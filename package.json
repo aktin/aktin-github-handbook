@@ -1,0 +1,25 @@
+{
+  "name": "aktin-user-manual",
+  "description": "A VuePress-powered documentation site providing user guides, templates, and instructions for using and configuring the AKTIN Data Warehouse",
+  "version": "0.0.1",
+  "private": true,
+  "license": "CC-BY-4.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_ORG/aktin-user-manual.git"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:build": "vuepress build docs",
+    "docs:update-package": "npx vp-update"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.20",
+    "@vuepress/theme-default": "2.0.0-rc.88",
+    "sass-embedded": "^1.86.0",
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.20"
+  }
+}
