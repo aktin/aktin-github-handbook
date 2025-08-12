@@ -1,0 +1,39 @@
+<!-- Only for legacy reference -->
+	<properties>
+		<!-- build versions -->
+		<version_dwh>1.6rc1</version_dwh>
+		<verison_dwh_ontology>0.15</verison_dwh_ontology>
+		<version_dwh_import>0.18</version_dwh_import>
+
+		<!-- version number to use in scripts -->
+		<version_java>11</version_java>
+		<version_wildfly>22.0.1.Final</version_wildfly>
+		<version_postgresql>14</version_postgresql>
+		<version_jdbc_driver>42.7.4</version_jdbc_driver>
+		<version_apache2>apache2 2.4.52-1ubuntu4</version_apache2>
+		<version_i2b2>1.8.1a</version_i2b2>
+		<version_p21_import_script>1.5.1</version_p21_import_script>
+
+		<!-- only for install-script.vm.md -->
+		<version_php>8.1</version_php>
+		<version_python>3.10.12</version_python>
+		<version_r>4.1.2</version_r>
+
+		<!-- urls for release and packages -->
+		<url_release_repo>https://www.aktin.org/software/repo</url_release_repo>
+		<url_i2b2_webclient>https://github.com/i2b2/i2b2-webclient/archive/v${version_i2b2}.0002.zip</url_i2b2_webclient>
+		<url_wildfly>https://download.jboss.org/wildfly/${version_wildfly}/wildfly-${version_wildfly}.zip</url_wildfly>
+		<url_jdbc_driver>https://jdbc.postgresql.org/download/postgresql-${version_jdbc_driver}.jar</url_jdbc_driver>
+		<url_i2b2_war>https://www.aktin.org/software/repo/org/i2b2/${version_i2b2}/i2b2.war</url_i2b2_war>
+
+		<!-- colors for bash scripting -->
+		<color_white>'\033[0m'</color_white>
+		<color_red>'\e[1;31m'</color_red>
+		<color_orange>'\e[0;33m'</color_orange>
+		<color_yellow>'\e[1;33m'</color_yellow>
+		<color_green>'\e[0;32m'</color_green>
+
+		<!-- encoding stuff -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
