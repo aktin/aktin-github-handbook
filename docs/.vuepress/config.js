@@ -1,18 +1,16 @@
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
-import { viteBundler } from '@vuepress/bundler-vite'
+import {defaultTheme} from '@vuepress/theme-default'
+import {defineUserConfig} from 'vuepress'
+import {viteBundler} from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
-  lang: 'en-US',
-
-  title: 'VuePress',
-  description: 'My first VuePress Site',
-
+  bundler: viteBundler(),
   theme: defaultTheme({
-    logo: 'https://vuejs.press/images/hero.png',
-
-    navbar: ['/', '/get-started'],
+    logo: '/assets/public/logo.png',
+    sidebar: ['/', '/page1', 'page2', '/guide/page3'],
   }),
 
-  bundler: viteBundler(),
+  lang: 'de-DE',
+  title: 'AKTIN Data Warehouse Handbook',
+  description: "AKTIN Data Warehouse documentation site, providing user manuals, support guides, and FAQs",
+  head: [['link', {rel: 'icon', href: '/assets/public/signet.png'}]],
 })
