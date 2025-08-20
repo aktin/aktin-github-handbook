@@ -1,5 +1,5 @@
 {
-  "name": "aktin-user-manual",
+  "name": "aktin-github-handbook",
   "description": "A VuePress-powered documentation site providing user guides, templates, and instructions for using and configuring the AKTIN Data Warehouse",
   "version": "0.0.1",
   "private": true,
@@ -7,7 +7,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_ORG/aktin-user-manual.git"
+    "url": "https://github.com/aktin/aktin-github-handbook.git"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",
