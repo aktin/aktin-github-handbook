@@ -3,21 +3,6 @@
 [Add troubleshooting
 article](https://confluence-imi.ukaachen.de?createDialogBlueprintId=61cf3a09-11aa-4cc7-9708-36893724e901&createDialogSpaceKey=AKTIN)
 
-| Title                                                                                                                                       | Creator                                                                       | Modified     |
-|---------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|--------------|
-| [Monatsbericht/Report: Abnormal Termination Exception](#monatsberichtreport-abnormal-termination-exception)                                 | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Aug 05, 2025 |
-| [DWH verliert regelmäßig Kontakt mit Broker bis zum Wildfly neustart](#dwh-verliert-regelmäßig-kontakt-mit-broker-bis-zum-wildfly-neustart) | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Jun 11, 2025 |
-| [Wildfly Startet nicht mehr](#wildfly-startet-nicht-mehr)                                                                                   | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Jun 10, 2025 |
-| [Wildfly hat keine Verbindung zu Postgresql](#wildfly-hat-keine-verbindung-zu-postgresql)                                                   | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Jun 10, 2025 |
-| [DWH 1.6 Update depends on postgresql \<=229](#dwh-1.6-update-depends-on-postgresql-229)                                                    | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Jun 02, 2025 |
-| [Adminkonsole Fehler 404](#adminkonsole-fehler-404)                                                                                         | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | May 07, 2025 |
-| [DWH Update 1.6 verbindet sich nicht mehr mit dem Broker](#dwh-update-1.6-verbindet-sich-nicht-mehr-mit-dem-broker)                         | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Apr 30, 2025 |
-| [Falsche IP auf automatisierten Mails des DWHs](#falsche-ip-auf-automatisierten-mails-des-dwhs)                                             | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Apr 23, 2025 |
-| [Monatsbericht nicht erstellt: Patient ohne ID](#monatsbericht-nicht-erstellt-patient-ohne-id)                                              | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Oct 24, 2024 |
-| [Installation des DWH auf Ubuntu 24.04LTS](#installation-des-dwh-auf-ubuntu-24.04lts)                                                       | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Oct 23, 2024 |
-| [Anfragen an das DWH führen zu Absturz](#anfragen-an-das-dwh-führen-zu-absturz)                                                             | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | Apr 27, 2020 |
-| [Firewall Probleme: Proxy](#firewall-probleme-proxy)                                                                                        | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | Dec 18, 2019 |
-
 ## Adminkonsole Fehler 404
 
 ### Hintergrund
@@ -52,7 +37,7 @@ Ubuntu Version oder DWH Version verändert wurde.
 <td><p><strong>sudo service wildfly status</strong></p>
 <p>oder</p>
 <p><strong>sudo systemctl status wildfly.service</strong></p></td>
-<td><img src="wissen-md/media/media/image13.png"
+<td><img src="../media/media/image13.png"
 style="width:1.12431in;height:0.36931in" /></td>
 <td><ul>
 <li><p>muss active(running) anzeigen</p></li>
@@ -72,7 +57,7 @@ style="width:1.12431in;height:0.36931in" /></td>
 <td>3</td>
 <td>Deployments ansehen</td>
 <td><strong>sudo ls /opt/wildfly/standalone/deployments/</strong></td>
-<td><img src="wissen-md/media/media/image14.png"
+<td><img src="../media/media/image14.png"
 style="width:1.12431in" /></td>
 <td><ul>
 <li><p>Prüfe ob die Dateien Endungen haben wie ".failed" oder
@@ -84,7 +69,7 @@ ist alles gut</p></li>
 <td>4</td>
 <td>Apache Status checken</td>
 <td><strong>sudo systemctl status apache2</strong></td>
-<td><img src="wissen-md/media/media/image15.png"
+<td><img src="../media/media/image15.png"
 style="width:1.12431in;height:0.4708in" /></td>
 <td><ul>
 <li><p>muss active(running) anzeigen</p></li>
@@ -469,7 +454,7 @@ Vermutlich wurden im neuen Release Pakete aktualisiert.
 
 | Änderung                    | 1.5rc1 | 1.6rc1  | Bemerkung                                    |
 |-----------------------------|--------|---------|----------------------------------------------|
-| Aktin Repo aus Pom entfernt |        |         | <img src="wissen-md/media/media/image16.png" 
+| Aktin Repo aus Pom entfernt |        |         | <img src="../media/media/image16.png" 
                                                   style="width:1.41944in;height:0.40915in" />   |
 | Update: admin-gui           | 0.11   | 0.13rc1 |                                              |
 | Update: report-manager      | 0.12   | 0.13    |                                              |
@@ -506,7 +491,7 @@ Vermutlich wurden im neuen Release Pakete aktualisiert.
 <tbody>
 <tr class="odd">
 <td>Installieren des DWHs als j2ee</td>
-<td><p><img src="wissen-md/media/media/image17.png"
+<td><p><img src="../media/media/image17.png"
 style="width:1.41944in;height:0.40163in" /></p>
 <p>function download_dwh_j2ee() {<br />
     DWILDFLYDEPLOYMENTS="${1}"</p>
@@ -519,7 +504,7 @@ href="https://www.aktin.org/software/repo/">https://www.aktin.org/software/repo/
 ~/".m2/repository/org/aktin/dwh/dwh-j2ee/${VDWH_J2EE}/dwh-j2ee-${VDWH_J2EE}.ear"
 "${DBUILD}${DWILDFLYDEPLOYMENTS}/dwh-j2ee-${VDWH_J2EE}.ear"<br />
 }</p></td>
-<td><p><img src="wissen-md/media/media/image18.png"
+<td><p><img src="../media/media/image18.png"
 style="width:1.41944in;height:0.70885in" /></p>
 <p>#TODO fix this<br />
 download_and_copy_dwh_j2ee() {<br />
@@ -843,7 +828,7 @@ Lösung, an einem Upgrade wird bald gearbeitet.
 <thead>
 <tr class="header">
 <th><blockquote>
-<p><img src="wissen-md/media/media/image19.jpeg"
+<p><img src="../media/media/image19.jpeg"
 style="width:1.10615in;height:1.5625in" /></p>
 </blockquote></th>
 </tr>
@@ -906,23 +891,23 @@ Für einen Login im Data Warehouse Manger ist es notwendig, dass die
 dafür notwendige Admin Berechtigung vergeben ist. In dem folgenden
 Beispiel ist der user "demo" kein Admin (da false).
 
-<img src="wissen-md/media/media/image20.png"
+<img src="../media/media/image20.png"
 style="width:5.90069in;height:0.38758in" />
 
 Ein Login ist daher nicht möglich:
 
-<img src="wissen-md/media/media/image21.png"
+<img src="../media/media/image21.png"
 style="width:4.40659in;height:2.60417in" />
 
 Wenn aber das Adminattribut auf "true" gesetzt wurde, ist ein Login
 möglich (bei gleichem Passwort):
 
-<img src="wissen-md/media/media/image22.png"
+<img src="../media/media/image22.png"
 style="width:5.90069in;height:0.46831in" />
 
 Dann ist ein Login möglich:
 
-<img src="wissen-md/media/media/image23.png"
+<img src="../media/media/image23.png"
 style="width:5.90069in;height:1.7225in" />
 
 ## Monatsbericht/Report: Abnormal Termination Exception
@@ -1196,7 +1181,7 @@ Ubuntu Version oder DWH Version verändert wurde.
 <td><p><strong>sudo service wildfly status</strong></p>
 <p>oder</p>
 <p><strong>sudo systemctl status wildfly.service</strong></p></td>
-<td><img src="wissen-md/media/media/image13.png"
+<td><img src="../media/media/image13.png"
 style="width:1.12431in;height:0.36931in" /></td>
 <td><ul>
 <li><p>muss active(running) anzeigen</p></li>
@@ -1224,7 +1209,7 @@ starten</td>
 <td>3</td>
 <td>Deployments ansehen</td>
 <td><strong>sudo ls /opt/wildfly/standalone/deployments/</strong></td>
-<td><img src="wissen-md/media/media/image14.png"
+<td><img src="../media/media/image14.png"
 style="width:1.12431in" /></td>
 <td><ul>
 <li><p>Prüfe ob die Dateien Endungen haben wie ".failed" oder
@@ -1236,7 +1221,7 @@ ist alles gut</p></li>
 <td>4</td>
 <td>Apache Status checken</td>
 <td><strong>sudo systemctl status apache2</strong></td>
-<td><img src="wissen-md/media/media/image15.png"
+<td><img src="../media/media/image15.png"
 style="width:1.12431in;height:0.4708in" /></td>
 <td><ul>
 <li><p>muss active(running) anzeigen</p></li>

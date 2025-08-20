@@ -483,7 +483,7 @@ Erläuterungen und dem letzten Stand der Bearbeitung.
 
 ### Tickets in der Schwebe
 
-<img src="wissen-md/media/media/image1.png"
+<img src="media/media/image1.png"
 style="width:4.16667in;height:4.16667in"
 alt="Kunstdruck, Leinwandbild, Schweben im Raum von Astrolabs" />
 
@@ -638,7 +638,7 @@ Erläuterungen und dem letzten Stand der Bearbeitung.
 
 ### Tickets in der Schwebe
 
-<img src="wissen-md/media/media/image1.png"
+<img src="media/media/image1.png"
 title="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.gettyimages.de%2Ffotos%2Fastronaut-funny%3Fpage%3D4&amp;psig=AOvVaw32tNlLt3HPv5j_1VwAZJ-A&amp;ust=1747229744680000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBQQjRxqFwoTCOjvjZnIoI0DFQAAAAAdAAAAABAb"
 style="width:2.43056in;height:2.60417in"
 alt="1.293 Astronaut Funny Stock Photos, High-Res Pictures, and Images - Getty Images" />
@@ -714,7 +714,7 @@ mit Erläuterungen und dem letzten Stand der Bearbeitung.
 
 ### Tickets in der Schwebe
 
-<img src="wissen-md/media/media/image1.png"
+<img src="media/media/image1.png"
 style="width:4.16667in;height:4.16667in"
 alt="Kunstdruck, Leinwandbild, Schweben im Raum von Astrolabs" />
 
@@ -765,7 +765,7 @@ Erläuterungen und dem letzten Stand der Bearbeitung.
 
 ### Tickets in der Schwebe
 
-<img src="wissen-md/media/media/image1.png"
+<img src="media/media/image1.png"
 style="width:4.16667in;height:4.16667in"
 alt="Kunstdruck, Leinwandbild, Schweben im Raum von Astrolabs" />
 
@@ -1005,13 +1005,13 @@ werden können.**
 
 3.  (IP-des-Servers) ersetzten mit der tatsächlichen IP
 
-    <img src="wissen-md/media/media/image2.png"
+    <img src="media/media/image2.png"
     style="width:5.40069in;height:0.36005in" />
 
 4.  (CDA-Datei) mit einer tatsächlichen Datei ersetzten (Beispiel
     Download bereit)
 
-5.  In einer Shell das Script ausführen (z.B. Git-Bash) mit ./import.sh
+5.  In einer Shell das Script ausführen (z.B. Git-Bash) mit import.sh
 
 6.  Rückmeldungen sind analog zu http Rückmeldungen wie z.B. 200 = Fall
     geupdated, 201 = Fall erstellt, 503 = Server nicht erreichbar, 400 =
@@ -1025,7 +1025,7 @@ werden können.**
 
 2.  batch_import.sh mit einem Text-Editor öffnen
 
-    <img src="wissen-md/media/media/image3.png"
+    <img src="media/media/image3.png"
     style="width:5.40069in;height:1.40239in" />
 
 3.  Zeile 2: durch das verstellen der 1 bzw. 10 kann die Anzahl (und die
@@ -1040,7 +1040,7 @@ werden können.**
     hier Kommentar entfernen
 
 7.  In einer Shell das Script ausführen (z.B. Git-Bash) mit
-    ./batch_import.sh
+    batch_import.sh
 
 8.  Rückmeldungen sind analog zu http Rückmeldungen wie z.B. 200 = Fall
     geupdated, 201 = Fall erstellt, 503 = Server nicht erreichbar, 400 =
@@ -1079,18 +1079,18 @@ werden können.**
 Um RScript zu debuggen muss die folgende Variable in aktin.properties
 auf true gesetzt werden:
 
-<img src="wissen-md/media/media/image4.png"
+<img src="media/media/image4.png"
 style="width:5.90069in;height:2.08077in" />
 
 Nach Neustart des DWH sollte eine Zeile angegeben sein, welche den
 temporären Speicherort der Dateien
-ausgibt:<img src="wissen-md/media/media/image5.png"
+ausgibt:<img src="media/media/image5.png"
 style="width:5.90069in;height:0.415in" />
 
 Das Rscript kann durch folgenden Befehl ausgeführt werden und verwendet
 dafür die temporären diagnosen/patienten/Encounter txt Dateien.
 
-<img src="wissen-md/media/media/image6.png"
+<img src="media/media/image6.png"
 style="width:5.90069in;height:0.415in" />
 
 Wichtig ist nach erfolgreichem Debuggen die Aktin.properties Variable
@@ -1112,7 +1112,7 @@ login as: root
 <tr class="header">
 <th><blockquote>
 <p>cd /opt/aktin/diagnostic_script</p>
-<p>./aktindiag.sh</p>
+<p>aktindiag.sh</p>
 </blockquote></th>
 </tr>
 </thead>
@@ -1195,7 +1195,7 @@ auf die Funktionalität des Data Warehouse haben.
 
 ### Anleitung
 
-<img src="wissen-md/media/media/image7.png"
+<img src="media/media/image7.png"
 style="width:3.46875in;height:2.60417in" /> 
 
 |     |
@@ -1222,10 +1222,10 @@ Zwei User werden erstellt user a und b, mit user a als Admin und user b
 als kein Admin. Beachten Sie, dass keine weiteren Parameter oder
 Projekte zugeordnet worden sind.
 
-<img src="wissen-md/media/media/image8.png"
+<img src="media/media/image8.png"
 style="width:5.90069in;height:2.47388in" />
 
-<img src="wissen-md/media/media/image9.png"
+<img src="media/media/image9.png"
 style="width:5.90069in;height:2.47388in" />
 
 User a) sollte sich nun in dem Data Warehouse Manager (DWH) einloggen
@@ -1234,10 +1234,10 @@ können. 
 
 Nun fügen wir beide User zu dem AKTIN Projekt hinzu:
 
-<img src="wissen-md/media/media/image10.png"
+<img src="media/media/image10.png"
 style="width:5.90069in;height:2.47388in" />
 
-<img src="wissen-md/media/media/image11.png"
+<img src="media/media/image11.png"
 style="width:5.90069in;height:2.47388in" />
 
 Nun kann a sich in das I2B2 einloggen und besitzt Admin Berechtigungen
@@ -2591,7 +2591,7 @@ the</p>
 
 6.  Zugriff per PGAdmin(v4 oder höher) mit folgender Konfiguration:
 
-<img src="wissen-md/media/media/image12.png"
+<img src="media/media/image12.png"
 style="width:3.93214in;height:4.16667in" />
 
 ### Verwandte Artikel
@@ -2663,7 +2663,7 @@ Ubuntu Version oder DWH Version verändert wurde.
 <td><p><strong>sudo service wildfly status</strong></p>
 <p>oder</p>
 <p><strong>sudo systemctl status wildfly.service</strong></p></td>
-<td><img src="wissen-md/media/media/image13.png"
+<td><img src="media/media/image13.png"
 style="width:1.12431in;height:0.36931in" /></td>
 <td><ul>
 <li><p>muss active(running) anzeigen</p></li>
@@ -2683,7 +2683,7 @@ style="width:1.12431in;height:0.36931in" /></td>
 <td>3</td>
 <td>Deployments ansehen</td>
 <td><strong>sudo ls /opt/wildfly/standalone/deployments/</strong></td>
-<td><img src="wissen-md/media/media/image14.png"
+<td><img src="media/media/image14.png"
 style="width:1.12431in" /></td>
 <td><ul>
 <li><p>Prüfe ob die Dateien Endungen haben wie ".failed" oder
@@ -2695,7 +2695,7 @@ ist alles gut</p></li>
 <td>4</td>
 <td>Apache Status checken</td>
 <td><strong>sudo systemctl status apache2</strong></td>
-<td><img src="wissen-md/media/media/image15.png"
+<td><img src="media/media/image15.png"
 style="width:1.12431in;height:0.4708in" /></td>
 <td><ul>
 <li><p>muss active(running) anzeigen</p></li>
@@ -3080,7 +3080,7 @@ Vermutlich wurden im neuen Release Pakete aktualisiert.
 
 | Änderung                    | 1.5rc1 | 1.6rc1  | Bemerkung                                    |
 |-----------------------------|--------|---------|----------------------------------------------|
-| Aktin Repo aus Pom entfernt |        |         | <img src="wissen-md/media/media/image16.png" 
+| Aktin Repo aus Pom entfernt |        |         | <img src="media/media/image16.png" 
                                                   style="width:1.41944in;height:0.40915in" />   |
 | Update: admin-gui           | 0.11   | 0.13rc1 |                                              |
 | Update: report-manager      | 0.12   | 0.13    |                                              |
@@ -3117,7 +3117,7 @@ Vermutlich wurden im neuen Release Pakete aktualisiert.
 <tbody>
 <tr class="odd">
 <td>Installieren des DWHs als j2ee</td>
-<td><p><img src="wissen-md/media/media/image17.png"
+<td><p><img src="media/media/image17.png"
 style="width:1.41944in;height:0.40163in" /></p>
 <p>function download_dwh_j2ee() {<br />
     DWILDFLYDEPLOYMENTS="${1}"</p>
@@ -3130,7 +3130,7 @@ href="https://www.aktin.org/software/repo/">https://www.aktin.org/software/repo/
 ~/".m2/repository/org/aktin/dwh/dwh-j2ee/${VDWH_J2EE}/dwh-j2ee-${VDWH_J2EE}.ear"
 "${DBUILD}${DWILDFLYDEPLOYMENTS}/dwh-j2ee-${VDWH_J2EE}.ear"<br />
 }</p></td>
-<td><p><img src="wissen-md/media/media/image18.png"
+<td><p><img src="media/media/image18.png"
 style="width:1.41944in;height:0.70885in" /></p>
 <p>#TODO fix this<br />
 download_and_copy_dwh_j2ee() {<br />
@@ -3232,7 +3232,7 @@ Hierzu lasse ich folgende Schritte zur Überprüfung durchlaufen:
 <tr class="odd">
 <td>1</td>
 <td>Öffne J Boss CLI</td>
-<td><strong>sudo ./opt/wildfly/bin/jboss-cli.sh</strong></td>
+<td><strong>sudo opt/wildfly/bin/jboss-cli.sh</strong></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -3454,7 +3454,7 @@ Lösung, an einem Upgrade wird bald gearbeitet.
 <thead>
 <tr class="header">
 <th><blockquote>
-<p><img src="wissen-md/media/media/image19.jpeg"
+<p><img src="media/media/image19.jpeg"
 style="width:1.10615in;height:1.5625in" /></p>
 </blockquote></th>
 </tr>
@@ -3517,23 +3517,23 @@ Für einen Login im Data Warehouse Manger ist es notwendig, dass die
 dafür notwendige Admin Berechtigung vergeben ist. In dem folgenden
 Beispiel ist der user "demo" kein Admin (da false).
 
-<img src="wissen-md/media/media/image20.png"
+<img src="media/media/image20.png"
 style="width:5.90069in;height:0.38758in" />
 
 Ein Login ist daher nicht möglich:
 
-<img src="wissen-md/media/media/image21.png"
+<img src="media/media/image21.png"
 style="width:4.40659in;height:2.60417in" />
 
 Wenn aber das Adminattribut auf "true" gesetzt wurde, ist ein Login
 möglich (bei gleichem Passwort):
 
-<img src="wissen-md/media/media/image22.png"
+<img src="media/media/image22.png"
 style="width:5.90069in;height:0.46831in" />
 
 Dann ist ein Login möglich:
 
-<img src="wissen-md/media/media/image23.png"
+<img src="media/media/image23.png"
 style="width:5.90069in;height:1.7225in" />
 
 ## Monatsbericht/Report: Abnormal Termination Exception
@@ -3807,7 +3807,7 @@ Ubuntu Version oder DWH Version verändert wurde.
 <td><p><strong>sudo service wildfly status</strong></p>
 <p>oder</p>
 <p><strong>sudo systemctl status wildfly.service</strong></p></td>
-<td><img src="wissen-md/media/media/image13.png"
+<td><img src="media/media/image13.png"
 style="width:1.12431in;height:0.36931in" /></td>
 <td><ul>
 <li><p>muss active(running) anzeigen</p></li>
@@ -3827,7 +3827,7 @@ style="width:1.12431in;height:0.36931in" /></td>
 <td></td>
 <td>Wenn keine Wildlfy logs verfügbar, Wldfly manuell mit Skript
 starten</td>
-<td><strong>sudo ./opt/wildfly/bin/standalone.sh</strong></td>
+<td><strong>sudo opt/wildfly/bin/standalone.sh</strong></td>
 <td></td>
 <td></td>
 </tr>
@@ -3835,7 +3835,7 @@ starten</td>
 <td>3</td>
 <td>Deployments ansehen</td>
 <td><strong>sudo ls /opt/wildfly/standalone/deployments/</strong></td>
-<td><img src="wissen-md/media/media/image14.png"
+<td><img src="media/media/image14.png"
 style="width:1.12431in" /></td>
 <td><ul>
 <li><p>Prüfe ob die Dateien Endungen haben wie ".failed" oder
@@ -3847,7 +3847,7 @@ ist alles gut</p></li>
 <td>4</td>
 <td>Apache Status checken</td>
 <td><strong>sudo systemctl status apache2</strong></td>
-<td><img src="wissen-md/media/media/image15.png"
+<td><img src="media/media/image15.png"
 style="width:1.12431in;height:0.4708in" /></td>
 <td><ul>
 <li><p>muss active(running) anzeigen</p></li>

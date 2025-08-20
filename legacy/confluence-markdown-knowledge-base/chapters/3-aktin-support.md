@@ -71,7 +71,7 @@ Erläuterungen und dem letzten Stand der Bearbeitung.
 
 ### Tickets in der Schwebe
 
-<img src="wissen-md/media/media/image1.png"
+<img src="../media/media/image1.png"
 style="width:4.16667in;height:4.16667in"
 alt="Kunstdruck, Leinwandbild, Schweben im Raum von Astrolabs" />
 
@@ -226,7 +226,7 @@ Erläuterungen und dem letzten Stand der Bearbeitung.
 
 ### Tickets in der Schwebe
 
-<img src="wissen-md/media/media/image1.png"
+<img src="../media/media/image1.png"
 title="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.gettyimages.de%2Ffotos%2Fastronaut-funny%3Fpage%3D4&amp;psig=AOvVaw32tNlLt3HPv5j_1VwAZJ-A&amp;ust=1747229744680000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBQQjRxqFwoTCOjvjZnIoI0DFQAAAAAdAAAAABAb"
 style="width:2.43056in;height:2.60417in"
 alt="1.293 Astronaut Funny Stock Photos, High-Res Pictures, and Images - Getty Images" />
@@ -302,7 +302,7 @@ mit Erläuterungen und dem letzten Stand der Bearbeitung.
 
 ### Tickets in der Schwebe
 
-<img src="wissen-md/media/media/image1.png"
+<img src="../media/media/image1.png"
 style="width:4.16667in;height:4.16667in"
 alt="Kunstdruck, Leinwandbild, Schweben im Raum von Astrolabs" />
 
@@ -353,7 +353,7 @@ Erläuterungen und dem letzten Stand der Bearbeitung.
 
 ### Tickets in der Schwebe
 
-<img src="wissen-md/media/media/image1.png"
+<img src="../media/media/image1.png"
 style="width:4.16667in;height:4.16667in"
 alt="Kunstdruck, Leinwandbild, Schweben im Raum von Astrolabs" />
 

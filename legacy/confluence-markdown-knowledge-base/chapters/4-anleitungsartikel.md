@@ -5,21 +5,6 @@ article](https://confluence-imi.ukaachen.de?createDialogBlueprintId=a16b97ad-2dc
 
 Auf diesen Seiten befinden sich Anleitungsartikel für AKTIN
 
-| Title                                                                                           | Creator                                                                       | Modified     |
-|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|--------------|
-| [Ubuntu Speicher Erweiterung](#ubuntu-speicher-erweiterung)                                     | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Jun 11, 2025 |
-| [Ubuntu Distributions Upgrade](#ubuntu-distributions-upgrade)                                   | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | May 26, 2025 |
-| [Zugriff per PGAdmin auf ein lokales AKTIN DWH](#zugriff-per-pgadmin-auf-ein-lokales-aktin-dwh) | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | Apr 23, 2025 |
-| [Broker Anfrage](#broker-anfrage)                                                               | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | Mar 31, 2025 |
-| [HTTPS-Zugriff aktivieren](#https-zugriff-aktivieren)                                           | [Wiliam Hoy](https://confluence-imi.ukaachen.de/display/~whoy)                | Nov 08, 2024 |
-| [Manuelle Datenabfrage](#manuelle-datenabfrage)                                                 | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | May 16, 2024 |
-| [Löschen von Fällen](#löschen-von-fällen)                                                       | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | Jul 07, 2023 |
-| [Einloggen als root](#schritt-für-schritt-anleitung-1)                                          | [Dominik Brammen](https://confluence-imi.ukaachen.de/display/~dbrammen)       | Jul 23, 2020 |
-| [Manuelles AKTIN Update](#manuelles-aktin-update)                                               | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | Jul 23, 2020 |
-| [DWH Logdateien erstellen](#dwh-logdateien-erstellen)                                           | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | Apr 28, 2020 |
-| [Installation Broker Monitoring](#installation-broker-monitoring)                               | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | Dec 20, 2019 |
-| [CDA Import](#cda-import)                                                                       | [Jonas Bienzeisler](https://confluence-imi.ukaachen.de/display/~jbienzeisler) | Dec 12, 2019 |
-
 ## Broker Anfrage
 
 **Diese Anleitung beschreibt das Vorgehen zum Erstellen einer Anfrage
@@ -187,7 +172,7 @@ werden können.**
 
 3.  (IP-des-Servers) ersetzten mit der tatsächlichen IP
 
-    <img src="wissen-md/media/media/image2.png"
+    <img src="../media/media/image2.png"
     style="width:5.40069in;height:0.36005in" />
 
 4.  (CDA-Datei) mit einer tatsächlichen Datei ersetzten (Beispiel
@@ -207,7 +192,7 @@ werden können.**
 
 2.  batch_import.sh mit einem Text-Editor öffnen
 
-    <img src="wissen-md/media/media/image3.png"
+    <img src="../media/media/image3.png"
     style="width:5.40069in;height:1.40239in" />
 
 3.  Zeile 2: durch das verstellen der 1 bzw. 10 kann die Anzahl (und die
@@ -261,18 +246,19 @@ werden können.**
 Um RScript zu debuggen muss die folgende Variable in aktin.properties
 auf true gesetzt werden:
 
-<img src="wissen-md/media/media/image4.png"
+<img src="../media/media/image4.png"
 style="width:5.90069in;height:2.08077in" />
 
 Nach Neustart des DWH sollte eine Zeile angegeben sein, welche den
 temporären Speicherort der Dateien
-ausgibt:<img src="wissen-md/media/media/image5.png"
+ausgibt:
+<img src="../media/media/image5.png"
 style="width:5.90069in;height:0.415in" />
 
 Das Rscript kann durch folgenden Befehl ausgeführt werden und verwendet
 dafür die temporären diagnosen/patienten/Encounter txt Dateien.
 
-<img src="wissen-md/media/media/image6.png"
+<img src="../media/media/image6.png"
 style="width:5.90069in;height:0.415in" />
 
 Wichtig ist nach erfolgreichem Debuggen die Aktin.properties Variable
@@ -377,7 +363,7 @@ auf die Funktionalität des Data Warehouse haben.
 
 ### Anleitung
 
-<img src="wissen-md/media/media/image7.png"
+<img src="../media/media/image7.png"
 style="width:3.46875in;height:2.60417in" /> 
 
 |     |
@@ -404,10 +390,10 @@ Zwei User werden erstellt user a und b, mit user a als Admin und user b
 als kein Admin. Beachten Sie, dass keine weiteren Parameter oder
 Projekte zugeordnet worden sind.
 
-<img src="wissen-md/media/media/image8.png"
+<img src="../media/media/image8.png"
 style="width:5.90069in;height:2.47388in" />
 
-<img src="wissen-md/media/media/image9.png"
+<img src="../media/media/image9.png"
 style="width:5.90069in;height:2.47388in" />
 
 User a) sollte sich nun in dem Data Warehouse Manager (DWH) einloggen
@@ -416,10 +402,10 @@ können. 
 
 Nun fügen wir beide User zu dem AKTIN Projekt hinzu:
 
-<img src="wissen-md/media/media/image10.png"
+<img src="../media/media/image10.png"
 style="width:5.90069in;height:2.47388in" />
 
-<img src="wissen-md/media/media/image11.png"
+<img src="../media/media/image11.png"
 style="width:5.90069in;height:2.47388in" />
 
 Nun kann a sich in das I2B2 einloggen und besitzt Admin Berechtigungen
@@ -1773,7 +1759,7 @@ the</p>
 
 6.  Zugriff per PGAdmin(v4 oder höher) mit folgender Konfiguration:
 
-<img src="wissen-md/media/media/image12.png"
+<img src="../media/media/image12.png"
 style="width:3.93214in;height:4.16667in" />
 
 ### Verwandte Artikel
