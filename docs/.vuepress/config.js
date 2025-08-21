@@ -1,9 +1,9 @@
 import {defineUserConfig} from 'vuepress'
 import {viteBundler} from '@vuepress/bundler-vite'
-import {defaultTheme} from "@vuepress/theme-default";
-import versionConfig from './config/version.js';
+import {defaultTheme} from "@vuepress/theme-default"
+import dotenv from 'dotenv'
 
-const DWH_VERSION = versionConfig.version;
+dotenv.config()
 
 export default defineUserConfig({
   bundler: viteBundler(),
@@ -16,10 +16,15 @@ export default defineUserConfig({
     lastUpdated: true,
     lastUpdatedText: 'Zuletzt aktualisiert',
     contributors: false,
+
+    versions: {
+      dwh: process.env.DWH_VERSION,
+      api: process.env.API_VERSION,
+    }
   }),
 
   lang: 'de-DE',
-  title: `AKTIN Data Warehouse ${DWH_VERSION}`,
+  title: `AKTIN Data Warehouse ${process.env.DWH_VERSION}`,
   description: "AKTIN Data Warehouse documentation site, providing user manuals, support guides, and FAQs",
 
   head: [
