@@ -21,15 +21,6 @@ export default defineUserConfig({
       dwh: process.env.DWH_VERSION,
       api: process.env.API_VERSION,
     },
-    plugins: [
-      searchPlugin({
-        locales: {
-          '/': {
-            placeholder: 'Search',
-          },
-        },
-      }),
-    ],
   }),
 
   lang: 'de-DE',
