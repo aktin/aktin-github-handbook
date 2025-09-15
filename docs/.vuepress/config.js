@@ -1,6 +1,7 @@
 import {defineUserConfig} from 'vuepress'
 import {viteBundler} from '@vuepress/bundler-vite'
 import {defaultTheme} from "@vuepress/theme-default"
+import {searchPlugin} from '@vuepress/plugin-search'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -16,11 +17,10 @@ export default defineUserConfig({
     lastUpdated: true,
     lastUpdatedText: 'Zuletzt aktualisiert',
     contributors: false,
-
     versions: {
       dwh: process.env.DWH_VERSION,
       api: process.env.API_VERSION,
-    }
+    },
   }),
 
   lang: 'de-DE',
@@ -29,5 +29,15 @@ export default defineUserConfig({
 
   head: [
     ['link', {rel: 'icon', href: '.vuepress/public/images/signet.png'}],
+  ],
+
+  plugins: [
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: 'Search',
+        },
+      },
+    }),
   ],
 })
