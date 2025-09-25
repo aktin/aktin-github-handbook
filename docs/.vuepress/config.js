@@ -1,43 +1,36 @@
-import {defineUserConfig} from 'vuepress'
-import {viteBundler} from '@vuepress/bundler-vite'
+import {defineUserConfig} from "vuepress"
+import {viteBundler} from "@vuepress/bundler-vite"
 import {defaultTheme} from "@vuepress/theme-default"
-import {searchPlugin} from '@vuepress/plugin-search'
-import dotenv from 'dotenv'
+import {searchPlugin} from "@vuepress/plugin-search"
+import dotenv from "dotenv"
 
 dotenv.config()
 
 export default defineUserConfig({
   bundler: viteBundler(),
-
   theme: defaultTheme({
-    logo: '/images/logo.png',
-    sidebar: ['/', '/folder1/page1', 'folder2/page2'],
-    repo: 'https://github.com/aktin/aktin-github-handbook.git',
+    logo: "/images/logo.png",
+    sidebar: [
+      "/",
+      "/folder1/page1",
+      "folder2/page2"
+    ],
     editLink: false,
     lastUpdated: true,
-    lastUpdatedText: 'Zuletzt aktualisiert',
+    lastUpdatedText: "Zuletzt aktualisiert",
     contributors: false,
     versions: {
       dwh: process.env.DWH_VERSION,
       api: process.env.API_VERSION,
     },
   }),
-
-  lang: 'de-DE',
-  title: `AKTIN Data Warehouse ${process.env.DWH_VERSION}`,
+  lang: "de-DE",
+  title: `AKTIN Data Warehouse v${process.env.DWH_VERSION} Handbook`,
   description: "AKTIN Data Warehouse documentation site, providing user manuals, support guides, and FAQs",
-
   head: [
-    ['link', {rel: 'icon', href: '.vuepress/public/images/signet.png'}],
+    ["link", {rel: "icon", href: ".vuepress/public/images/signet.png"}],
   ],
-
   plugins: [
-    searchPlugin({
-      locales: {
-        '/': {
-          placeholder: 'Search',
-        },
-      },
-    }),
+    searchPlugin({}),
   ],
 })

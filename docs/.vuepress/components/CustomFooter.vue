@@ -6,10 +6,8 @@
 
 <style>
 .custom-footer {
-  margin-top: 2rem;
-  padding: 1rem;
   text-align: center;
-  border-top: 1px solid #ddd;
   color: #666;
+  border-top: 1px solid #ddd;
 }
 </style>
