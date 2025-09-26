@@ -1,6 +1,8 @@
-import { defineClientConfig } from "vuepress/client"
-import CustomFooter from "./components/CustomFooter.vue"
+import { defineClientConfig } from 'vuepress/client'
+import Layout from './layouts/Layout.vue'
 
 export default defineClientConfig({
-  rootComponents: [CustomFooter],
+  layouts: {
+    Layout,
+  },
 })
