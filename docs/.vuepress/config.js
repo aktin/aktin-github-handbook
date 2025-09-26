@@ -1,4 +1,3 @@
-import {defineUserConfig} from "vuepress"
 import {viteBundler} from "@vuepress/bundler-vite"
 import {defaultTheme} from "@vuepress/theme-default"
 import {searchPlugin} from "@vuepress/plugin-search"
@@ -6,7 +5,8 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-export default defineUserConfig({
+// theme docs : https://ecosystem.vuejs.press/themes/default/
+export default {
   bundler: viteBundler(),
   theme: defaultTheme({
     logo: "/images/logo.png",
@@ -23,6 +23,12 @@ export default defineUserConfig({
       dwh: process.env.DWH_VERSION,
       api: process.env.API_VERSION,
     },
+    themePlugins: {
+      // see default theme plugins here: https://ecosystem.vuejs.press/themes/default/plugin.html
+      backToTop: false,
+      seo: false,
+      search: false,
+    }
   }),
   lang: "de-DE",
   title: `AKTIN Data Warehouse v${process.env.DWH_VERSION} Handbook`,
@@ -31,6 +37,7 @@ export default defineUserConfig({
     ["link", {rel: "icon", href: ".vuepress/public/images/signet.png"}],
   ],
   plugins: [
+    // plugin docs: https://ecosystem.vuejs.press/plugins/
     searchPlugin({}),
   ],
-})
+}
