@@ -33,6 +33,109 @@ Check [default theme docs][default-theme] for full reference.
 
 You can [add extra style][style] with `.vuepress/styles/index.scss` file.
 
+::: tip
+This is a tip
+:::
+
+::: warning
+This is a warning
+:::
+
+::: danger
+This is a dangerous warning
+:::
+
+::: info
+This is an information.
+:::
+
+::: important
+This is an important message
+:::
+
+::: note
+This is a note
+:::
+
+::: details
+This is a details block
+:::
+
+> [!note]
+> This is note text
+
+> [!important]
+> This is important text
+
+> [!tip]
+> This is tip text
+
+> [!warning]
+> This is warning text
+
+> [!caution]
+> This is caution text
+
+::: tip
+
+A custom tip container with `code` and [links](https://example.com).
+
+```js
+const a = 1
+```
+
+:::
+
+
+```css :collapsed-lines
+html {
+  margin: 0;
+  background: black;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: inherit;
+}
+
+/* the three main rows going down the page */
+
+body > div {
+  height: 25%;
+}
+
+.thumb {
+  float: left;
+  width: 25%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main {
+  display: none;
+}
+```
+
+::: tabs
+
+@tab title 1
+
+<!-- tab 1 content -->
+
+@tab title 2
+
+<!-- tab 2 content -->
+
+<!-- 👇 tab 3 will be activated by default -->
+
+@tab:active title 3
+
+<!-- tab 3 content -->
+
+:::
+
 [routing]: https://vuejs.press/guide/page.html#routing
 [content]: https://vuejs.press/guide/page.html#content
 [synatex-extensions]: https://vuejs.press/guide/markdown.html#syntax-extensions
