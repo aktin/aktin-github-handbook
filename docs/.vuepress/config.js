@@ -19,7 +19,8 @@ export default {
         {
           text: "Installation",
           prefix: "install",
-          children: ["server.md", "debian.md", "docker.md", "configuration.md", "test.md"],
+          children: ["server.md", "debian.md", "docker.md", "configuration.md",
+            "test.md"],
         },
         {
           text: "Sonstiges",

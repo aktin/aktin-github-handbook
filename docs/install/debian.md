@@ -1,9 +1,8 @@
 # Debian-Paket
 
 Auf dieser Seite wird die Installation und Konfiguration des AKTIN Data Warehouse beschrieben. Die Software steht als Debian-Paket zur Verfügung und wurde für Ubuntu {{ $theme.versions.ubuntu }}
-Server LTS getestet. Wenn Sie eine
-andere Distribution verwenden möchten, kontaktieren Sie bitte den [AKTIN IT-Support][support-email]. Für die Vorbereitung des Servers beachten Sie die Hinweise auf der Seite
-zur [Server-Installation][server].
+Server LTS getestet. Wenn Sie eine andere Distribution verwenden möchten, kontaktieren Sie bitte den [AKTIN IT-Support][support-email]. Für die Vorbereitung des Servers beachten Sie die Hinweise auf
+der Seite zur [Server-Installation][server].
 
 ## Vorbereitung der Installation
 
@@ -14,8 +13,7 @@ Stellen Sie sicher, dass Ihre Firewall für die Installation und den Betrieb des
 ### Freischaltung von root
 
 Für die Installation benötigen Sie Konsolenzugriff und `root`-Rechte. Standardmäßig ist der `root`-Benutzer bei Ubuntu deaktiviert. Um ihn zu aktivieren, wechseln Sie zunächst mit dem folgenden Befehl
-in
-eine `root`-Sitzung:
+in eine `root`-Sitzung:
 
 ```bash
 sudo -i

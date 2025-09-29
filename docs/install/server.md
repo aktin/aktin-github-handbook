@@ -1,8 +1,8 @@
 # Betriebssystem
 
 Das AKTIN Data Warehouse ist grundsätzlich auf allen Debian-basierten Linux-Systemen lauffähig. Für die Installation auf Ubuntu Server {{ $theme.versions.ubuntu }} LTS wird ein Debian-Paket (`.deb`)
-bereitgestellt. Diese Anleitung
-beschreibt die Vorbereitung des Betriebssystems für die anschließende Installation dieses Pakets. Bei Fragen können Sie sich gerne an [it-support@aktin.org][support-email] wenden.
+bereitgestellt. Diese Anleitung beschreibt die Vorbereitung des Betriebssystems für die anschließende Installation dieses Pakets. Bei Fragen können Sie sich gerne
+an [it-support@aktin.org][support-email] wenden.
 
 ## 1. Download der Installationsdatei
 

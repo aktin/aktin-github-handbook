@@ -124,3 +124,6 @@ body > div {
 [sidebar]: https://vuejs.press/reference/default-theme/config.html#sidebar
 [default-theme]: https://vuejs.press/reference/default-theme/
 [style]: https://vuejs.press/reference/default-theme/styles.html#style-file
+
+
+[support-email]: mailto:it-support@aktin.org
