@@ -1,4 +1,4 @@
-# Server-Installation
+# Betriebssystem
 
 Das AKTIN Data Warehouse ist grundsätzlich auf allen Debian-basierten Linux-Systemen lauffähig. Für die Installation auf Ubuntu Server {{ $theme.versions.ubuntu }} LTS wird ein Debian-Paket (`.deb`) bereitgestellt. Diese Anleitung
 beschreibt die Vorbereitung des Betriebssystems für die anschließende Installation dieses Pakets.
@@ -29,7 +29,6 @@ Wählen Sie Ihr Tastaturlayout aus den angezeigten Optionen. Alternativ können 
 
 ![ubuntu3x400](images/ubuntu_3.png)
 
-
 ## 5. Netzwerkverbindungen
 
 In diesem Dialog werden alle erkannten Netzwerkschnittstellen angezeigt. Wählen Sie eine Schnittstelle aus, um eine Internetverbindung herzustellen.
@@ -53,7 +52,7 @@ Hier können Sie einen alternativen Download-Mirror für Ubuntu-Pakete angeben. 
 ## 8. Speicherkonfiguration
 
 Es ist ratsam, den gesamten Speicherplatz in einer Partition zu verwenden. Behalten Sie hierfür die Standardeinstellungen bei. Beachten Sie, dass dabei alle vorhandenen Daten auf dem Laufwerk gelöscht
-werden. Bei einer manuellen Partitionierung sollte die Partition mindestens **100 Gigabyte** groß sein.
+werden. Bei einer manuellen Partitionierung sollte die Partition **mindestens 100 Gigabyte** groß sein.
 
 ![ubuntu7x400](images/ubuntu_7.png)
 ![ubuntu8x400](images/ubuntu_8.png)
@@ -69,7 +68,7 @@ wird aber benötigt, um den `root`-Nutzer freizuschalten.
 
 ## 10. SSH-Setup und Server-Snaps
 
-Achten Sie bei der Softwareauswahl darauf, dass nur der **OpenSSH server** zusätzlich installiert wird. Entfernen Sie alle anderen Haken, um sicherzustellen, dass keine unnötige Software auf dem Server
+Achten Sie bei der Softwareauswahl darauf, dass **nur der OpenSSH server** zusätzlich installiert wird. Entfernen Sie alle anderen Haken, um sicherzustellen, dass keine unnötige Software auf dem Server
 installiert wird.
 
 ![ubuntu11x400](images/ubuntu_11.png)

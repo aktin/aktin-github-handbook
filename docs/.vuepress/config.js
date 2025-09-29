@@ -19,12 +19,12 @@ export default {
         {
           text: "Installation",
           prefix: "install",
-          children: ["server.md", "debian.md", "docker.md"],
+          children: ["server.md", "debian.md", "docker.md", "configuration.md"],
         },
         {
-          text: "Folder2",
-          prefix: "folder2",
-          children: ["page2", "page3"],
+          text: "Sonstiges",
+          prefix: "misc",
+          children: ["network.md"],
         },
       ],
     },
@@ -36,6 +36,7 @@ export default {
       dwh: process.env.DWH_VERSION,
       api: process.env.API_VERSION,
       ubuntu: process.env.UBUNTU_VERSION,
+      codename: process.env.UBUNTU_CODENAME,
     },
     themePlugins: {
       // see default theme plugins here: https://ecosystem.vuejs.press/themes/default/plugin.html
