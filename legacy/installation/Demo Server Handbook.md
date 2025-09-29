@@ -221,7 +221,7 @@ Assuming the test file such as `test.xml` is stored in `/home/user/Documents/tes
 curl --location 'http://localhost/aktin/cda/fhir/Binary/' \
 --header 'Content-Type: application/xml' \
 --header 'Authorization: Bearer c96f4b61-e898-4924-9021-3c9e646d3c18' \
---data-binary '@/home/user/Documents/test.md'
+--data-binary '@/home/user/Documents/operability.md'
 ```
 
 or In POSTMAN with the Bearer Token set to the authorization key:
