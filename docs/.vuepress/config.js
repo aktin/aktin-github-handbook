@@ -10,11 +10,24 @@ export default {
   bundler: viteBundler(),
   theme: defaultTheme({
     logo: "/images/logo.png",
-    sidebar: [
-      "/",
-      "/folder1/page1",
-      "folder2/page2"
-    ],
+    sidebar: {
+      "/": [
+        {
+          text: "Home",
+          children: ["index"]
+        },
+        {
+          text: "Installation",
+          prefix: "install",
+          children: ["server.md", "debian.md", "docker.md"],
+        },
+        {
+          text: "Folder2",
+          prefix: "folder2",
+          children: ["page2", "page3"],
+        },
+      ],
+    },
     editLink: false,
     lastUpdated: true,
     lastUpdatedText: "Zuletzt aktualisiert",
@@ -27,7 +40,7 @@ export default {
       // see default theme plugins here: https://ecosystem.vuejs.press/themes/default/plugin.html
       backToTop: false,
       seo: false,
-      search: false,
+      sitemap: false,
     }
   }),
   lang: "de-DE",

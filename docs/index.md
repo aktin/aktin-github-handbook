@@ -16,18 +16,9 @@ VuePress support basic markdown syntax and [some extensions][synatex-extensions]
 
 ## Configuration
 
-VuePress use a `.vuepress/config.js`(or .ts) file as [site configuration][config], you can use it to config your site.
-
-For [client side configuration][client-config], you can create `.vuepress/client.js`(or .ts).
-
-Meanwhile, you can also add configuration per page with [frontmatter][].
+VuePress use a `.vuepress/config.js`(or .ts) file as site configuration, you can use it to config your site.
 
 ## Layouts and customization
-
-Here are common configuration controlling layout of `@vuepress/theme-default`:
-
-- [navbar][]
-- [sidebar][]
 
 Check [default theme docs][default-theme] for full reference.
 
@@ -64,30 +55,16 @@ This is a details block
 > [!note]
 > This is note text
 
-> [!important]
-> This is important text
-
-> [!tip]
-> This is tip text
-
-> [!warning]
-> This is warning text
-
-> [!caution]
-> This is caution text
-
 ::: tip
-
 A custom tip container with `code` and [links](https://example.com).
 
 ```js
 const a = 1
 ```
-
 :::
 
 
-```css :collapsed-lines
+```css
 html {
   margin: 0;
   background: black;
@@ -116,6 +93,7 @@ body > div {
 .main {
   display: none;
 }
+
 ```
 
 ::: tabs
@@ -133,7 +111,6 @@ body > div {
 @tab:active title 3
 
 <!-- tab 3 content -->
-
 :::
 
 [routing]: https://vuejs.press/guide/page.html#routing
