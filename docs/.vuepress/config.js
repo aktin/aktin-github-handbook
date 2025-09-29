@@ -35,6 +35,7 @@ export default {
     versions: {
       dwh: process.env.DWH_VERSION,
       api: process.env.API_VERSION,
+      ubuntu: process.env.UBUNTU_VERSION,
     },
     themePlugins: {
       // see default theme plugins here: https://ecosystem.vuejs.press/themes/default/plugin.html
