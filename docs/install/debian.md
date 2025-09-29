@@ -51,7 +51,7 @@ Binden Sie anschließend die Repository-Quelle ein:
 echo "deb https://www.aktin.org/software/repo/org/apt jammy main" | sudo tee /etc/apt/sources.list.d/aktin.list
 ```
 
-::: important
+::: info
 Das Paket wurde nur mit **Ubuntu {{ $theme.versions.ubuntu }} LTS ({{ $theme.versions.codename }})** getestet und verifiziert.
 :::
 

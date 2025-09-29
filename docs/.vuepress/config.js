@@ -19,12 +19,12 @@ export default {
         {
           text: "Installation",
           prefix: "install",
-          children: ["server.md", "debian.md", "docker.md", "configuration.md"],
+          children: ["server.md", "debian.md", "docker.md", "configuration.md", "test.md"],
         },
         {
           text: "Sonstiges",
           prefix: "misc",
-          children: ["network.md"],
+          children: ["network.md", "i2b2-manual.md"],
         },
       ],
     },

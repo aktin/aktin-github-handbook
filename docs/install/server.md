@@ -1,14 +1,14 @@
 # Betriebssystem
 
-Das AKTIN Data Warehouse ist grundsätzlich auf allen Debian-basierten Linux-Systemen lauffähig. Für die Installation auf Ubuntu Server {{ $theme.versions.ubuntu }} LTS wird ein Debian-Paket (`.deb`) bereitgestellt. Diese Anleitung
-beschreibt die Vorbereitung des Betriebssystems für die anschließende Installation dieses Pakets.
-
-Bei Fragen können Sie sich gerne an [it-support@aktin.org][support-email] wenden.
+Das AKTIN Data Warehouse ist grundsätzlich auf allen Debian-basierten Linux-Systemen lauffähig. Für die Installation auf Ubuntu Server {{ $theme.versions.ubuntu }} LTS wird ein Debian-Paket (`.deb`)
+bereitgestellt. Diese Anleitung
+beschreibt die Vorbereitung des Betriebssystems für die anschließende Installation dieses Pakets. Bei Fragen können Sie sich gerne an [it-support@aktin.org][support-email] wenden.
 
 ## 1. Download der Installationsdatei
 
-Für eine Neuinstallation wird [Ubuntu Server {{ $theme.versions.ubuntu }} LTS][ubuntu] empfohlen. Dies ist eine minimalistische Ubuntu-Version, die für den Serverbetrieb optimiert ist. Unter dem angegebenen Link können Sie eine
-`.iso`-Datei herunterladen. Diese Datei muss anschließend auf ein Installationsmedium (CD oder bootfähiger USB-Stick) kopiert werden, um Ubuntu auf dem System zu installieren.
+Für eine Neuinstallation wird [Ubuntu Server {{ $theme.versions.ubuntu }} LTS][ubuntu] empfohlen. Dies ist eine minimalistische Ubuntu-Version, die für den Serverbetrieb optimiert ist. Unter dem
+angegebenen Link können Sie eine `.iso`-Datei herunterladen. Diese Datei muss anschließend auf ein Installationsmedium (CD oder bootfähiger USB-Stick) kopiert werden, um Ubuntu auf dem System zu
+installieren.
 
 ## 2. Willkommensbildschirm
 
@@ -68,8 +68,8 @@ wird aber benötigt, um den `root`-Nutzer freizuschalten.
 
 ## 10. SSH-Setup und Server-Snaps
 
-Achten Sie bei der Softwareauswahl darauf, dass **nur der OpenSSH server** zusätzlich installiert wird. Entfernen Sie alle anderen Haken, um sicherzustellen, dass keine unnötige Software auf dem Server
-installiert wird.
+Achten Sie bei der Softwareauswahl darauf, dass **nur der OpenSSH server** zusätzlich installiert wird. Entfernen Sie alle anderen Haken, um sicherzustellen, dass keine unnötige Software auf dem
+Server installiert wird.
 
 ![ubuntu11x400](images/ubuntu_11.png)
 ![ubuntu12x400](images/ubuntu_12.png)
