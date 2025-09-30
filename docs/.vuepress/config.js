@@ -20,13 +20,31 @@ export default {
           text: "Installation",
           prefix: "install",
           children: ["server.md", "debian.md", "docker.md", "configuration.md",
-            "operability.md"],
+            "test-operability.md"],
+        },
+        {
+          text: "Betrieb",
+          prefix: "operation",
+          children: ["i2b2-manual.md"],
+        },
+        {
+          text: "Updates",
+          prefix: "update",
+          children: [],
+        },
+        {
+          text: "Importschnitstelle",
+          prefix: "import",
+          children: [],
         },
         {
           text: "Sonstiges",
           prefix: "misc",
-          children: ["network.md", "i2b2-manual.md"],
+          children: ["network.md", "errors.md", "faq.md"],
         },
+        {
+          children: ["changelog.md"],
+        }
       ],
     },
     editLink: false,
@@ -47,7 +65,7 @@ export default {
     }
   }),
   lang: "de-DE",
-  title: `AKTIN Data Warehouse v${process.env.DWH_VERSION} Handbook`,
+  title: `AKTIN Data Warehouse v${process.env.DWH_VERSION} Handbuch`,
   description: "AKTIN Data Warehouse documentation site, providing user manuals, support guides, and FAQs",
   head: [
     ["link", {rel: "icon", href: ".vuepress/public/images/signet.png"}],
