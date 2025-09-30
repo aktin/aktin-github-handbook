@@ -6,8 +6,8 @@ import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
   <ParentLayout>
     <template #page-bottom>
       <div class="my-footer">
-        <p>Copyright © 2025-present AKTIN e.V.</p>
-        <p>Documentation is licensed under CC-BY-4.0. Logos and other branding materials are excluded from this license</p>
+        <p style="margin-bottom: -1rem;">Copyright © 2025-present AKTIN e.V.</p>
+        <p>Documentation is licensed under CC-BY-4.0. Logos and other branding materials are excluded from this license.</p>
       </div>
     </template>
   </ParentLayout>
