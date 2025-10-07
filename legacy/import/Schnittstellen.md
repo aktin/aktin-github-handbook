@@ -24,7 +24,6 @@
 
 * * *
 
-[![Built by Maven](./images/logos/maven-feather.png)](http://maven.apache.org/ "Built by Maven")
 
 # ﻿Schnittstellen
 

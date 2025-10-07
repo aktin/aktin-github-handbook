@@ -25,8 +25,6 @@
 
 * * *
 
-[![Built by Maven](./images/logos/maven-feather.png)](http://maven.apache.org/ "Built by Maven")
-
 # ﻿Zusammenfassung der Änderungen im CDA Release v1.21
 
 Diese Informationen richten sich an die Entwickler der CDA-Dokumente, die das Mapping zwischen dem Notaufnahme-System und dem Basismodul-CDA herstellen bzw. das CDA generieren.

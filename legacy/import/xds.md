@@ -24,8 +24,6 @@
 
 * * *
 
-[![Built by Maven](./images/logos/maven-feather.png)](http://maven.apache.org/ "Built by Maven")
-
 # ﻿IHE XDS.b SOAP-Schnittstelle
 
 CDA-Dokumente werden per SOAP entsprechend dem IHE XDS.b Standard abgeliefert.
