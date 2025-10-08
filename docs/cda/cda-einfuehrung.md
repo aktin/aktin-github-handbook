@@ -1,0 +1,320 @@
+# <span id="page-0-0"></span>**Einführung in CDA**
+
+**Auf dieser Seite finden Sie ...**
+
+Einführung in CDA
+
+# Inhalt
+
+- [Inhalt](#page-0-0)
+- [Allgemeines Verständnis](#page-0-1)
+	- [Was ist ein CDA-Dokument?](#page-0-2)
+	- [Welchen Zweck erfüllt ein CDA in der](#page-0-3)  [Gesundheitsinformatik?](#page-0-3)
+- [HL7-Standart](#page-0-4)
+- [Was ist der HL7-Standard, und wie wird er im CDA-Dokument](#page-1-0)  [verwendet?](#page-1-0)
+- [XML-Struktur](#page-1-1)
+	- [Wie ist XML strukturiert, und wie wird es im CDA-](#page-1-2)[Dokument verwendet?](#page-1-2)
+- [XML-Transformation und Styling](#page-2-0)
+	- [Welche Rolle spielt die XML-Stylesheet-Referenz im](#page-2-1)  [CDA?](#page-2-1)
+	- [Wie unterstützt die XML-Transformation die](#page-2-2)  [Präsentation von klinischen Daten?](#page-2-2)
+- [Header](#page-2-3)
+	- [Welche Informationen sind im Dokumentenheader](#page-2-4)  [enthalten?](#page-2-4)
+	- [Warum ist die Identifikation des Patienten wichtig, und](#page-2-5)  [wie wird sie erreicht?](#page-2-5)
+	- [Was ist die Rolle der verschiedenen Codes im Header](#page-3-0)  [\(z.B., realmCode, typeId, templateId\)?](#page-3-0)
+- [Dokumentinhalt](#page-3-1)
+	- [Welche patientenspezifischen Informationen sind im](#page-3-2)  [CDA-Dokument vorhanden?](#page-3-2)
+	- [Welche Abschnitte sind im Dokumenteninhalt](#page-3-3)  [enthalten, und welche Informationen repräsentieren](#page-3-3)  [sie?](#page-3-3)
+	- [Wie werden Zeitpunkte \(Datum und Uhrzeit\) im CDA](#page-4-0)  [dargestellt?](#page-4-0)
+	- [Welche Rolle spielen die Abschnitte für](#page-4-1)  [Transportmittel, Notfallanamnese, Diagnostik usw.?](#page-4-1)
+	- [Wie werden Codes und Terminologien im CDA](#page-4-2)  [verwendet \(z.B., LOINC, SNOMED CT\)?](#page-4-2)
+	- [Warum sind sie wichtig für die Interoperabilität im](#page-5-0)  [Gesundheitswesen?](#page-5-0)
+- [Dateien \(Versionierung\)](#page-5-1)
+
+# <span id="page-0-1"></span>Allgemeines Verständnis
+
+# <span id="page-0-2"></span>**Was ist ein CDA-Dokument?**
+
+Das **Clinical Document Architecture** (**CDA**) ist ein von HL7 erarbeiteter, auf XML basierender Standard für den Austausch und die Speicherung medizinischer Inhalte. Dabei entspricht ein CDA-Dokument immer genau **einem** klinischen Dokument (z. B. Arztbrief, Befundbericht). Somit erfolgt keine Zusammenfassung mehrerer Dokumente wie in einer Patientenakte. Deshalb ist ein CDA immer eine Momentaufnahme zu einem bestimmten Zeitpunkt.
+
+Mit einem CDA kann ein klinisches Dokument in eine strukturierte Form gebracht werden. Durch die Umwandlung in ein solches CDA kann ein klinisches Dokument nun von Maschinen/Gesundheitssystemen gelesen und interpretiert werden. CDAs haben festgelegte Strukturen und Hierarchien, jedoch stellen sie auch eine Vielzahl an standartisierten Komponenten zu Verfügung, mit denen ein CDA genau an ein spezifisches Dokument angepasst werden kann.
+
+# <span id="page-0-3"></span>**Welchen Zweck erfüllt ein CDA in der Gesundheitsinformatik?**
+
+Der Zweck des CDA ist, strukturierte klinische Dokumente zu erstellen, zu speichern, auszutauschen und zu interpretieren.
+
+Wesentlich für die Gesundheitsinformatik sind aber primär die Möglichkeiten für Austausch und Übermittelung von klinischen Daten und Dokumenten.
+
+# **Welche Rolle spielt das CDA im Austausch von klinischen Informationen?**
+
+<span id="page-0-4"></span>Die Rolle des CDA ist es, Interoperabilität zwischen verschiedenen Systemen und Organisationen in Gesundheitswesen zu ermöglichen. Mithilfe dem CDA können verschiedene Gesundheitsleister und Systeme effizient Informationen austauschen, unabhängig davon, welche Software oder Platform sie verwenden. Dies erleichtert die nahtlose Integration von klinischen Daten und verbessert die Zusammenarbeit, was letztendlich die Patientenversorgung verbessert und die Effizienz steigert.
+
+# HL7-Standart
+
+# <span id="page-1-0"></span>**Was ist der HL7-Standard, und wie wird er im CDA-Dokument verwendet?**
+
+HL-7-Standart ist speziell für das Gesundheitswesen entwickelte Kommunikationsstandard, der die Kommunikation zwischen nahezu allen Institutionen und Bereichen des Gesundheitswesens ermöglicht. Mit HL7 lassen sich alle wesentlichen Kommunikationsaufgaben abwickeln und die Effizienz der Kommunikationsvorgänge entscheidend verbessern. Es existiert 3 verschiedenen HL7 Standards, die heutzutage verwendet sind: HL7 v2, HL7 v3 und HL7 FHIR. Für uns ist HL7 v3 interessant, da es das CDA als eine Dokumenten-Spezifikation enthält.
+
+HL7 v3 Standard umfasst:
+
+- ein Informationsmodell (Reference Information Model)
+- eine Dokumenten-Spezifikation (CDA)
+- einen Messaging-Teil (HL7 v3, der inhaltliche Nachfolger von v2)
+- weitere Teile (die nicht relevant sind)
+
+# **Welche HL7-Standards werden in diesem CDA speziell genutzt (z.B., HL7 FHIR)?**
+
+CDA Dokumente können das Code-System von HL7 nutzen, um die Codes innerhalb des Dokuments zu identifizieren. Dieses spezifische Code-System mit der OID (Object Identifier) ist Teil der HL7-Standardterminologie und wird oft als LOINC (Logical Observation Identifiers Names and Codes) bezeichnet. Dies ermöglicht eine standardisierte und eindeutige Identifizierung von medizinischen Beobachtungen und Tests innerhalb des Dokuments.
+
+# **Wie tragen die HL7-Standards zur Interoperabilität im Gesundheitswesen bei?**
+
+ "CDA" alleine bedeutet nicht, dass Systeme interoperabel sind. CDA basieren auf verschiedene Klassifikationen. Wenn aber ein System-1 ein ICD-10 basiertes Dokument schickt, aber System-2 ein DIMDI erwarten, dann wurden die Informationen korrekt übertragen, aber kein Verständnis erzielt. Dieses Problem lösen **CDA Templates.** Jedes Dokument spezifiziert eine Template-ID, und das Template gibt Art, Struktur und verwendeten Codesysteme des Dokuments vor. Wenn 2 Systeme die gleichen Templates unterstützen, so sind sie interoperabel. Das Template liefert alles, was das System braucht, um ein CDA Dokument zu erzeugen und verarbeiten zu können.
+
+# <span id="page-1-1"></span>XML-Struktur
+
+## <span id="page-1-2"></span>**Wie ist XML strukturiert, und wie wird es im CDA-Dokument verwendet?**
+
+XML besitzt die Fähigkeit, Daten strukturiert und hierarchisch zu speichern. XML ist die Grundstruktur eines CDAs. Dadurch werden die einzelnen Abschnitte eines klinisches Dokuments klar abgegrenzt. Desweiteren können diese Abschnitte dann hierarchisch aufgebaut werden. Somit werden Unterabschnitte ebenfalls klar abgegrenzt. In XML können die einzelnen Abschnitte zu vordefinierten Klassen zugeordnet und mit Attributen versehen werden. So können in die einzelnen Abschnitte in klinischen Dokumenten durch standardtisierte Klassen abgebildet werden. Dadurch können verschiedene Gesundheitssysteme diese Informationen austauschen und interpretieren. Auch können die Abschnitte mit Informationen aus Code-Systemen attributiert werden, welche Definitionen von Begriffen und Sachverhalten liefern können.
+
+# **Was sind die Schlüsselkomponenten eines CDA-Dokuments (Header, Body, Abschnitte)?**
+
+Die Schlüsselkomponenten eines CDA-Dokuments umfassen:
+
+- 1. **Header**:
+	- Der Header enthält Metadaten und administrative Informationen über das Dokument. Dies umfasst Dinge wie den Ersteller des Dokuments, den Zeitpunkt der Erstellung, den Patienten, auf den sich das Dokument bezieht, und andere relevante Details. Der Header bietet Kontext und Hintergrundinformationen für den Inhalt des Dokuments.
+- 2. **Body**:
+	- Der Body enthält den Hauptinhalt des CDA-Dokuments. Hier werden die eigentlichen klinischen Informationen in strukturierter Form dargestellt. Der Body kann mehrere Abschnitte oder Blöcke von Informationen enthalten, die verschiedene Aspekte des klinischen Berichts darstellen, wie beispielsweise medizinische Befunde, Diagnosen, Behandlungen, Medikamentenlisten usw.
+- 3. **Abschnitte (Sections)**:
+	- Abschnitte sind strukturierte Bereiche innerhalb des Body, die spezifische Arten von Informationen enthalten. Jeder Abschnitt ist in der Regel für eine bestimmte Art von klinischen Daten oder Informationen reserviert und kann spezifische Elemente und Strukturen enthalten, die durch entsprechende CDA-Templates definiert sind. Beispiele für Abschnitte sind "History of Present Illness" (Anamnese), "Medications" (Medikamente), "Allergies" (Allergien) usw. Diese Abschnitte helfen dabei, den Hauptinhalt des Dokuments zu organisieren und zu strukturieren.
+
+# **Welche Bedeutung haben die verschiedenen XML-Attribute und -Elemente im CDA?**
+
+Hier sind einige wichtige XML-Attribute und -Elemente:
+
+- 1. `<ClinicalDocument>` : Dies ist das Wurzelelement eines CDA-Dokuments und enthält alle anderen Elemente und Informationen des Dokuments.
+- 2. `<realmCode>` : Ein Attribut, das angibt, in welchem geografischen oder administrativen Bereich das Dokument erstellt wurde.
+- 3. `<typeId>` : Ein Attribut, das den Typ des CDA-Dokuments angibt, z.B. ob es sich um einen Entlassungsbrief oder einen Befund handelt.
+- 4. `<templateId>` : Ein Attribut, das auf die Vorlage (Template) verweist, die für die Erstellung des CDA-Dokuments verwendet wurde. Templates definieren die Struktur und den Inhalt des Dokuments gemäß den Anforderungen von Standards wie HL7.
+- 5. `<id>` : Ein Element, das eine eindeutige Identifikationsnummer für das CDA-Dokument enthält.
+- 6. `<code>` : Ein Element, das den Code oder die Klassifikation des Dokuments angibt, z.B. den Zweck oder die Art des Dokuments.
+- 7. `<title>` : Ein Element, das den Titel oder die Überschrift des CDA-Dokuments enthält.
+- 8. `<effectiveTime>` : Ein Element, das den Zeitpunkt angibt, zu dem das CDA-Dokument erstellt oder aktualisiert wurde.
+- 9. `<confidentialityCode>` : Ein Element, das den Vertraulichkeitsgrad des Dokuments angibt, z.B. ob es sich um vertrauliche oder öffentliche Informationen handelt.
+- 10. `<author>` : Ein Element, das Informationen über den Autor des Dokuments enthält, z.B. Name, Kontaktinformationen und Rollenbezeichnung.
+- 11. `<component>` **:** Ein Element, das einen einzelnen Abschnitt oder eine Komponente des CDA-Dokuments enthält, z.B. einen Laborbefund oder eine medizinische Geschichte.
+- 12. `<section>` : Ein Element, das einen Abschnitt des CDA-Dokuments darstellt, z.B. eine Diagnose, Medikationsliste oder Behandlungsplan.
+
+# <span id="page-2-0"></span>XML-Transformation und Styling
+
+## <span id="page-2-1"></span>**Welche Rolle spielt die XML-Stylesheet-Referenz im CDA?**
+
+Die XML-Stylesheet-Referenz ermöglicht es, dass ein XML-Parser oder Viewer weiß, wie das XML Dokument formatiert und dargestellt werden soll. Es definiert im Wesentlichen die visuelle Darstellung des XML-Dokuments.
+
+Das wird im `<?xml-stylesheet?>` Deklarationsabschnitt innerhalb des XML-Headers angegeben. Sie verweist auf eine separate Datei, die die Anweisungen für die Formatierung und Darstellung enthält. Diese separate Datei wird als XSL-Datei bezeichet.
+
+#### **Beispiel**
+
+```xml
+<?xml-stylesheet type="text/xsl" href="CDA.xsl"?>
+```
+
+## <span id="page-2-2"></span>**Wie unterstützt die XML-Transformation die Präsentation von klinischen Daten?**
+
+Hier sind einige Möglichkeiten, wie XML-Transformationen die Präsentation von Daten unterstützen:
+
+- 1. **Formatierung für die Anzeige**: Transformationen können verwendet werden, um die strukturierten XML-Daten in verschiedene Anzeigeformate umzuwandeln, wie z.B. HTML, PDF oder andere benutzerfreundliche Formate. Dies ermöglicht es, klinische Daten auf eine Weise zu präsentieren, die für Menschen lesbar ist.
+- 2. **Anpassung an verschiedene Benutzeroberflächen**: XML-Transformationen ermöglichen es, klinische Daten an verschiedene Benutzeroberflächen anzupassen, sei es in einem elektronischen Patientenakten-System, einem Krankenhausinformationssystem (KIS) oder einer mobilen Gesundheits-App. Durch die Transformation können die Daten entsprechend den Anforderungen und dem Layout der jeweiligen Benutzeroberfläche angepasst werden.
+- 3. **Filterung und Selektion**: XML-Transformationen können verwendet werden, um bestimmte Teile der klinischen Daten zu filtern oder auszuwählen, die für eine bestimmte Präsentation relevant sind. Dies kann helfen, irrelevante Informationen zu entfernen und den Fokus auf die wichtigsten klinischen Details zu legen.
+- 4. **Darstellung von Hierarchien und Beziehungen**: Durch Transformationen können komplexe Hierarchien und Beziehungen zwischen klinischen Daten visuell dargestellt werden, um Zusammenhänge und Verbindungen besser zu verstehen. Dies kann insbesondere bei der Darstellung von medizinischen Befunden, Diagnosen und Behandlungsverläufen hilfreich sein.
+
+Insgesamt unterstützen XML-Transformationen, indem sie die strukturierten XML-Daten in benutzerfreundliche und informative Darstellungsformen umwandeln. Dies trägt dazu bei, die Kommunikation, Interpretation und Nutzung von klinischen Informationen im Gesundheitswesen zu verbessern.
+
+# <span id="page-2-3"></span>Header
+
+#### <span id="page-2-4"></span>**Welche Informationen sind im Dokumentenheader enthalten?**
+
+Der Dokumentenheader enthält wichtige Metadaten und Kontextinformationen über das klinische Dokument. Diese Informationen helfen bei der Identifizierung, Klassifizierung und Interpretation des Dokuments. Das sind die einige Informationen;
+
+- Dokumentenidentifikator: Eine eindeutige Kennung, die das Dokument identifiziert.
+- Patientenidentifikator: E
+- Autoreninformationen: Informationen über die Person oder Organisation, die das Dokument erstellt hat.
+- Erstellungsdatum und Zeitpunkt
+- Klinischer Kontext (Zustand des Patienten, die medizinische Abteilung usw.)
+- Änderungshistorie
+- Vertraulichkeitsstufe (Wer hat Zugriff auf das Dokument)
+- Empfängerinformationen
+- Kodierungsinformationen: Information über das verwendeten Code-Systeme
+- Sprache des Dokuments
+
+#### <span id="page-2-5"></span>**Warum ist die Identifikation des Patienten wichtig, und wie wird sie erreicht?**
+
+Die Identifikation des Patienten ist wichtig aus mehreren Gründen:
+
+- Patientensicherheit. Eine eindeutige Identifikation des Patienten hilft, Verwechslungen zu vermeiden und sicherzustellen, dass die richtige Behandlungen dem richtigen Patienten zugeordnet werden.
+- Kontinuität der Pflege. Eine genaue Identifikation ermöglicht es den medizinischen Fachkräften, die relevante Informationen des Patienten korrekt zu verfolgen und zu verwalten, unabhängig davon, wo der Patient behandelt wird oder wer involviert sind.
+
+Die Identifikation wird durch die Verwendung eindeutiger Kennungen erreicht. Dafür wird auch die demografische Information (Name, Geburtsdatum, Geschlecht und eine eindeutige Patientennummer) verwendet.
+
+#### <span id="page-3-0"></span>**Was ist die Rolle der verschiedenen Codes im Header (z.B., realmCode, typeId, templateId)?**
+
+Die Codes dienen dazu, die Struktur, den Typ und andere Aspekte des Dokuments zu definieren und zu identifizieren.
+
+realmCode Dieser Code identifiziert den geografischen oder administrativen Bereich, für den das Dokument relevant ist.
+
+typeId Dieser Code identifiziert den Typ des CDA-Dokuments. Beschreibung aus wiki.HL7.de: The clinical document typeId identifies the constraints imposed by CDA R2 on the content, essentially acting as a version identifier.
+
+templateId Dieser Code identifiziert die Vorlage oder die Vorlagen, die für die Erstellung des Dokuments verwendet wurden. Sie können verwendet werden, um sicherzustellen, dass das Dokument bestimmten Standards entspricht und die erforderlichen Informationen enthält. Jede Vorlage hat eine eindeutige Vorlagen-ID, die im templateId -Element angegeben wird.
+
+# <span id="page-3-1"></span>Dokumentinhalt
+
+#### <span id="page-3-2"></span>**Welche patientenspezifischen Informationen sind im CDA-Dokument vorhanden?**
+
+Ein CDA Dokument kann folgende Informationen über ein Patient erfassen:
+
+- Identifikation (In Header). Dazu gehören Name, Geburtsdatum, Geschlecht und eine eindeutige Patientenidentifikationsnummer.
+- Kontaktinformation. Adresse, Telefonnummer und Email, falls vorhanden.
+- Kontaktinformation über Vormund. Name, Adresse, Kontaktdaten.
+- Medizinische Geschichte. Die Information über vergangene Diagnosen, Behandlungen, Operationen usw.
+- Aktuelle Probleme und Diagnosen.
+- Medikationen. Eine Liste der aktuellen Medikamente des Patienten, einschließlich Dosierung und Verabreichungshäufigkeit.
+- Laborergebnisse. Laboruntersuchungen wie Bluttests, Analysen usw.
+- Behandlungspläne. Informationen über geplante medizinische Interventionen, Operationen oder Therapien.
+- Fortgeschrittene medizinische Direktiven. Dokumente, die die Wünsche des Patienten in Bezug auf medizinische Behandlungen festlegen, falls er nicht in der Lage ist, Entscheidungen selbst zu treffen.
+- Verlaufsdokumentation
+- Vitalzeichen. Daten zu den Vitalparametern des Patienten wie Blutdruck, Puls, Temperatur und Atmung.
+
+Diese Liste ist nicht endlich und je nach CDA Dokument können die Daten variieren.
+
+#### <span id="page-3-3"></span>**Welche Abschnitte sind im Dokumenteninhalt enthalten, und welche Informationen repräsentieren sie?**
+
+Abschnitte sind je nach Dokumenttyp unterschiedlich. Z.b. In einem AKTIN Template werden folgende Abschnitten enthalten.
+
+- Abschlussdiagnosen.
+	- Die endgültigen Diagnosen, die während des Notfallbesuchs gestellt wurden.
+- Allergien und Unverträglichkeit
+	- Informationen über bekannte Allergien und Unverträglichkeiten des Patienten gegenüber Medikamenten oder anderen Substanzen.
+- Befunde / Verlauf / durchgeführte
+	- Therapie Dokumentation des klinischen Verlaufs während des Notfallbesuchs, einschließlich festgestellter Befunde, durchgeführter Therapien und ihrer Ergebnisse.
+- Beschwerden bei Vorstellung
+	- Eine Beschreibung der Symptome oder Beschwerden, mit denen der Patient bei der Notfallaufnahme vorgestellt wurde.
+- Diagnostik
+	- Informationen über durchgeführte diagnostische Untersuchungen wie Laboruntersuchungen, Bildgebung und andere Testverfahren.
+- Ersteinschätzung
+	- Eine initiale Einschätzung des Gesundheitszustands des Patienten bei der Ankunft in der Notaufnahme.
+- Klinische Basisinformationen
+	- Grundlegende demografische Informationen des Patienten sowie Angaben zur aktuellen Medikation und Vorerkrankungen.
+- Notfallanamnese
+	- Informationen über die Vorgeschichte des aktuellen Notfallereignisses, einschließlich relevanter Symptome, Ereignisse oder Expositionen.
+- Transportmittel
+	- Details zum Transportmittel, mit dem der Patient zur Notaufnahme gebracht wurde.
+- Vitalparameter
+	- Messwerte von Vitalparametern wie Blutdruck, Puls, Atemfrequenz und Temperatur.
+- Weiteres Procedere / Therapieempfehlung / Weiterbehandler
+	- Empfehlungen für weitere Maßnahmen, Therapien oder die Weiterleitung des Patienten an einen anderen Behandler oder eine spezialisierte Einrichtung.
+- Zusatzmodule (weitere Dokumentation)
+	- Zusätzliche Informationen oder Dokumentationen, die nicht in die anderen Abschnitte passen.
+- Zuweisung
+
+Angaben zur Zuweisung des Patienten zur Notaufnahme, einschließlich Informationen über den überweisenden Arzt oder die überweisende Einrichtung.
+
+#### <span id="page-4-0"></span>**Wie werden Zeitpunkte (Datum und Uhrzeit) im CDA dargestellt?**
+
+HL7 definiert einen spezifischen Datentyp namens "TS" (Timestamp), der für die Darstellung von Zeitangaben verwendet wird.
+
+Ein Timestamp kann folgendermaßen formatiert sein:
+
+# **Timestamp** YYYYMMDDHHMMSS.TZ
+
+#### Dabe steht;
+
+- YYYY für das Jahr (z. B. 2024)
+- MM für den Monat (01 bis 12)
+- DD für den Tag im Monat (01 bis 31)
+- HH für die Stunde im 24-Stunden-Format (00 bis 23)
+- MM für die Minute (00 bis 59)
+- SS für die Sekunde (00 bis 59)
+- TZ für die Zeitzone (z. B. +/-HHMM oder Z für UTC)
+
+#### Beispiel:
+
+```xml
+<!-- Timestamp Beispiel -->
+<time>
+ <low value="201209091911-0400"/>
+ <high value="201209161911-0400"/>
+</time>
+```
+
+Die Zeitangaben im CDA sind auf diese standardisierte Weise formatiert, um Interoperabilität zwischen verschiedenen Systemen zu gewährleisten und einheitliche Datenrepräsentationen zu ermöglichen.
+
+## <span id="page-4-1"></span>**Welche Rolle spielen die Abschnitte für Transportmittel, Notfallanamnese, Diagnostik usw.?**
+
+Die verschiedenen Abschnitte spielen wichtige Rollen bei der Dokumentation und Erfassung von klinischen Informationen. Hier ist die Rolle jedes Abschnitts
+
+- 1. **Transportmittel**: Dieser Abschnitt dokumentiert das Transportmittel, mit dem der Patient zur Notaufnahme gebracht wurde. Die Aufnahme dieser Information ermöglicht es den medizinischen Fachkräften, den Zustand des Patienten bei der Ankunft besser zu verstehen und mögliche Einflüsse des Transportmittels auf den Gesundheitszustand zu berücksichtigen.
+- 2. **Notfallanamnese**: Hier werden relevante Informationen über die Vorgeschichte des aktuellen Notfallereignisses erfasst. Dies kann Symptome, Ereignisse, Expositionen oder andere Faktoren umfassen, die zur aktuellen Notfallsituation geführt haben. Die Notfallanamnese hilft dabei, den Kontext des Notfalls zu verstehen und die Behandlung entsprechend anzupassen.
+- 3. **Diagnostik**: In diesem Abschnitt werden alle durchgeführten diagnostischen Untersuchungen dokumentiert, einschließlich Laboruntersuchungen, Bildgebung und anderen Testverfahren. Die Erfassung dieser Informationen ermöglicht es den behandelnden Ärzten, den klinischen Zustand des Patienten zu bewerten und die richtigen Diagnosen zu stellen.
+- 4. **Weiteres Procedere / Therapieempfehlung / Weiterbehandler**: Hier werden Empfehlungen für weitere Maßnahmen, Therapien oder die Weiterleitung des Patienten an andere Behandler oder Einrichtungen festgehalten. Dieser Abschnitt ist entscheidend für die Koordination der Patientenversorgung nach dem Notfallbesuch und die Sicherstellung einer angemessenen Nachsorge.
+
+#### <span id="page-4-2"></span>**Wie werden Codes und Terminologien im CDA verwendet (z.B., LOINC, SNOMED CT)?**
+
+Im CDA werden Codes und Terminologien verwendet, um medizinische Konzepte und Informationen eindeutig zu identifizieren und zu codieren. Weil sie eindeutig sind, erleichtert das den Austausch und die Interpretation von klinischen Daten zwischen verschiedenen Systemen und Organisationen. Typische Terminologiesysteme, die im CDA verwendet werden, sind LOINC (Logical Observation Identifiers Names and Codes) und SNOMED CT (Systematized Nomenclature of Medicine -- Clinical Terms).
+
+**LOINC (Logical Observation Identifiers Names and Codes)**: LOINC ist ein standardisiertes Terminologiesystem, das zur Identifizierung von Laborergebnissen und klinischen Beobachtungen verwendet wird. Es verwendet Codes, um Tests, Messungen und Beobachtungen zu beschreiben. Im CDA können LOINC-Codes verwendet werden, um Laborergebnisse und klinische Beobachtungen zu kodieren, sodass sie einheitlich und interoperabel sind.
+
+```xml
+<!-- *** SURGICAL DRAINS **************** -->
+<component>
+ <section>
+ <templateId root="2.16.840.1.113883.10.20.7.13"/>
+ <code code="11537-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="
+SURGICAL DRAINS"/>
+ <title>Surgical Drains</title>
+ <text>Penrose drain placed</text>
+ </section>
+</component>
+```
+**SNOMED CT (Systematized Nomenclature of Medicine -- Clinical Terms)**: SNOMED CT ist eine umfassende, hierarchisch strukturierte Terminologie, die klinische Konzepte, Beschreibungen von Krankheiten, klinischen Befunden, Prozeduren und anderen medizinischen Entitäten umfasst. SNOMED CT-Codes werden verwendet, um klinische Begriffe und Konzepte im CDA zu kodieren, was eine detaillierte und präzise Erfassung und Darstellung von klinischen Informationen ermöglicht.
+
+```xml
+<!-- SNOMED CT Beispiel -->
+<entry>
+ <procedure moodCode="RQO" classCode="PROC">
+ <!-- *** Planned Procedure (V2) *** -->
+ <templateId root="2.16.840.1.113883.10.20.22.4.41" extension="2014-06-09"/>
+ <id root="9a6d1bac-17d3-4195-89c4-1121bc809b5a"/>
+ <code code="73761001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" 
+displayName="Colonoscopy"/>
+ <statusCode code="new"/>
+ <effectiveTime>
+ <center value="20120512"/>
+ </effectiveTime>
+ <author>
+ <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+ <time value="20050329224411-0500"/>
+ <assignedAuthor>
+ <id extension="99999999" root="2.16.840.1.113883.4.6"/>
+ </assignedAuthor>
+ </author>
+ </procedure>
+</entry>
+```
+#### <span id="page-5-0"></span>**Warum sind sie wichtig für die Interoperabilität im Gesundheitswesen?**
+
+Die Verwendung von standardisierten Codes und Terminologien im Gesundheitswesen ist entscheidend für die Interoperabilität aus mehreren Gründen:
+
+- 1. **Einheitliche Datendarstellung**: Standardisierte Codes ermöglichen es, medizinische Konzepte und Informationen eindeutig zu identifizieren und zu beschreiben. Dadurch wird eine konsistente und einheitliche Datendarstellung erreicht, unabhängig von dem System oder der Organisation, die die Daten erfasst.
+- 2. **Interoperabilität zwischen Systemen**: Durch die Verwendung standardisierter Codes können Informationen zwischen verschiedenen Systemen und Organisationen ausgetauscht und interpretiert werden. Dies erleichtert die nahtlose Integration und den Austausch von klinischen Daten zwischen verschiedenen medizinischen Einrichtungen, Behandlern und IT-Systemen.
+- 3. **Klinische Entscheidungsunterstützung**: Standardisierte Terminologien ermöglichen es klinischen Entscheidungsunterstützungssystemen, ein breites Spektrum von klinischen Informationen zu verarbeiten und zu analysieren. Dies kann dazu beitragen, die Genauigkeit von Diagnosen und Behandlungsentscheidungen zu verbessern und die Qualität der Patientenversorgung zu erhöhen.
+- 4. **Qualitätsverbesserung und Forschung**: Standardisierte Codes erleichtern die Aggregation und Analyse von klinischen Daten für Qualitätsverbesserungsinitiativen und medizinische Forschung. Sie ermöglichen es, Daten aus verschiedenen Quellen zu kombinieren und zu analysieren, um Trends zu identifizieren, Behandlungsergebnisse zu bewerten und evidenzbasierte Praktiken zu entwickeln.
+- 5. **Compliance und Regulierung**: Die Verwendung standardisierter Codes und Terminologien ist oft eine Anforderung von Regulierungsbehörden und Gesundheitsorganisationen. Durch die Einhaltung dieser Standards können Organisationen sicherstellen, dass ihre Systeme und Prozesse den geltenden Vorschriften entsprechen.
+
+Insgesamt tragen standardisierte Codes und Terminologien wesentlich zur Verbesserung der Interoperabilität im Gesundheitswesen bei, indem sie eine gemeinsame Sprache für die Erfassung, Darstellung und Austausch von klinischen Daten bereitstellen. Dies fördert eine effizientere und effektivere Nutzung von Gesundheitsinformationen zur Verbesserung der Patientenversorgung, Forschung und Qualitätssicherung.
+
+# <span id="page-5-1"></span>Dateien (Versionierung)
+
+| File                          | Modified                          |
+|-------------------------------|-----------------------------------|
+| PDF File HL7_Präsentation.pdf | Feb 01, 2024 by Alexander Ivanets |
+|                               |                                   |
+
+Drag and drop to upload or browse for files

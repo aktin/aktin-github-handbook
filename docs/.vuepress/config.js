@@ -33,14 +33,39 @@ export default {
           children: [],
         },
         {
-          text: "Importschnitstelle",
-          prefix: "import",
-          children: [],
+          text: "HL7 CDA Dokumente",
+          prefix: "cda",
+          children: [
+            "index.md",
+            "cda-einfuehrung.md",
+            "cda-quickstart.md",
+            "Basismodul.md",
+            "cda-release-v1.21.md",
+            "cda-release-v1.26.md"
+          ],
+        },
+        {
+          text: "Schnittstellen",
+          prefix: "schnittstellen",
+          children: [
+            "index.md",
+            "hl7-fhir.md",
+            "xds.md"
+          ],
+        },
+        {
+          text: "Entwicklung",
+          prefix: "entwicklung",
+          children: [
+            "demo-server.md",
+            "changelog.md",
+            "roadmap.md"
+          ],
         },
         {
           text: "Sonstiges",
           prefix: "misc",
-          children: ["network.md", "errors.md", "faq.md"],
+          children: ["network.md", "errors.md", "faq.md", "support.md"],
         },
         {
           children: ["changelog.md"],
