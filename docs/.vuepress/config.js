@@ -19,13 +19,28 @@ export default {
         {
           text: "Installation",
           prefix: "install",
-          children: ["server.md", "debian.md", "docker.md", "configuration.md",
-            "test-operability.md"],
-        },
-        {
-          text: "Betrieb",
-          prefix: "operation",
-          children: ["i2b2-manual.md"],
+          children: [
+            {
+              text: "Server Installation",
+              link: "server.md"
+            },
+            {
+              text: "Debian Installation",
+              link: "debian.md"
+            },
+            {
+              text: "Docker Installation",
+              link: "docker.md"
+            },
+            {
+              text: "Konfiguration",
+              link: "configuration.md"
+            },
+            {
+              text: "Funktionsfähigkeit testen",
+              link: "test-operability.md"
+            }
+          ],
         },
         {
           text: "Updates",
@@ -33,39 +48,86 @@ export default {
           children: [],
         },
         {
-          text: "HL7 CDA Dokumente",
-          prefix: "cda",
-          children: [
-            "index.md",
-            "cda-einfuehrung.md",
-            "cda-quickstart.md",
-            "Basismodul.md",
-            "cda-release-v1.21.md",
-            "cda-release-v1.26.md"
-          ],
-        },
-        {
           text: "Schnittstellen",
-          prefix: "schnittstellen",
+          prefix: "interfaces",
           children: [
-            "index.md",
-            "hl7-fhir.md",
-            "xds.md"
+            {
+              text: "Übersicht",
+              link: "index.md"
+            },
+            {
+              text: "Basismodul",
+              link: "Basismodul.md"
+            },
+            {
+              text: "Einführung in CDA",
+              link: "cda-einfuehrung.md"
+            },
+            {
+              text: "CDA Kurzanleitung",
+              link: "cda-quickstart.md"
+            },
+            {
+              text: "CDA Release v1.21",
+              link: "cda-release-v1.21.md"
+            },
+            {
+              text: "CDA Release v1.26",
+              link: "cda-release-v1.26.md"
+            },
+            {
+              text: "HL7 FHIR",
+              link: "hl7-fhir.md"
+            },
+            {
+              text: "IHE XDS.b SOAP",
+              link: "xds.md"
+            }
           ],
         },
         {
           text: "Entwicklung",
-          prefix: "entwicklung",
+          prefix: "development",
           children: [
-            "demo-server.md",
-            "changelog.md",
-            "roadmap.md"
+            {
+              text: "Demo Server",
+              link: "demo-server.md"
+            },
+            {
+              text: "Roadmap",
+              link: "roadmap.md"
+            },
+            {
+              text: "Changelog",
+              link: "changelog.md"
+            },
+                        {
+              text: "i2b2 Handbuch",
+              link: "i2b2-manual.md"
+            }
           ],
         },
         {
           text: "Sonstiges",
           prefix: "misc",
-          children: ["network.md", "errors.md", "faq.md", "support.md"],
+          children: [
+            {
+              text: "Netzwerk",
+              link: "network.md"
+            },
+            {
+              text: "Fehler",
+              link: "errors.md"
+            },
+            {
+              text: "FAQ",
+              link: "faq.md"
+            },
+            {
+              text: "Support",
+              link: "support.md"
+            }
+          ],
         },
         {
           children: ["changelog.md"],

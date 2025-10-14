@@ -1,28 +1,4 @@
 ## AKTIN : DWH Import
-
-* * *
-
-- Last Published: 2025-08-13
-\|
-- Version: 0.20-SNAPSHOT
-
-
-- HL7 CDA Dokument
-- [Kurzanleitung CDA](cda-quickstart.md "Kurzanleitung CDA")
-- CDA Release V1.21
-- [CDA Release V1.26](cda-release-v1.26.md "CDA Release V1.26")
-- Importschnittstelle
-- [Kurzanleitung CDA](cda-quickstart.md "Kurzanleitung CDA")
-- [Import Schnittstellen](Schnittstellen.md "Import Schnittstellen")
-- [RESTful/HL7 FHIR](hl7-fhir.md "RESTful/HL7 FHIR")
-- [IHE XDS.b SOAP](xds.md "IHE XDS.b SOAP")
-- [Changelog](changelog.md "Changelog")
-- [Roadmap](roadmap.md "Roadmap")
-- [Support](support.md "Support")
-- Demo Server
-- [Demo Server](demo-server.md "Demo Server")
-
-
 * * *
 
 # ﻿Zusammenfassung der Änderungen im CDA Release v1.21
@@ -33,7 +9,7 @@ Die hier genannten (projektrelevanten) Änderungen beziehen sich auf die Umstell
 
 Weitere allgemeine Informationen zur CDA-Implementierung finden Sie auch unter dem Menüpunkt [Kurzanleitung CDA](cda-quickstart.md)
 
-Der aktuelle [Demo-Server](demo-server.md) validiert nach dem aktuellen Release und kann für die Entwicklung als Test-Tool genutzt werden.
+Der aktuelle [Demo-Server](../development/demo-server.md) validiert nach dem aktuellen Release und kann für die Entwicklung als Test-Tool genutzt werden.
 
 ## Encounter-ID
 

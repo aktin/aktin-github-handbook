@@ -100,7 +100,7 @@ Hier sind einige wichtige XML-Attribute und -Elemente:
 - 8. `<effectiveTime>` : Ein Element, das den Zeitpunkt angibt, zu dem das CDA-Dokument erstellt oder aktualisiert wurde.
 - 9. `<confidentialityCode>` : Ein Element, das den Vertraulichkeitsgrad des Dokuments angibt, z.B. ob es sich um vertrauliche oder öffentliche Informationen handelt.
 - 10. `<author>` : Ein Element, das Informationen über den Autor des Dokuments enthält, z.B. Name, Kontaktinformationen und Rollenbezeichnung.
-- 11. `<component>` **:** Ein Element, das einen einzelnen Abschnitt oder eine Komponente des CDA-Dokuments enthält, z.B. einen Laborbefund oder eine medizinische Geschichte.
+- 11. `<component>` : Ein Element, das einen einzelnen Abschnitt oder eine Komponente des CDA-Dokuments enthält, z.B. einen Laborbefund oder eine medizinische Geschichte.
 - 12. `<section>` : Ein Element, das einen Abschnitt des CDA-Dokuments darstellt, z.B. eine Diagnose, Medikationsliste oder Behandlungsplan.
 
 # <span id="page-2-0"></span>XML-Transformation und Styling
@@ -237,7 +237,6 @@ Ein Timestamp kann folgendermaßen formatiert sein:
 #### Beispiel:
 
 ```xml
-<!-- Timestamp Beispiel -->
 <time>
  <low value="201209091911-0400"/>
  <high value="201209161911-0400"/>
@@ -273,10 +272,10 @@ SURGICAL DRAINS"/>
  </section>
 </component>
 ```
+
 **SNOMED CT (Systematized Nomenclature of Medicine -- Clinical Terms)**: SNOMED CT ist eine umfassende, hierarchisch strukturierte Terminologie, die klinische Konzepte, Beschreibungen von Krankheiten, klinischen Befunden, Prozeduren und anderen medizinischen Entitäten umfasst. SNOMED CT-Codes werden verwendet, um klinische Begriffe und Konzepte im CDA zu kodieren, was eine detaillierte und präzise Erfassung und Darstellung von klinischen Informationen ermöglicht.
 
 ```xml
-<!-- SNOMED CT Beispiel -->
 <entry>
  <procedure moodCode="RQO" classCode="PROC">
  <!-- *** Planned Procedure (V2) *** -->

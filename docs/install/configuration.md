@@ -219,4 +219,4 @@ i2b2-Adminoberfläche unter `http://<IHR-SERVER>/webclient`. Eine genaue Anleitu
 
 [support-email]: mailto:it-support@aktin.org
 
-[i2b2-manual]: ../misc/i2b2-manual.md
+[i2b2-manual]: ../development/i2b2-manual.md

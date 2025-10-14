@@ -11,6 +11,8 @@ HL7 Clinical Document Architecture (CDA) ist ein XML-basierter Standard für den
 - [Basismodul](Basismodul.md) - Datensatz für das Basismodul
 - [CDA Release V1.21](cda-release-v1.21.md) - Versionshinweise für Release 1.21
 - [CDA Release V1.26](cda-release-v1.26.md) - Versionshinweise für Release 1.26
+- [Basismodul](Basismodul.md "Basismodul")
+
 
 ## Externe Ressourcen
 
