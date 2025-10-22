@@ -1,4 +1,4 @@
-# Debian-Paket
+# Debian Installation
 
 Auf dieser Seite wird die Installation und Konfiguration des AKTIN Data Warehouse beschrieben. Die Software steht als Debian-Paket zur Verfügung und wurde für Ubuntu {{ $theme.versions.ubuntu }}
 Server LTS getestet. Wenn Sie eine andere Distribution verwenden möchten, kontaktieren Sie bitte den [AKTIN IT-Support][support-email]. Für die Vorbereitung des Servers beachten Sie die Hinweise auf

@@ -30,7 +30,7 @@ sudo service wildfly restart
 **1. Datei öffnen**: Bei einer Docker-Installation liegt die Datei in einem Volume. Ersetzen Sie `<PROJEKT_NAME>` mit dem Namen Ihres Docker-Projekts:
 
 ```bash
-nano /var/lib/docker/volumes/<PROJEKT_NAME>_aktin_config/_data/aktin.properties
+nano /var/lib/docker/volumes/<PROJEKT_NAME>/aktin_config/_data/aktin.properties
 ```
 
 **2. Änderungen vornehmen**: Passen Sie die gewünschten Werte an. Speichern und Schließen Sie die `aktin.properties` anschließend.
