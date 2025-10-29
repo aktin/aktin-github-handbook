@@ -1,9 +1,9 @@
-import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
-import { searchPlugin } from '@vuepress/plugin-search'
+import {viteBundler} from '@vuepress/bundler-vite'
+import {defaultTheme} from '@vuepress/theme-default'
+import {searchPlugin} from '@vuepress/plugin-search'
 import dotenv from 'dotenv'
-import { readFileSync } from "node:fs"
-import { resolve } from "node:path"
+import {readFileSync} from "node:fs"
+import {resolve} from "node:path"
 import MarkdownIt from "markdown-it"
 
 dotenv.config()
@@ -34,7 +34,16 @@ export default {
             "debian.md",
             "docker.md",
             "configuration.md",
-            "test-operability.md"],
+            "test-operability.md"
+          ],
+        },
+        {
+          text: "Sonstiges",
+          prefix: "misc",
+          children: [
+            "hardware.md",
+            "network.md",
+          ]
         },
       ],
     },
