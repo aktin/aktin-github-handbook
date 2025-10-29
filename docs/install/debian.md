@@ -8,7 +8,7 @@ der Seite zur [Server-Installation][server].
 
 ### Freischaltung der Server-Adressen
 
-Stellen Sie sicher, dass Ihre Firewall für die Installation und den Betrieb des AKTIN Data Warehouse den Zugriff auf [die notwendigen Server][network] erlaubt.
+Stellen Sie sicher, dass Ihre Firewall für die Installation und den Betrieb des AKTIN Data Warehouse den Zugriff auf [die notwendigen Server][ports] erlaubt.
 
 ### Freischaltung von root
 
@@ -72,11 +72,3 @@ apt-get install -y aktin-notaufnahme-updateagent
 ::: important
 Bevor Sie Ihr AKTIN Data Warehouse in Betrieb nehmen können, müssen Sie zunächst eine [initiale Konfiguration][config] vornehmen.
 :::
-
-[support-email]: mailto:it-support@aktin.org
-
-[server]: ./server.md
-
-[network]: ../misc/network.md#ports
-
-[config]: ./configuration.md

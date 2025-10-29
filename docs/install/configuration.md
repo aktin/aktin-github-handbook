@@ -216,7 +216,3 @@ Diese Pfade und technischen Werte sind für den Betrieb essenziell und werden be
 
 Benutzer ohne Admin-Rechte benötigen zwei Berechtigungen, um den Data-Warehouse-Manager zu nutzen: die Zuweisung zum AKTIN-Projekt und eine AKTIN-Rolle. Beides konfigurieren Sie in der
 i2b2-Adminoberfläche unter `http://<IHR-SERVER>/webclient`. Eine genaue Anleitung finden Sie im [i2b2-Handbuch][i2b2-manual].
-
-[support-email]: mailto:it-support@aktin.org
-
-[i2b2-manual]: ../development/i2b2-manual.md
