@@ -19,3 +19,8 @@ HL7 Clinical Document Architecture (CDA) ist ein XML-basierter Standard für den
 - [ART-DECOR AKTIN Projekt](http://aktin.art-decor.org) - Aktuelle Release-Dokumentation
 - [Notaufnahmeprotokoll](http://www.notaufnahmeprotokoll.de/site/) - Informationen zum Datensatz
 - [Notaufnahme Dataset](http://notaufnahme.data-set.org/) - Dataset-Spezifikation
+
+
+Die Importschnittstelle des Servers kann mit den Client-Programmen aus dem Software-Paket (ZIP) des Demo-Server getestet werden:
+
+java-client-fhir.bat `http://<IHR SERVER>/aktin/cda/fhir/Binary` examples\basismodul-beispiel-storyboard01.xml

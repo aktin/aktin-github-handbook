@@ -1,43 +1,28 @@
 # Test der Betriebsfähigkeit
 
-Unter der URL `http://<IHR-SERVER>/aktin/admin/plain/test.html` können Sie die Konfiguration testen.
+Nach Abschluss der Installation und Konfiguration sollten Sie die Betriebsfähigkeit des AKTIN Data Warehouse überprüfen. Über die integrierte Testseite können alle zentralen Komponenten verifiziert
+werden.
 
-* **Broker-Verbindung testen**: Prüft die Verbindung zum zentralen AKTIN-Broker.
-* **Email-Konfiguration testen**: Sendet eine Test-E-Mail an die in der Konfiguration hinterlegte Adresse.
-* **R-Scripte/Berichte testen**: Überprüft die Funktionalität der R-Bibliotheken, die zur Erstellung von Berichten benötigt werden.
+### Aufruf der Testseite
 
-Wenn ein Test fehlschlägt, überprüfen Sie die entsprechenden Einstellungen in der `aktin.properties`-Datei.
+Öffnen Sie im Webbrowser die folgende Adresse: `http://<SERVER-IP>/aktin/admin/plain/test.html`
 
-Nach der Installation der AKTIN-DWH-Software ist es anzuraten, dessen Betriebsfähigkeit zu testen. Im folgenden Bereich können Sie Methoden und Funktionalitäten für die Verifikation der
-Betriebsfähigkeit entnehmen.
-Data Warehouse
+![operability1](images/operability1.png)
 
-Wenn die Installation erfolgreich durchgeführt wurde, kann anschließend per Webbrowser auf das integrierte Data Warehouse zugegriffen werden. In der Adresszeile muss die entsprechende
-IP-Adresse/Servername angepasst werden: `http://<IHR SERVER>/webclient/`
-CDA Importschnittstelle
+Auf dieser Seite können Sie mehrere Funktionsprüfungen durchführen:
 
-Die Importschnittstelle des Servers kann mit den Client-Programmen aus dem Software-Paket (ZIP) des Demo-Server getestet werden:
+* **Test Broker**: Prüft die Verbindung zum zentralen AKTIN-Broker.
+* **Test Email**: Sendet eine Testnachricht an die in `aktin.properties` konfigurierte E-Mail-Adressen.
+* **Test R**: Überprüft die Funktionalität der R-Bibliotheken, die zur Erstellung von Berichten benötigt werden.
+* **Monatsbericht erzeugen und senden**: Erstellt den AKTIN-Monatsbericht für den aktuellen Monat auf Basis der in der Datenbank gespeicherten Daten und sendet ihn an die in `aktin.properties`
+  hinterlegten E-Mail-Adressen.
 
-java-client-fhir.bat `http://<IHR SERVER>/aktin/cda/fhir/Binary` examples\basismodul-beispiel-storyboard01.xml
+![operability2](images/operability2.png)
 
-Verbindung und E-Mail-Konfiguration
+Ein grün hinterlegter Bereich zeigt an, dass der Test erfolgreich war und die Komponente korrekt funktioniert. Ein rot hinterlegter Bereich weist auf einen Fehler hin. Die angezeigte Fehlermeldung
+enthält Hinweise zur Ursache, etwa falsche Zugangsdaten oder Verbindungsprobleme. In diesem Fall sollten Sie die entsprechenden Einstellungen in der Datei `aktin.properties` prüfen und den Test erneut
+ausführen.
 
-Unter dem Link `http://<IHR SERVER>/aktin/admin/plain/test.html` lassen sich die durchgeführten Anpassungen bezüglich Broker und E-Mail sowie Reporterstellung testen.
+### Zugriff auf das Web-Interface
 
-img2
-
-Der erste Button testet die Erreichbarkeit des zentralen AKTIN-Broker. Der lokale Server übersendet dem zentralen Broker nur Statusinformationen, wie die Serverversion und Aktivität. Der zweite Button
-testet die eingerichtete E-Mail-Adresse. Nach Bestätigung des Buttons wird eine E-Mail an die in aktin.properties angegebene Ziel-Adresse gesendet. Der dritte Button testet die R-Bibliotheken. Diese
-werden zur Erzeugung der Berichte verwendet.
-
-img3
-
-Sollte der E-Mail-Test fehlschlagen und das Textfeld zeigt keine grüne Erfolgsmeldung anzeigen, könnte dies ein Hinweis auf eine fehlerhafte E-Mail-Einstellung sein. In diesem Fall muss die
-E-Mail-Konfiguration geändert (Abschnitt Weitere Anmerkungen) oder die Softwarepakete erneut geladen werden.
-
-img4
-
-
-[support-email]: mailto:it-support@aktin.org
-
-[i2b2-manual]: ../misc/i2b2-manual.md
+Nach erfolgreichem Funktionstest ist das Web-Interface des Data Warehouse unter `http://<SERVER-IP>/aktin/admin`(standardmäßig Port 80) erreichbar.
