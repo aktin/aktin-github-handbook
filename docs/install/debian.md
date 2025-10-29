@@ -4,7 +4,7 @@ Auf dieser Seite wird die Installation und Konfiguration des AKTIN Data Warehous
 
 ## Vorbereitung der Installation
 
-### Systemanforderungen
+### Voraussetzungen
 
 Siehe [Systemanforderungen][hardware] und [Netzwerk][network].
 

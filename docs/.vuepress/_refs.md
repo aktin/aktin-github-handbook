@@ -1,4 +1,6 @@
 [ubuntu]: https://ubuntu.com/download/server
+[docker-engine]: https://docs.docker.com/engine/install/ubuntu/
+[docker-compose]: https://docs.docker.com/compose/install/linux/#install-using-the-repository
 
 [support-email]: mailto:it-support@aktin.org
 

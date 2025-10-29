@@ -6,15 +6,15 @@ abweichenden Systemumgebungen kontaktieren Sie bitte den [AKTIN IT-Support][supp
 
 ## Vorbereitung der Installation
 
-### Systemanforderungen
+### Voraussetzungen
 
 Siehe [Systemanforderungen][hardware] und [Netzwerk][network].
 
-Stellen Sie außerdem sicher, dass auf Ihrem System die aktuelle **Docker Engine** (≥ 24.0) und das aktuelle **Docker Compose Plugin** (≥ 2.0) installiert sind.
+Stellen Sie außerdem sicher, dass auf Ihrem System die aktuelle [Docker Engine][docker-engine] (≥ 24.0) und das aktuelle [Docker Compose Plugin][docker-compose] (≥ 2.0) installiert sind.
 
 ### Verzeichnisstruktur anlegen
 
-Legen Sie ein separates Arbeitsverzeichnis für die Docker-Konfiguration des AKTIN DWH an. Dieses Verzeichnis enthält später die `compose`-Datei:
+Legen Sie ein separates Arbeitsverzeichnis für die Docker-Konfiguration des AKTIN DWH an. Dieses Verzeichnis enthält später die `compose`-Datei sowie eine Datei mit Umgebungsvariablen:
 
 ```bash
 mkdir -p /opt/docker-deploy/aktin-dwh/dwh1
@@ -65,7 +65,7 @@ echo "HTTP_PORT=8080" > .env
 
 ### Container starten
 
-Starten Sie die Container mit Docker Compose:
+Starten Sie die Container mit Docker Compose. Der Befehl wird automatisch die benötigten AKTIN Container herunterladen und starten. 
 
 ```bash
 cd /opt/docker-deploy/aktin-dwh/dwh1
@@ -109,6 +109,5 @@ Zur Überwachung und Verwaltung der Container stehen folgende Befehle zur Verfü
 |                           | `docker compose stop`            | Stoppt alle laufenden Container                        |
 
 ::: tip
-Regelmäßige Kontrolle des Containerstatus und der verfügbaren Updates wird empfohlen.  
-Aktualisierungen erfolgen über neue Releases im Repository [aktin/docker-aktin-dwh](https://github.com/aktin/docker-aktin-dwh).
+Eine regelmäßige Kontrolle des Containerstatus und der verfügbaren Updates wird empfohlen.  
 :::
