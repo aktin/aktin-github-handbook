@@ -3,7 +3,7 @@
 Auf dieser Seite sind alle Netzwerkfreigaben und Verbindungen aufgeführt, die für den Betrieb des AKTIN Data Warehouse erforderlich sind. Die Anforderungen unterscheiden sich leicht zwischen der
 Debian-Installation und dem Docker-Betrieb.
 
-## Netzwerk-Anforderungen für Debian-Installation
+### Netzwerk-Anforderungen für Debian-Installation
 
 | Zugriff                    | Server                                 | IP-Adresse     | Port/Protokoll                  | Zweck                             |
 |----------------------------|----------------------------------------|----------------|---------------------------------|-----------------------------------|
@@ -12,7 +12,7 @@ Debian-Installation und dem Docker-Betrieb.
 | **Betrieb**                | `aktin-broker.klinikum.rwth-aachen.de` | 134.130.15.160 | 443/tcp                         | Kommunikation mit AKTIN Broker    |
 | **Webzugriff (lokal)**     | lokaler Host                           | -              | 80/tcp oder konfigurierter Port | Zugriff auf Weboberfläche des DWH |
 
-## Netzwerk-Anforderungen für Docker-Betrieb
+### Netzwerk-Anforderungen für Docker-Betrieb
 
 | Zugriff                     | Server                                 | IP-Adresse     | Port/Protokoll          | Zweck                                   |
 |-----------------------------|----------------------------------------|----------------|-------------------------|-----------------------------------------|

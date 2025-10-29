@@ -9,7 +9,7 @@ import MarkdownIt from "markdown-it"
 dotenv.config()
 
 const refsPath = resolve(process.cwd(), "docs/.vuepress/_refs.md")
-const refsSrc = readFileSync(refsPath, 'utf-8')
+const refsSrc = readFileSync(refsPath, "utf-8")
 const mdTmp = new MarkdownIt()
 const env = {}
 mdTmp.parse(refsSrc, env)
@@ -20,8 +20,8 @@ export default {
   bundler: viteBundler(),
   theme: defaultTheme({
     logo: "/images/logo.png",
-    sidebar: {
-      "/": [
+    sidebarDepth: 1,
+    sidebar: [
         {
           text: "Home",
           children: ["index"]
@@ -46,7 +46,6 @@ export default {
           ]
         },
       ],
-    },
     editLink: false,
     lastUpdated: true,
     lastUpdatedText: "Zuletzt aktualisiert",
@@ -72,9 +71,9 @@ export default {
     searchPlugin({}),
     // inject global refs
     (app) => ({
-      name: 'global-link-refs',
+      name: "global-link-refs",
       extendsMarkdown(md) {
-        md.core.ruler.before('inline', 'seed-global-refs', (state) => {
+        md.core.ruler.before("inline", "seed-global-refs", (state) => {
           state.env.references = {
             ...GLOBAL_REFS,
             ...(state.env.references || {}),
