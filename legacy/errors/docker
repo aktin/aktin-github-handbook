@@ -1,0 +1,24 @@
+6. Fehlerbehebung
+
+Wenn der Webserver-Container oder der Reverse Proxy nach dem Update nicht mehr startet oder den Status „unhealthy“ zeigt, prüfen Sie zunächst die Logausgabe mit:
+
+docker compose logs web
+
+Starten Sie den betroffenen Dienst danach neu:
+
+docker compose restart web
+
+Wenn die Datenbank nach dem Update nicht startet oder eine Migration fehlschlägt, überprüfen Sie die Logdateien des Datenbankcontainers:
+
+docker compose logs db
+
+Sollte die Datenbank beschädigt sein, können Sie Ihr zuvor erstelltes Backup wiederherstellen:
+
+cat backup_YYYY-MM-DD_HHMM_i2b2.dump | docker compose exec -T db pg_restore -U postgres -d i2b2 --clean
+
+Wenn Container ungewöhnlich viel Speicher oder CPU-Ressourcen verbrauchen, kann der Befehl
+
+docker stats
+
+eine Übersicht über den aktuellen Ressourcenverbrauch geben.
+In diesem Fall sollten Sie prüfen, ob andere Prozesse das System stark belasten oder einzelne Container neu starten.

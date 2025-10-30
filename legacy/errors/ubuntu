@@ -1,0 +1,34 @@
+3.1.
+DWH Startet nicht mehr
+Falls unter "systemctl status apache2", "failed" angezeigt wird, ist vermutlich die neue
+PHP Version nicht erkannt worden (in manchen Fällen kann das wohl auftreten). In
+diesem Fall führen Sie bitte die folgenden Befehle aus:
+1. "php -v" aktuelle php version, Sie erhalten z.B.: ... PHP8.1.2-1ubuntu....
+2. a2dismod php7.4
+3. "a2enmod php8.1" (hier für 8.1 sehen Sie bitte die ersten Zwei Nummern der
+Version in Schritt 1)
+4. systemctl restart apache2
+5. service wildfly restart
+Bei Fragen und Problemen steht Ihnen
+
+
+
+Post-Distributionsupgrade Problembehebung
+Beim Upgrade kann es sein, dass Apache noch auf veraltete Module zeigt und dadurch nicht startet. In dem Fall:
+Schritt
+BeschreibungBefehlBemerkung
+1Apache2 Status prüfen"systemctl status apache2"Wir gehen hier davon aus, dass Apache2 nicht korrekt gestartet werden konnte
+2Such nach der Ursache des
+Abbruchs-Suche in den Logs des Status, ob Pakete nicht gefunden wurden, wie "PHP7.4 not
+found"
+3Nach Paket suchen"php -v"Suche für das fehlende paket (hier php) ob eine andere Version durch das
+Distributionsupgrade installiert wurde
+4Falls Paket nicht auf System-Paket Installieren
+4Neue Version des Pakets
+verwenden"a2dismod
+<package><old_version>z.B.:
+a2dismod php7.4
+a2enmod
+<package><new_version>a2enmod php8.1
+systenctrl restart apache2
+systenctrl restart apache2"
