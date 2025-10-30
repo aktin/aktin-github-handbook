@@ -72,8 +72,6 @@ cd /opt/docker-deploy/aktin-dwh/dwh1
 docker compose up -d
 ```
 
-![docker1](images/docker1.png)
-
 - Das Argument `-d` startet die Container im Hintergrund.
 - Nach einem Serverneustart werden die Container automatisch wieder gestartet.
 - Alle Services werden in einem gemeinsamen Docker-Netzwerk betrieben.
@@ -85,8 +83,6 @@ Prüfen Sie, ob alle Container erfolgreich gestartet sind. Alle Services sollten
 ```bash
 docker compose ps
 ```
-
-![docker2](images/docker2.png)
 
 ::: important
 Bevor Sie Ihr AKTIN Data Warehouse in Betrieb nehmen können, müssen Sie zunächst eine [initiale Konfiguration][config] vornehmen.

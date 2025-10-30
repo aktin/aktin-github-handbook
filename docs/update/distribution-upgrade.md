@@ -38,8 +38,6 @@ Nach dem Neustart des Systems sollten Sie zunächst prüfen, ob das Upgrade erfo
 lsb_release -a
 ```
 
-![dist-upgrade1.png](images/dist-upgrade1.png)
-
 Anschließend fügen Sie das aktuelle AKTIN-Repository hinzu, um sicherzustellen, dass Ihr System die neuesten AKTIN-Pakete beziehen kann:
 
 <pre><code>echo "deb https://www.aktin.org/software/repo/org/apt {{ $theme.versions.codename }} main"</code></pre>
