@@ -11,3 +11,4 @@
 [network]: /misc/network.html
 
 [root-manual]: /install/debian.html#freischaltung-von-root
+[repo-aktin]: /install/debian.html#aktin-repository-einbinden

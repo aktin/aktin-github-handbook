@@ -32,3 +32,63 @@ a2enmod
 <package><new_version>a2enmod php8.1
 systenctrl restart apache2
 systenctrl restart apache2"
+
+4.Mögliche Fehler
+4.1.Postgresql nicht installiert
+Falls Sie bei dem Upgrade des DWH die folgende Meldung sehen, müssen Sie die
+Postgresql Datenbank manuell installieren. Die Meldung kann wie folgt aussehen:
+“packages have unmet dependencies: postgresql-14: Depends: postgresql-common
+(<=229) but 214ubuntu0.1 is to be installed”
+4.1.1.
+Manuelle Postgresql Installation
+In der Konsole:
+1. sudo apt-get install -y ca-certificates
+2. curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc|sudo gpg
+--dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
+3. sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release
+-cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+4. sudo apt update
+5. sudo apt install postgresql-14
+(falls sich das Postgresql Repository nicht mit curl einbinden lässt (Schritt 2))
+“wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo
+apt-key
+add
+-
+echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" |
+sudo
+tee
+sudo
+sudo
+/etc/apt/sources.list.d/pgdg.list
+apt
+apt
+update
+install
+postgresql-14"
+Nach erfolgreicher Installation von Postgresql können Sie das DWH Update erneut starten.
+4.2.
+GPG Key veraltet
+Wenn sich ein Fehler auf einen “veralteten GPG Key” bezieht, können Sie diesen aktualisieren
+mit dem Befehl:
+5AKTIN-Notaufnahmeregister – SOP Erinnerung Datenabfragen
+“sudo wget -O - https://www.aktin.org/software/repo/org/apt/conf/aktin.gpg.key | sudo
+gpg --dearmour -o /etc/apt/trusted.gpg.d/aktin.gpg”
+Bei Fragen und Problemen steht Ihnen da
+
+
+Fehlerbehebung
+
+Falls das Update fehlschlägt, stellt das System automatisch die vorherige Version wieder her.
+In diesem Fall wenden Sie sich bitte an das AKTIN IT-Team unter it-support@aktin.org
+Zusätzliche Informationen finden Sie im Log, das im Hinweisfenster nach dem Update angezeigt wird.
+Sollte das Data Warehouse nach dem Upgrade nicht starten, prüfen Sie insbesondere den Apache- und den WildFly-Dienst mit den folgenden Befehlen:
+
+systemctl status apache2
+service wildfly restart
+
+Wenn Fehler im Zusammenhang mit PHP angezeigt werden (z. B. „php7.4 not found“), aktivieren Sie die korrekte PHP-Version:
+
+
+a2dismod php7.4
+a2enmod php8.1
+systemctl restart apache2

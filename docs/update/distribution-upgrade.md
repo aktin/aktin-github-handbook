@@ -6,7 +6,8 @@ Wenn Sie eine andere Distribution oder ein angepasstes Setup verwenden, kontakti
 
 ### Vorbereitung
 
-Für das Upgrade werden `root`-Rechte benötigt. Öffnen Sie eine `root`-Sitzung:
+Für das Upgrade werden `root`-Rechte benötigt. Falls der `root`-Nutzer noch nicht aktiviert ist, folgen Sie den Hinweisen im Abschnitt [Freischaltung von root][root-manual] der
+Installationsanleitung. Öffnen Sie eine `root`-Sitzung:
 
 ```bash
 sudo -i
@@ -38,11 +39,10 @@ Nach dem Neustart des Systems sollten Sie zunächst prüfen, ob das Upgrade erfo
 lsb_release -a
 ```
 
-Anschließend fügen Sie das aktuelle AKTIN-Repository hinzu, um sicherzustellen, dass Ihr System die neuesten AKTIN-Pakete beziehen kann:
+Fügen Sie anschließend das aktuelle AKTIN-Repository hinzu, um sicherzustellen, dass Ihr System die neuesten AKTIN-Pakete beziehen kann. Folgen Sie dazu den Hinweisen im
+Abschnitt [AKTIN Repository einbinden][repo-aktin] der Installationsanleitung.
 
-<pre><code>echo "deb https://www.aktin.org/software/repo/org/apt {{ $theme.versions.codename }} main"</code></pre>
-
-Damit die neuen Paketquellen erkannt werden, aktualisieren Sie abschließend erneut die Paketlisten. So stellt das System sicher, dass alle AKTIN-Komponenten aus der korrekten Repository-Version
+Damit die neuen Paketquellen erkannt werden, aktualisieren Sie erneut die Paketlisten. So stellt das System sicher, dass alle AKTIN-Komponenten aus der korrekten Repository-Version
 geladen werden.
 
 ```bash

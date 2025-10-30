@@ -45,7 +45,8 @@ sudo wget -O - https://www.aktin.org/software/repo/org/apt/conf/aktin.gpg.key | 
 
 Binden Sie anschließend die Repository-Quelle ein:
 
-<pre><code>echo "deb https://www.aktin.org/software/repo/org/apt {{ $theme.versions.codename }} main"</code></pre>
+<pre><code>echo "deb https://www.aktin.org/software/repo/org/apt {{ $theme.versions.codename }} main" | \
+sudo tee /etc/apt/sources.list.d/aktin.list</code></pre>
 
 ::: info
 Das Paket wurde nur mit **Ubuntu {{ $theme.versions.ubuntu }} LTS ({{ $theme.versions.codename }})** getestet und verifiziert.
