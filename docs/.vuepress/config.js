@@ -22,30 +22,39 @@ export default {
     logo: "/images/logo.png",
     sidebarDepth: 1,
     sidebar: [
-        {
-          text: "Home",
-          children: ["index"]
-        },
-        {
-          text: "Installation",
-          prefix: "install",
-          children: [
-            "server.md",
-            "debian.md",
-            "docker.md",
-            "configuration.md",
-            "test-operability.md"
-          ],
-        },
-        {
-          text: "Sonstiges",
-          prefix: "misc",
-          children: [
-            "hardware.md",
-            "network.md",
-          ]
-        },
-      ],
+      {
+        text: "Home",
+        children: ["index"]
+      },
+      {
+        text: "Installation",
+        prefix: "install",
+        children: [
+          "server.md",
+          "debian.md",
+          "docker.md",
+          "configuration.md",
+          "test-operability.md"
+        ],
+      },
+      {
+        text: "Updates und Patches",
+        prefix: "update",
+        children: [
+          "debian-update.md",
+          "docker-update.md",
+          "migration.md"
+        ],
+      },
+      {
+        text: "Sonstiges",
+        prefix: "misc",
+        children: [
+          "hardware.md",
+          "network.md",
+        ]
+      },
+    ],
     editLink: false,
     lastUpdated: true,
     lastUpdatedText: "Zuletzt aktualisiert",
