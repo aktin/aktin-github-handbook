@@ -8,7 +8,6 @@ einer Neuinstallation müssen einige dieser Einstellungen zwingend angepasst wer
 Um die Einstellungen zu ändern, benötigen Sie einen Konsolenzugang zum Server. Je nach Installationstyp unterscheidet sich der Pfad zur Datei und der Befehl zum Neustarten des Dienstes.
 
 ::: tabs
-
 @tab Debian
 
 **1. Datei öffnen**: Öffnen Sie die Konfigurationsdatei mit dem folgenden Befehl:
@@ -40,7 +39,6 @@ nano /var/lib/docker/volumes/<PROJEKT_NAME>/aktin_config/_data/aktin.properties
 ```bash
 docker restart <PROJEKT_NAME>-wildfly-1
 ```
-
 :::
 
 ::: info

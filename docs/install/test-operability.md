@@ -5,11 +5,7 @@ werden.
 
 ### Aufruf der Testseite
 
-Öffnen Sie im Webbrowser die folgende Adresse: `http://<SERVER-IP>/aktin/admin/plain/test.html`
-
-![operability1](images/operability1.png)
-
-Auf dieser Seite können Sie mehrere Funktionsprüfungen durchführen:
+Öffnen Sie im Webbrowser die folgende Adresse: `http://<SERVER-IP>/aktin/admin/plain/test.html`. Auf dieser Seite können Sie mehrere Funktionsprüfungen durchführen:
 
 * **Test Broker**: Prüft die Verbindung zum zentralen AKTIN-Broker.
 * **Test Email**: Sendet eine Testnachricht an die in `aktin.properties` konfigurierte E-Mail-Adressen.
@@ -25,4 +21,4 @@ ausführen.
 
 ### Zugriff auf das Web-Interface
 
-Nach erfolgreichem Funktionstest ist das Web-Interface des Data Warehouse unter `http://<SERVER-IP>/aktin/admin`(standardmäßig Port 80) erreichbar.
+Nach erfolgreichem Funktionstest ist das Web-Interface des Data Warehouse unter `http://<SERVER-IP>/aktin/admin` (standardmäßig Port 80) erreichbar.
