@@ -65,7 +65,7 @@ echo "HTTP_PORT=8080" > .env
 
 ### Container starten
 
-Starten Sie die Container mit Docker Compose. Der Befehl wird automatisch die benötigten AKTIN Container herunterladen und starten. 
+Starten Sie die Container mit Docker Compose. Der Befehl wird automatisch die benötigten AKTIN Container herunterladen und starten.
 
 ```bash
 cd /opt/docker-deploy/aktin-dwh/dwh1
