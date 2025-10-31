@@ -5,17 +5,11 @@ Auf dieser Seite wird beschrieben, wie eine bestehende AKTIN Data Warehouse Dock
 
 ## Voraussetzungen
 
-Vor Beginn des Updates muss sichergestellt sein, dass auf dem Server die aktuelle Version der [Docker Engine][docker-engine] (≥ 24.0) und des [Docker Compose Plugin][docker-compose] (≥ 2.0)
-installiert sind. Überprüfen Sie dies mit den folgenden Befehlen:
+Die Voraussetzungen für das Docker-Update sind identisch mit den [Vorrausetzungen der Docker-Installation][docker-reqs].
 
-```bash
-docker --version
-docker compose version
-```
-
-Beide Befehle sollten Versionsnummern ausgeben. Stellen Sie außerdem sicher, dass Sie Zugriff auf das Arbeitsverzeichnis der Installation besitzen, beispielsweise `/opt/docker-deploy/aktin-dwh/dwh1`.
-In diesem Verzeichnis befindet sich die Datei `compose.yml`, die alle Containerdefinitionen enthält, sowie die Datei `secret.txt`, in der das interne Datenbankpasswort gespeichert ist. Diese Datei
-darf nicht verändert oder gelöscht werden. Vor dem Update empfiehlt es sich außerdem, ein Backup anzulegen.
+Stellen Sie außerdem sicher, dass Sie Zugriff auf das Arbeitsverzeichnis der Installation besitzen, beispielsweise `/opt/docker-deploy/aktin-dwh/dwh1`. In diesem Verzeichnis befindet sich die Datei
+`compose.yml`, die alle Containerdefinitionen enthält, sowie die Datei `secret.txt`, in der das interne Datenbankpasswort gespeichert ist. Diese Datei darf nicht verändert oder gelöscht werden. Vor
+dem Update empfiehlt es sich außerdem, ein Backup anzulegen.
 
 ## Vorbereitung des Updates
 

@@ -85,7 +85,7 @@ docker compose ps
 ```
 
 ::: important
-Bevor Sie Ihr AKTIN Data Warehouse in Betrieb nehmen können, müssen Sie zunächst eine [initiale Konfiguration][config] vornehmen.
+Bevor Sie Ihr AKTIN Data Warehouse in Betrieb nehmen können, müssen Sie zunächst eine [initiale Konfiguration][configuration] vornehmen.
 :::
 
 ## Betrieb und Wartung

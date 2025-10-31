@@ -6,7 +6,7 @@ Wenn Sie eine andere Distribution oder ein angepasstes Setup verwenden, kontakti
 
 ### Vorbereitung
 
-Für das Upgrade werden `root`-Rechte benötigt. Falls der `root`-Nutzer noch nicht aktiviert ist, folgen Sie den Hinweisen im Abschnitt [Freischaltung von root][root-manual] der
+Für das Upgrade werden `root`-Rechte benötigt. Falls der `root`-Nutzer noch nicht aktiviert ist, folgen Sie den Hinweisen im Abschnitt [Freischaltung von root][activate-root] der
 Installationsanleitung. Öffnen Sie eine `root`-Sitzung:
 
 ```bash

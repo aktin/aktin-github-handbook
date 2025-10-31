@@ -6,7 +6,7 @@ den [AKTIN IT-Support][support-email] wenden.
 
 ## 1. Download der Installationsdatei
 
-Für eine Neuinstallation wird [Ubuntu Server {{ $theme.versions.ubuntu }} LTS][ubuntu] empfohlen. Dies ist eine minimalistische Ubuntu-Version, die für den Serverbetrieb optimiert ist. Unter dem
+Für eine Neuinstallation wird [Ubuntu Server {{ $theme.versions.ubuntu }} LTS][ubuntu-server] empfohlen. Dies ist eine minimalistische Ubuntu-Version, die für den Serverbetrieb optimiert ist. Unter dem
 angegebenen Link können Sie eine `.iso`-Datei herunterladen. Diese Datei muss anschließend auf ein Installationsmedium (CD oder bootfähiger USB-Stick) kopiert werden, um Ubuntu auf dem System zu
 installieren.
 

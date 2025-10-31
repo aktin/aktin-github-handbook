@@ -30,9 +30,9 @@ export default {
         text: "Installation",
         prefix: "install",
         children: [
-          "server.md",
-          "debian.md",
-          "docker.md",
+          "server-install.md",
+          "debian-install.md",
+          "docker-install.md",
           "configuration.md",
           "test-operability.md"
         ],

@@ -1,14 +1,16 @@
-[ubuntu]: https://ubuntu.com/download/server
+[ubuntu-server]: https://ubuntu.com/download/server
 [docker-engine]: https://docs.docker.com/engine/install/ubuntu/
 [docker-compose]: https://docs.docker.com/compose/install/linux/#install-using-the-repository
-
 [support-email]: mailto:it-support@aktin.org
 
-[server]: /install/server.html
-[config]: /install/configuration.html
+[server-install]: /install/server-install.html
+[docker-install]: /install/docker-install.html
+[configuration]: /install/configuration.html
+[test-operability]: /install/test-operability.html
 [i2b2-manual]: /development/i2b2-manual.html
 [hardware]: /misc/hardware.html
 [network]: /misc/network.html
 
-[root-manual]: /install/debian.html#freischaltung-von-root
+[activate-root]: /install/debian.html#freischaltung-von-root
 [repo-aktin]: /install/debian.html#aktin-repository-einbinden
+[docker-reqs]: /install/docker.html#vorbereitung-der-installation

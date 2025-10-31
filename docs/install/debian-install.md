@@ -2,7 +2,7 @@
 
 Auf dieser Seite wird die Installation und Konfiguration des AKTIN Data Warehouse beschrieben. Die Software steht als Debian-Paket zur Verfügung und wurde für
 **Ubuntu {{ $theme.versions.ubuntu }} LTS ({{ $theme.versions.codename }})** getestet. Wenn Sie eine andere Distribution verwenden möchten, kontaktieren Sie bitte
-den [AKTIN IT-Support][support-email]. Für die Vorbereitung des Servers beachten Sie die Hinweise auf der Seite zur [Server-Installation][server].
+den [AKTIN IT-Support][support-email]. Für die Vorbereitung des Servers beachten Sie die Hinweise auf der Seite zur [Server-Installation][server-install].
 
 ## Vorbereitung der Installation
 
@@ -68,5 +68,5 @@ apt-get install -y aktin-notaufnahme-updateagent
 * `aktin-notaufnahme-updateagent`: (Optional) Ermöglicht die Aktualisierung des DWH über die Web-Oberfläche
 
 ::: important
-Bevor Sie Ihr AKTIN Data Warehouse in Betrieb nehmen können, müssen Sie zunächst eine [initiale Konfiguration][config] vornehmen.
+Bevor Sie Ihr AKTIN Data Warehouse in Betrieb nehmen können, müssen Sie zunächst eine [initiale Konfiguration][configuration] vornehmen.
 :::
