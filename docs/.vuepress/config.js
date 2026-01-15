@@ -41,7 +41,7 @@ export default {
         text: "Updates und Patches",
         prefix: "update",
         children: [
-          "distribution-upgrade.md",
+          "server-upgrade.md",
           "debian-update.md",
           "docker-update.md",
           "migration.md"

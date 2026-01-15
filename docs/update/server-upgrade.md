@@ -1,4 +1,4 @@
-# Ubuntu Distributions Upgrade
+# Ubuntu Server Upgrade
 
 Diese Anleitung beschreibt das Upgrade einer bestehenden Ubuntu LTS-Version auf die nächste LTS-Version, z. B. von Ubuntu 20.04 LTS (focal) auf Ubuntu 22.04 LTS (jammy).
 Dieses Upgrade ist erforderlich für den Betrieb des AKTIN Data Warehouse ab Version 1.6 (ausgenommen Docker-Installationen).

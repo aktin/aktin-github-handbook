@@ -11,6 +11,6 @@
 [hardware]: /misc/hardware.html
 [network]: /misc/network.html
 
-[activate-root]: /install/debian.html#freischaltung-von-root
-[repo-aktin]: /install/debian.html#aktin-repository-einbinden
-[docker-reqs]: /install/docker.html#vorbereitung-der-installation
+[activate-root]: /install/debian-install.html#freischaltung-von-root
+[repo-aktin]: /install/debian-install.html#aktin-repository-einbinden
+[docker-reqs]: /install/docker-install.html#vorbereitung-der-installation

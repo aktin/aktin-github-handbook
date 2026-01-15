@@ -92,17 +92,29 @@ Bevor Sie Ihr AKTIN Data Warehouse in Betrieb nehmen können, müssen Sie zunäc
 
 Zur Überwachung und Verwaltung der Container stehen folgende Befehle zur Verfügung:
 
-| Kategorie                 | Befehl                           | Beschreibung                                           |
-|---------------------------|----------------------------------|--------------------------------------------------------|
-| **Status & Ressourcen**   | `docker compose ps`              | Zeigt den Status aller Container an                    |
-|                           | `docker stats`                   | Zeigt Ressourcenverbrauch (CPU, RAM, Netzwerk, I/O) an |
-|                           | `docker compose top`             | Listet laufende Prozesse in den Containern auf         |
-| **Protokolle**            | `docker compose logs`            | Zeigt die kombinierten Logs aller Container            |
-|                           | `docker logs CONTAINER_NAME`     | Zeigt Logs eines bestimmten Containers                 |
-|                           | `docker logs -f CONTAINER_NAME`  | Zeigt Live-Logs (Fortlaufende Ausgabe)                 |
-| **Neustart & Verwaltung** | `docker compose restart SERVICE` | Startet einen einzelnen Service neu                    |
-|                           | `docker compose restart`         | Startet alle Services neu                              |
-|                           | `docker compose stop`            | Stoppt alle laufenden Container                        |
+#### Status & Ressourcen
+
+| Befehl               | Beschreibung                                           |
+|----------------------|--------------------------------------------------------|
+| `docker compose ps`  | Zeigt den Status aller Container an                    |
+| `docker stats`       | Zeigt Ressourcenverbrauch (CPU, RAM, Netzwerk, I/O) an |
+| `docker compose top` | Listet laufende Prozesse in den Containern auf         |
+
+#### Protokolle
+
+| Befehl                          | Beschreibung                                |
+|---------------------------------|---------------------------------------------|
+| `docker compose logs`           | Zeigt die kombinierten Logs aller Container |
+| `docker logs CONTAINER_NAME`    | Zeigt Logs eines bestimmten Containers      |
+| `docker logs -f CONTAINER_NAME` | Zeigt Live-Logs (Fortlaufende Ausgabe)      |
+
+#### Neustart & Verwaltung
+
+| Befehl                           | Beschreibung                        |
+|----------------------------------|-------------------------------------|
+| `docker compose restart SERVICE` | Startet einen einzelnen Service neu |
+| `docker compose restart`         | Startet alle Services neu           |
+| `docker compose stop`            | Stoppt alle laufenden Container     |
 
 ::: tip
 Eine regelmäßige Kontrolle des Containerstatus und der verfügbaren Updates wird empfohlen.  
