@@ -19,6 +19,15 @@ Ein grün hinterlegter Bereich zeigt an, dass der Test erfolgreich war und die K
 enthält Hinweise zur Ursache, etwa falsche Zugangsdaten oder Verbindungsprobleme. In diesem Fall sollten Sie die entsprechenden Einstellungen in der Datei `aktin.properties` prüfen und den Test erneut
 ausführen.
 
+### Fehlerbehebung
+
+Falls die Testseite nicht lädt oder der Browser einen Verbindungsfehler anzeigt, prüfen Sie folgende Punkte:
+* Prüfen Sie, ob der Dienst überhaupt läuft
+  * **Debian**: `systemctl status wildfly` 
+  * **Docker**: `docker compose ps`
+* Stellen Sie sicher, dass keine Firewall den Port 80 oder 443 blockiert
+* Werfen Sie einen Blick in die Logdateien, um Startfehler des Servers zu erkennen
+
 ### Zugriff auf das Web-Interface
 
 Nach erfolgreichem Funktionstest ist das Web-Interface des Data Warehouse unter `http://<SERVER-IP>/aktin/admin` (standardmäßig Port 80) erreichbar.

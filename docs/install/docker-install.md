@@ -37,6 +37,11 @@ Die Datei `compose.yml` definiert alle benötigten Container, Netzwerke und Volu
 Sie können die Datei bei Bedarf anpassen, z. B. für abweichende Ports oder externe Datenbankverbindungen.
 :::
 
+:::info Was ist ein Docker Volume?
+Docker-Container sind flüchtig. Wenn Sie einen Container löschen oder aktualisieren, werden alle darin gespeicherten Daten gelöscht. Ein Volume ist ein Ordner auf Ihrem
+Server, der fest mit dem Container verbunden wird. Daten, die im Volume liegen (wie die Datenbank oder Konfigurationsdateien), bleiben so dauerhaft erhalten. Auch nach einem Update des Containers.
+:::
+
 ### Datenbank-Passwort erstellen
 
 Das AKTIN DWH benötigt ein internes Datenbank-Passwort. Erzeugen Sie dieses Passwort und speichern Sie es in einer Datei `secret.txt` im selben Verzeichnis wie die `compose.yml`.

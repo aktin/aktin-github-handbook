@@ -10,22 +10,16 @@ den [AKTIN IT-Support][support-email]. Für die Vorbereitung des Servers beachte
 
 Siehe [Systemanforderungen][hardware] und [Netzwerk][network].
 
-### Freischaltung von root
+### Administrative Rechte (root)
 
-Für die Installation benötigen Sie Konsolenzugriff und `root`-Rechte. Standardmäßig ist der `root`-Benutzer bei Ubuntu deaktiviert. Um ihn zu aktivieren, wechseln Sie zunächst mit dem folgenden Befehl
-in eine `root`-Sitzung:
+Für die Installation benötigen Sie volle Systemrechte. Aus Sicherheitsgründen sollten Sie den `root`-Benutzer nicht dauerhaft aktivieren, sondern stattdessen `sudo` verwenden. Wechseln Sie für die
+Installation in eine temporäre `root`-Sitzung:
 
 ```bash
 sudo -i
 ```
 
-Geben Sie das Passwort Ihres aktuellen Benutzers ein. Anschließend können Sie mit diesem Befehl ein Passwort für den `root`-Benutzer festlegen:
-
-```bash
-sudo passwd root
-```
-
-Nachdem Sie ein neues Passwort vergeben haben, können Sie sich zukünftig direkt als `root` anmelden.
+Geben Sie Ihr eigenes Benutzerpasswort ein. Sie haben nun dauerhaft `root`-Rechte für diese Sitzung. Alternativ können Sie jedem Befehl ein `sudo` voranstellen.
 
 ### Aktualisierung der Zertifikate
 
