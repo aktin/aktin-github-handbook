@@ -12,10 +12,7 @@ Diese Anleitung gilt nur für Updates ab Version 1.5. Für eine Aktualisierung v
 
 ## Ausführung des Updates über die Kommandozeile
 
-Für das Update müssen alle Befehle als `root` ausgeführt werden. Falls der `root`-Nutzer noch nicht aktiviert ist, folgen Sie den Hinweisen im Abschnitt [Freischaltung von root][activate-root] der
-Installationsanleitung.
-
-Führen Sie zunächst den Befehl aus, um in den `root`-Nutzer zu wechseln:
+Für das Upgrade werden administrative Rechte benötigt. Öffnen Sie eine `root`-Sitzung:
 
 ```bash
 sudo -i

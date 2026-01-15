@@ -6,8 +6,7 @@ Wenn Sie eine andere Distribution oder ein angepasstes Setup verwenden, kontakti
 
 ### Vorbereitung
 
-Für das Upgrade werden `root`-Rechte benötigt. Falls der `root`-Nutzer noch nicht aktiviert ist, folgen Sie den Hinweisen im Abschnitt [Freischaltung von root][activate-root] der
-Installationsanleitung. Öffnen Sie eine `root`-Sitzung:
+Für das Upgrade werden administrative Rechte benötigt. Öffnen Sie eine `root`-Sitzung:
 
 ```bash
 sudo -i
@@ -48,3 +47,9 @@ geladen werden.
 ```bash
 apt update
 ```
+
+::: warning Wichtiger Hinweis zu PostgreSQL 
+Bei einem Distributions-Upgrade wird oft auch die Datenbank-Software (PostgreSQL) aktualisiert. Dabei wird ein neuer, leerer Datenbank-Server gestartet.
+Prüfen Sie nach dem Upgrade, ob Ihre alten Daten verfügbar sind. Falls das System "leer" wirkt, müssen die Daten vom alten in den neuen Datenbank-Cluster migriert werden (über den Befehl `pg_upgradecluster`).
+Kontaktieren Sie im Zweifel bitte den [AKTIN IT-Support][support-email]. bevor Sie neue Daten importieren. 
+:::

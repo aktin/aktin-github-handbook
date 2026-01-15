@@ -25,11 +25,19 @@ Der Befehl `docker compose ps` zeigt eine Übersicht aller Container mit ihrem a
 
 ## Durchführung des Updates
 
-Im nächsten Schritt laden Sie die aktuelle Version der AKTIN Compose-Datei aus dem offiziellen GitHub-Repository herunter. Diese Datei enthält Definitionen der Container, ihrer Versionen und
-Verbindungen.
+Im nächsten Schritt laden Sie die aktuelle Version der AKTIN Compose-Datei aus dem offiziellen GitHub-Repository herunter.
+
+::: warning Backup erstellen
+Es wird dringend empfohlen, vor dem Überschreiben der Konfigurationsdatei eine Sicherheitskopie der bestehenden `compose.yml` anzulegen.
+:::
 
 ```bash
 cd /opt/docker-deploy/aktin-dwh/dwh1
+
+# Backup der alten Konfiguration erstellen
+cp compose.yml compose.yml.backup_$(date +%F)
+
+# Download der neuen Konfiguration
 curl -LO https://github.com/aktin/docker-aktin-dwh/releases/latest/download/compose.yml
 ```
 
@@ -46,12 +54,17 @@ zurückwechseln können. Nachdem die neuen Images heruntergeladen wurden, starte
 docker compose up -d
 ```
 
-Dieser Befehl startet das System mit den aktualisierten Versionen der Container im Hintergrund. Während des Neustarts werden alle Dienste nacheinander aktualisiert und wieder verbunden. Nach Abschluss
-des Updates können Sie ungenutzte alte Images löschen, um Speicherplatz freizugeben:
+Dieser Befehl erstellt die Container auf Basis der neuen Konfiguration neu. Nach Abschluss des Updates können Sie veraltete Image-Versionen löschen, um Speicherplatz freizugeben:
+
+::: info Kurze Ausfallzeit
+Während die Container neu erstellt werden, ist das Data Warehouse für kurze Zeit nicht erreichbar. Die Datenbankinhalte und Konfigurationen in den Volumes bleiben dabei unberührt.
+:::
 
 ```bash
 docker image prune -f
 ```
+
+Dieser Befehl entfernt sicher nur solche Images, die von keinem laufenden Container mehr verwendet werden (sogenannte _dangling images_). Aktive Daten sind davon nicht betroffen.
 
 ## Überprüfung des Updates
 
