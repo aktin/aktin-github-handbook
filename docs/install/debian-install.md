@@ -34,13 +34,13 @@ apt-get update && apt-get install -y ca-certificates
 Um das AKTIN DWH installieren zu können, müssen Sie das AKTIN Repository zu Ihrem System hinzufügen. Fügen Sie zuerst den Repository-Schlüssel hinzu:
 
 ```bash
-sudo wget -O - https://www.aktin.org/software/repo/org/apt/conf/aktin.gpg.key | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/aktin.gpg
+wget -O - https://www.aktin.org/software/repo/org/apt/conf/aktin.gpg.key | gpg --dearmour -o /etc/apt/trusted.gpg.d/aktin.gpg
 ```
 
 Binden Sie anschließend die Repository-Quelle ein:
 
 <pre><code>echo "deb https://www.aktin.org/software/repo/org/apt {{ $theme.versions.codename }} main" | \
-sudo tee /etc/apt/sources.list.d/aktin.list</code></pre>
+tee /etc/apt/sources.list.d/aktin.list</code></pre>
 
 ::: info
 Das Paket wurde nur mit **Ubuntu {{ $theme.versions.ubuntu }} LTS ({{ $theme.versions.codename }})** getestet und verifiziert.

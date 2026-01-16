@@ -21,7 +21,7 @@ nano /opt/wildfly/standalone/configuration/aktin.properties
 **3. Dienst neustarten**: Wenden Sie die neuen Einstellungen an, indem Sie den Server neustarten:
 
 ```bash
-sudo service wildfly restart
+service wildfly restart
 ```
 
 @tab Docker
