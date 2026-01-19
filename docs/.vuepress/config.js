@@ -48,6 +48,13 @@ export default {
         ],
       },
       {
+        text: "Betrieb",
+        prefix: "operation",
+        children: [
+          "consent-manager.md"
+        ],
+      },
+      {
         text: "Sonstiges",
         prefix: "misc",
         children: [
