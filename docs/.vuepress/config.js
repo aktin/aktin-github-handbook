@@ -53,6 +53,7 @@ export default {
         children: [
           "hardware.md",
           "network.md",
+          "troubleshooting.md",
           "changelog.md"
         ]
       },
