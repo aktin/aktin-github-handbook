@@ -3,15 +3,13 @@
 Auf dieser Seite wird beschrieben, wie eine bestehende AKTIN Data Warehouse Docker-Installation aktualisiert wird. Das Verfahren wurde mit **Ubuntu {{ $theme.versions.ubuntu }} LTS
 ({{ $theme.versions.codename }})** getestet. Bei abweichenden Systemumgebungen wenden Sie sich bitte an den [AKTIN IT-Support][support-email].
 
-## Voraussetzungen
+## 1. Vorbereitung
 
 Die Voraussetzungen für das Docker-Update sind identisch mit den [Vorrausetzungen der Docker-Installation][docker-reqs].
 
 Stellen Sie außerdem sicher, dass Sie Zugriff auf das Arbeitsverzeichnis der Installation besitzen, beispielsweise `/opt/docker-deploy/aktin-dwh/dwh1`. In diesem Verzeichnis befindet sich die Datei
 `compose.yml`, die alle Containerdefinitionen enthält, sowie die Datei `secret.txt`, in der das interne Datenbankpasswort gespeichert ist. Diese Datei darf nicht verändert oder gelöscht werden. Vor
 dem Update empfiehlt es sich außerdem, ein Backup anzulegen.
-
-## Vorbereitung des Updates
 
 Zuerst sollten Sie den aktuellen Zustand der laufenden Container prüfen. Wechseln Sie dazu in das Installationsverzeichnis und geben Sie den folgenden Befehl ein:
 
@@ -23,7 +21,7 @@ docker compose ps
 Der Befehl `docker compose ps` zeigt eine Übersicht aller Container mit ihrem aktuellen Status an. Alle Container sollten als Status `running` oder `healthy` anzeigen. Mit dem Befehl
 `docker compose config --services` können Sie sich außerdem anzeigen lassen, welche Dienste in der Konfiguration definiert sind.
 
-## Durchführung des Updates
+## 2. Durchführung des Updates
 
 Im nächsten Schritt laden Sie die aktuelle Version der AKTIN Compose-Datei aus dem offiziellen GitHub-Repository herunter.
 
@@ -66,7 +64,7 @@ docker image prune -f
 
 Dieser Befehl entfernt sicher nur solche Images, die von keinem laufenden Container mehr verwendet werden (sogenannte _dangling images_). Aktive Daten sind davon nicht betroffen.
 
-## Überprüfung des Updates
+## 3. Nachbearbeitung
 
 Um sicherzustellen, dass das Update erfolgreich war, prüfen Sie zunächst abschließend den Status aller Container:
 

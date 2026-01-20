@@ -4,7 +4,7 @@ Auf dieser Seite wird die Installation und Konfiguration des AKTIN Data Warehous
 Betrieb des Data Warehouse in einer containerisierten Umgebung bevorzugen. Das Verfahren wurde mit **Ubuntu {{ $theme.versions.ubuntu }} LTS ({{ $theme.versions.codename }})** getestet. Bei
 abweichenden Systemumgebungen kontaktieren Sie bitte den [AKTIN IT-Support][support-email].
 
-## Vorbereitung der Installation
+## 1. Vorbereitung der Installation
 
 ### Voraussetzungen
 
@@ -21,9 +21,9 @@ mkdir -p /opt/docker-deploy/aktin-dwh/dwh1
 cd /opt/docker-deploy/aktin-dwh/dwh1
 ```
 
-## Installation des Data Warehouse
+## 2. Installation des Data Warehouse
 
-### Docker-Compose-Datei herunterladen
+#### Docker-Compose-Datei herunterladen
 
 Laden Sie die aktuelle `compose.yml` direkt aus dem offiziellen AKTIN GitHub-Repository herunter:
 
@@ -42,7 +42,7 @@ Docker-Container sind flüchtig. Wenn Sie einen Container löschen oder aktualis
 Server, der fest mit dem Container verbunden wird. Daten, die im Volume liegen (wie die Datenbank oder Konfigurationsdateien), bleiben so dauerhaft erhalten. Auch nach einem Update des Containers.
 :::
 
-### Datenbank-Passwort erstellen
+#### Datenbank-Passwort erstellen
 
 Das AKTIN DWH benötigt ein internes Datenbank-Passwort. Erzeugen Sie dieses Passwort und speichern Sie es in einer Datei `secret.txt` im selben Verzeichnis wie die `compose.yml`.
 
@@ -58,7 +58,7 @@ echo "IhrSicheresPasswort123!" > secret.txt
 Verwenden Sie ein starkes Passwort (mindestens 16 Zeichen, Groß-/Kleinbuchstaben, Zahlen und Sonderzeichen). Die Datei `secret.txt` darf nicht versioniert oder öffentlich zugänglich sein.
 :::
 
-### Optionale Umgebungsvariablen
+#### Optionale Umgebungsvariablen
 
 Zur Anpassung der Standardports oder weiterer Parameter können Sie eine `.env`-Datei anlegen.
 
@@ -68,7 +68,7 @@ Zur Anpassung der Standardports oder weiterer Parameter können Sie eine `.env`-
 echo "HTTP_PORT=8080" > .env
 ```
 
-### Container starten
+#### Container starten
 
 Starten Sie die Container mit Docker Compose. Der Befehl wird automatisch die benötigten AKTIN Container herunterladen und starten.
 
@@ -81,7 +81,7 @@ docker compose up -d
 - Nach einem Serverneustart werden die Container automatisch wieder gestartet.
 - Alle Services werden in einem gemeinsamen Docker-Netzwerk betrieben.
 
-### Status prüfen
+#### Status prüfen
 
 Prüfen Sie, ob alle Container erfolgreich gestartet sind. Alle Services sollten den Status `running` oder `healthy` haben.
 
@@ -93,7 +93,7 @@ docker compose ps
 Bevor Sie Ihr AKTIN Data Warehouse in Betrieb nehmen können, müssen Sie zunächst eine [initiale Konfiguration][configuration] vornehmen.
 :::
 
-## Betrieb und Wartung
+## 3. Betrieb und Wartung
 
 Zur Überwachung und Verwaltung der Container stehen folgende Befehle zur Verfügung:
 

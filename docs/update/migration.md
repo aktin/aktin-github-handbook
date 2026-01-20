@@ -7,7 +7,7 @@ Offiziell unterstützt ist Ubuntu {{ $theme.versions.ubuntu }} LTS als Betriebss
 der [Docker-Installationsanleitung][docker-install]. Die DWH-Version muss mindestens 1.5 sein. Die aktuell installierte DWH-Version sehen Sie nach Anmeldung in der Admin-Konsole unter
 `http://<SERVER-IP>/aktin/admin`.
 
-## Vorbereitung
+## 1. Vorbereitung
 
 Die benötigten Migrations-Skripte finden Sie im öffentlichen Repository
 unter [https://github.com/aktin/aktin-scripts/tree/main/dwh-migration](https://github.com/aktin/aktin-scripts/tree/main/dwh-migration). Laden Sie die entsprechenden Skripte für Ihre Quell- und
@@ -23,7 +23,7 @@ Für die Migration werden administrative Rechte benötigt, da die Skripte System
 sudo -i
 ```
 
-## Backups erstellen
+## 2. Backups erstellen
 
 ::: tabs
 @tab Debian-Installation
@@ -71,7 +71,7 @@ Notieren Sie sich die konkreten Container-Namen (z.B. `dwh1-wildfly-1`, `dwh1-db
 Das Skript erstellt eine komprimierte Backup-Datei `aktin-backup-YYYYmmddHHMM.tar.gz` im aktuellen Verzeichnis.
 :::
 
-## Backup anwenden
+## 3. Backup anwenden
 
 ::: tabs
 @tab Debian-Zielsystem
@@ -132,7 +132,7 @@ Backups enthalten vertrauliche Konfigurationen und exportierte Daten. Die Archiv
 dennoch jederzeit vertraulich und begrenzen Sie Zugriffe auf autorisierte Personen. Löschen oder archivieren Sie Backups nach Abschluss gemäß Ihren Richtlinien.
 :::
 
-## Validierung nach der Migration
+## 4. Validierung nach der Migration
 
 Öffnen Sie die Admin-Konsole unter `http://<SERVER-IP>/aktin/admin` und prüfen Sie, ob die erwartete DWH-Version angezeigt wird. Testen Sie auch die Funktionsfähigkeit, indem Sie den Anweisungen
 zum [Test der Betriebsfähigkeit][test-operability] folgen. Bei Fehlermeldungen prüfen Sie die Dienste und Logs.

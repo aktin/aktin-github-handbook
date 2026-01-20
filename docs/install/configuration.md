@@ -47,7 +47,7 @@ Beachten Sie, dass alle nachträglichen Änderungen an der `aktin.properties` ei
 
 ## Referenz der Einstellungen
 
-### Lokale Standorteinstellungen
+#### Lokale Standorteinstellungen
 
 Diese Einstellungen definieren den Namen und den Standort Ihrer Data Warehouse-Instanz.
 
@@ -66,7 +66,7 @@ E-Mail-Adresse für Berichte) an. An die hier hinterlegte E-Mail-Adresse werden 
 | `local.tz`       | Europe/Berlin                          | Zeitzone                                    |
 | `local.language` | de-DE                                  | Benutzersprache                             |
 
-### i2b2- und Datenbankeinstellungen
+#### i2b2- und Datenbankeinstellungen
 
 Diese Schlüssel konfigurieren die Verbindung zum i2b2-Server und zur WildFly-Datenquelle.
 
@@ -82,7 +82,7 @@ Diese Schlüssel konfigurieren die Verbindung zum i2b2-Server und zur WildFly-Da
 | `i2b2.service.domain` | i2b2demo                                       | i2b2 Projekt-Domäne               |
 | `db.datasource`       | java:jboss/datasources/AktinDS                 | JNDI-Name der Wildfly-Datenquelle |
 
-### E-Mail-Konfiguration
+#### E-Mail-Konfiguration
 
 Hier werden alle Einstellungen für den Versand von E-Mails über einen SMTP-Server festgelegt.
 
@@ -108,7 +108,7 @@ Das Feld `email.session` muss auf dem Wert `local` belassen werden. Anderenfalls
 | `mail.smtp.timeout`           | 10000                | Verbindungstimeout zum E-Mail-Server              |
 | `mail.smtp.connectiontimeout` | 10000                | Maximale Verarbeitungszeit für E-Mail-Versand     |
 
-### Broker-Einstellungen
+#### Broker-Einstellungen
 
 Diese Werte steuern die Kommunikation mit dem zentralen AKTIN-Broker.
 
@@ -123,7 +123,7 @@ nicht mit der zentralen Infrastruktur verbinden. Die anderen Werte sollten unver
 | `broker.archive.path` | /var/lib/aktin/broker-archive                        | Ablageort für archivierte Broker-Daten |
 | `broker.intervals`    | PT15M                                                | Heartbeat-Update-Intervall (ISO 8601)  |
 
-### Studienspezifische Einstellungen & CDA-IDs
+#### Studienspezifische Einstellungen & CDA-IDs
 
 Diese Einstellungen sind für die Verarbeitung von Patientendaten im Consent-Manager relevant.
 
@@ -182,7 +182,7 @@ Sollte in Ihrer Klinik keine feste `root`-Nummer verwendet werden, darf auch kei
 der Fall sein, wenn entweder `extension` direkt als `root` verwendet wird oder sich die `root`-Nummer klinikintern unterscheidet.
 :::
 
-### Pfad- und Servereinstellungen
+#### Pfad- und Servereinstellungen
 
 Diese Schlüssel definieren verschiedene Dateipfade und Konfigurationen für serverseitige Operationen.
 

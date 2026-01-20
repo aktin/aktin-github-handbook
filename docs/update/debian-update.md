@@ -46,14 +46,14 @@ ist, zeigt die Konsole einen entsprechenden Hinweis. Nach Abschluss des Updates 
 
 Um das AKTIN Data Warehouse über die Ansicht zu aktualisieren, wechseln Sie zunächst zum AKTIN Data Warehouse in Ihrem Browser.
 
-### 1. Suche nach einer neuen Version
+#### 1. Suche nach einer neuen Version
 
 Klicken Sie oben rechts auf den Update-Button. Während der Suche zeigt der Button eine laufende Animation. Wenn die Animation endet, ohne dass sich der Button ändert, ist bereits die aktuelle Version
 installiert.
 
 ![update1x400](images/update1.png)
 
-### 2. Initialisierung des Update-Vorgangs
+#### 2. Initialisierung des Update-Vorgangs
 
 Wenn eine neue Version gefunden wurde, ändert sich der Button. Klicken Sie ihn an, um das Update zu starten. Ein Hinweisfenster informiert Sie darüber, dass das Data Warehouse während des Updates
 nicht verfügbar ist und nach Abschluss automatisch neu gestartet wird. Bestätigen Sie den Hinweis, um den Vorgang zu beginnen.
@@ -62,14 +62,14 @@ nicht verfügbar ist und nach Abschluss automatisch neu gestartet wird. Bestäti
 
 ![update3x400](images/update3.png)
 
-### 3. Durchführung des Updates
+#### 3. Durchführung des Updates
 
 Während des Updates werden Sie auf eine externe Statusseite weitergeleitet. Dort sehen Sie den Fortschritt des Prozesses. Nach Abschluss werden Sie automatisch auf die Startseite des Data Warehouse
 zurückgeleitet.
 
 ![update4x400](images/update4.png)
 
-### 4. Abschluss des Updates
+#### 4. Abschluss des Updates
 
 Nach dem Update erscheint ein Hinweisfenster mit dem Ergebnis und der Konsolenausgabe. Schließen Sie dieses Fenster, um wieder in den Normalbetrieb zu wechseln. Das Popup kann jederzeit erneut
 geöffnet werden, indem Sie auf die Versionsnummer oben rechts klicken.
