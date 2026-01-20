@@ -6,13 +6,13 @@ abweichenden Systemumgebungen kontaktieren Sie bitte den [AKTIN IT-Support][supp
 
 ## 1. Vorbereitung der Installation
 
-### Voraussetzungen
+#### Voraussetzungen
 
 Siehe [Systemanforderungen][hardware] und [Netzwerk][network].
 
 Stellen Sie außerdem sicher, dass auf Ihrem System die aktuelle [Docker Engine][docker-engine] (≥ 24.0) und das aktuelle [Docker Compose Plugin][docker-compose] (≥ 2.0) installiert sind.
 
-### Verzeichnisstruktur anlegen
+#### Verzeichnisstruktur anlegen
 
 Legen Sie ein separates Arbeitsverzeichnis für die Docker-Konfiguration des AKTIN DWH an. Dieses Verzeichnis enthält später die `compose`-Datei sowie eine Datei mit Umgebungsvariablen:
 

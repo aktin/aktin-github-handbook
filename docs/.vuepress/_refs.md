@@ -7,7 +7,7 @@
 [docker-install]: /install/docker-install.html
 [configuration]: /install/configuration.html
 [test-operability]: /install/test-operability.html
-[i2b2-manual]: /development/i2b2-manual.html
+[i2b2-operation]: /operation/i2b2-operation.html
 [hardware]: /misc/hardware.html
 [network]: /misc/network.html
 

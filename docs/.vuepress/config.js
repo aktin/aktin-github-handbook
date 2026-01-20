@@ -51,6 +51,7 @@ export default {
         text: "Betrieb",
         prefix: "operation",
         children: [
+          "dwh-operation.md",
           "consent-manager.md"
         ],
       },
