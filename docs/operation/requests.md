@@ -1,24 +1,9 @@
-# Anleitung Data Warehouse Manager
-
-Der Data Warehouse Manager (DWH-Manager) ist die zentrale Web-Oberfläche zur Steuerung des AKTIN DWHs. Hier verwalten Sie eingehende Datenanfragen und generieren Monatsberichte.
-
-## Anmeldung
-
-1. Rufen Sie die Admin-Oberfläche in Ihrem Browser auf: `http://<SERVER-IP>/aktin/admin`.
-
-![dwh1x400](images/dwh1.png)
-
-2. Melden Sie sich mit Ihren Zugangsdaten an. Dazu werden die Benutzerdaten Ihrer [i2b2-Instanz][i2b2-operation] verwendet. Nach dem Login haben Sie Zugriff auf die Verwaltung der einzelnen
-   Funktionalitäten.
-
-![dwh2x400](images/dwh2.png)
-
-## Zentrale Datenanfragen verwalten
+# Datenanfragen verwalten
 
 Über das AKTIN-Netzwerk gehen regelmäßig Forschungsanfragen ein. Das wichtigste Prinzip dabei ist die lokale Datenhoheit: Jede neue Anfrage muss durch Sie lokal geprüft und explizit freigegeben
 werden, bevor die Daten Ihren Standort verlassen.
 
-### 1. Anfragenübersicht öffnen
+## 1. Anfragenübersicht öffnen
 
 Im Reiter *Anfragen* finden Sie die Liste aller eingegangenen Aufträge. Hier unterscheiden wir zwei Typen:
 
@@ -27,7 +12,7 @@ Im Reiter *Anfragen* finden Sie die Liste aller eingegangenen Aufträge. Hier un
 * **Serien-Anfragen:**
     * Wiederkehrende Abfragen, die vom Inhalt gleich sind, aber sich im Zeitfenster unterscheiden (z. B. Wöchentlicher Export). Diese sind in der Liste entsprechend gekennzeichnet
 
-![dwh3x400](images/dwh3.png)
+![requests1x400](images/requests1.png)
 
 ::: note Übersicht der möglichen Zustände einer Anfrage
 
@@ -54,18 +39,18 @@ Im Reiter *Anfragen* finden Sie die Liste aller eingegangenen Aufträge. Hier un
 
 :::
 
-### 2. Detailansicht einer Anfrage
+## 2. Detailansicht einer Anfrage
 
 Klicken Sie auf das entsprechende *Prüf-Symbol* rechts in der Abfragenübersicht, um die Einzelansicht einer Anfrage aufzurufen. Hier finden Sie alle entscheidungswichtigen Informationen.
 
 ::: tabs
 @tab Einzelanfrage
 
-![dwh4.1x400](images/dwh4.1.png)
+![requests2x400](images/requests2.png)
 
 @tab Serienanfrage
 
-![dwh4.2x400](images/dwh4.2.png)
+![requests3x400](images/requests3.png)
 :::
 
 | Element                              | Beschreibung                                                                                                                               |
@@ -93,7 +78,7 @@ Handelt es sich um ein wiederkehrendes Abfrage, stehen Ihnen zusätzliche Inform
 
 :::
 
-### 3. Entscheidung treffen
+## 3. Entscheidung treffen
 
 Nachdem Sie die Metadaten und den Quellcode geprüft haben, treffen Sie über die Entscheidungsschaltfläche Ihre Entscheidung. Dabei öffnet sich jeweils ein Dialogfenster, in dem Sie den genauen Ablauf
 steuern können.
@@ -103,7 +88,7 @@ steuern können.
 Wenn Sie der Durchführung zustimmen, klicken Sie auf die grüne Schaltfläche. Es öffnet sich ein Dialog zur Bestätigung. Hier legen Sie fest, ob die Daten sofort übertragen oder erst geprüft werden
 sollen.
 
-![dwh5.1x400](images/dwh5.1.png)
+![requests4x400](images/requests4.png)
 
 Wenn Sie das Häkchen zu *Ergebnisprüfung vor der Übermittlung* setzen, verbleiben die Daten zunächst lokal auf Ihrem Server. Dies ermöglicht eine manuelle Prüfung vor dem Versand. Die Übermittlung
 selbst erfordert dann eine zweite Bestätigung. Ist das Häkchen nicht gesetzt, werden die Ergebnisse unmittelbar nach der Berechnung verschlüsselt versendet. Es ist keine weitere Interaktion notwendig.
@@ -114,7 +99,7 @@ selbst erfordert dann eine zweite Bestätigung. Ist das Häkchen nicht gesetzt, 
 
 Wenn Sie die Anfrage zurückweisen möchten, klicken Sie auf die rote Schaltfläche. Es öffnet sich ein Dialog zur Ablehnung.
 
-![dwh5.2x400](images/dwh5.2.png)
+![requests5x400](images/requests5.png)
 
 Bei der Ablehnung der Anfrage wird die Anfrage nicht ausgeführt und es werden auch keine medizinischen Daten erhoben oder versendet. Der Broker erhält lediglich den Status *Abgelehnt* von Ihrem
 Standort.
@@ -133,7 +118,7 @@ Urlaub oder Neuinstallation) mehrere offene Anfragen angestaut haben. Aktivieren
 
 :::
 
-### 4. *(Optional)* Ergebnisse validieren
+## 4. *(Optional)* Ergebnisse validieren
 
 Wenn Sie sich für die vorherige Prüfung entschieden haben, steht nach der Berechnung ein ZIP-Archiv mit den Ergebnissen zum Download bereit. Speichern und entpacken Sie dieses Archiv zunächst auf
 Ihrem lokalen Rechner, um die darin enthaltenen CSV-Dateien stichprobenartig auf ihre inhaltliche Korrektheit zu kontrollieren.
@@ -144,70 +129,6 @@ Für eine leserliche Darstellung in Microsoft Excel empfiehlt sich der Weg über
 den Reiter *Daten* und wählen Sie die Funktion *Aus Text* (bzw. *Aus Text/CSV*). Im darauffolgenden Import-Dialog ist es entscheidend, dass Sie als Trennzeichen den Tabstopp auswählen, damit die
 Spalten korrekt erkannt werden.
 
-![dwh6x400](images/dwh6.png)
+![requests6x400](images/requests6.png)
 
 :::
-
-## Monatsberichte erstellen
-
-Das DWH bietet die Möglichkeit, automatisierte Berichte über die Datenqualität und Kennzahlen Ihrer Notaufnahme zu generieren. Im Menüpunkt *Berichte* finden Sie eine Übersicht aller bisher erstellten
-Dokumente.
-
-![report1x400](images/report1.png)
-
-Um eine aktuelle Auswertung zu starten, gehen Sie wie folgt vor. Klicken Sie oben rechts auf den Button *Neuer Bericht*.
-
-![report2x400](images/report2.png)
-
-Wählen Sie im Dialogfenster die gewünschte Berichtsvorlage sowie den Zeitraum (Monat/Jahr) aus. Bestätigen Sie mit *Jetzt erstellen*, um den Prozess auf dem Server zu starten. Der neue Bericht
-erscheint sofort in der Liste mit dem Status `wird erstellt`. Bitte haben Sie einen Moment Geduld, die Generierung kann je nach Datenmenge einige Minuten dauern.
-
-![report3x400](images/report3.png)
-
-Sobald der Vorgang abgeschlossen ist, können Sie den PDF-Bericht direkt im Browser in der Einzelansicht (über den Button *Detailansicht des Berichts*) betrachten.
-
-![report4x400](images/report4.png)
-
-## Consent-Manager (old)
-
-Der Consent Manager ermöglicht es, Patienten gezielt in Studien einzuschließen oder vom Datenversand auszuschließen (opt-in / opt-out). Diese Funktion ist besonders wichtig für Studien, die eine explizite Einwilligung erfordern oder bei denen bestimmte Patienten widersprochen haben.
-
-## Funktionsweise
-
-Der Consent Manager prüft bei jedem Datenexport, ob für einen Patienten ein Eintrag vorliegt.
-* **Ausschluss (Opt-out):** Daten des Patienten werden für die gewählte Studie nicht exportiert.
-* **Einschluss (Opt-in):** Nur Patienten mit einem expliziten Einschluss werden exportiert (abhängig von der Studienkonfiguration).
-
-## Verwendung
-
-### 1. Studie auswählen
-
-Nach der Anmeldung im AKTIN Data Warehouse finden Sie den Menüpunkt **Consent Manager**.
-
-1. Wählen Sie im Dropdown-Menü die gewünschte **Studie** aus.
-2. Es erscheint eine Liste aller bereits erfassten Einträge für diese Studie.
-3. Über das Suchfeld können Sie nach bestehenden Einträgen filtern.
-
-### 2. Teilnehmer verwalten
-
-Klicken Sie auf **Eintrag hinzufügen**, um einen neuen Status für einen Patienten zu setzen. Das Formular fragt je nach Studienkonfiguration unterschiedliche Felder ab:
-
-* **SIC (Study Identification Code):** Die Studiennummer des Patienten. Wird je nach Konfiguration automatisch vergeben (laufende Nummer) oder muss manuell eingetragen werden.
-* **Identifikator:** Hier müssen Sie den Patienten eindeutig identifizieren. Das System fragt – passend zu Ihrer `aktin.properties`-Konfiguration – nach einem der folgenden Werte:
-  * **Patientennummer:** Die ID des Patienten im KIS.
-  * **Fallnummer:** Die Abrechnungsnummer des Aufenthalts.
-  * **Episodennummer:** Die Nummer des spezifischen Notaufnahme-Kontakts.
-* **Teilnahme:** Wählen Sie hier den Status:
-  * `Einschluss` (Patient nimmt teil)
-  * `Ausschluss` (Patient widerspricht)
-  * *Hinweis: Manche Studien erlauben technisch nur eine der beiden Optionen.*
-* **Kommentar:** Optionales Feld für Notizen (z. B. "Widerspruch durch Angehörige am TT.MM.JJJJ").
-
-Klicken Sie abschließend auf **Speichern**.
-
-### 3. Eintrag löschen
-
-Um einen Eintrag zu entfernen (z. B. bei Fehleingabe):
-1. Suchen Sie den Eintrag in der Liste.
-2. Klicken Sie auf das **Löschen-Icon** (Mülleimer) in der entsprechenden Zeile.
-3. Bestätigen Sie den Vorgang. 

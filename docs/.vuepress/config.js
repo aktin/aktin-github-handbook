@@ -51,7 +51,11 @@ export default {
         text: "Betrieb",
         prefix: "operation",
         children: [
-          "dwh-operation.md"
+          "user-management.md",
+          "requests.md",
+          "reports.md",
+          "consent-manager.md",
+          "p21-import.md"
         ],
       },
       {
