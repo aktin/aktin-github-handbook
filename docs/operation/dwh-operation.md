@@ -150,23 +150,20 @@ Spalten korrekt erkannt werden.
 
 ## Monatsberichte erstellen
 
-Unter dem Menüpunkt „Berichte“ werden alle bisherigen Berichte aufgelistet.
-Der Button „Neuer Bericht“ leitet Sie zur Berichterstellung weiter. Hier können Sie die
-passende Berichtsvorlage sowie Start- und Enddatum auswählen. Beim Klick auf „Erzeugen“
-wird auf dem Server der Prozess zur Berichterzeugung gestartet.
-In der Übersicht wird der neue Bericht mit dem Status „wird erstellt“ sofort angezeigt. Die
-Erstellung dauert in der Regel einige Minuten. Nach erfolgreichem Erzeugen des Berichts wird
-dann auch der grüne Downloadbutton aktiviert.
+Das DWH bietet die Möglichkeit, automatisierte Berichte über die Datenqualität und Kennzahlen Ihrer Notaufnahme zu generieren. Im Menüpunkt *Berichte* finden Sie eine Übersicht aller bisher erstellten
+Dokumente.
 
-Über den grauen Button wird die Einzelansicht eines Berichts aufgerufen, in der auch der
-erzeugte PDF-Bericht angezeigt wird.
+![report1x400](images/report1.png)
 
-Das DWH kann automatisierte Berichte über die Datenqualität und Kennzahlen Ihrer Notaufnahme generieren.
+Um eine aktuelle Auswertung zu starten, gehen Sie wie folgt vor. Klicken Sie oben rechts auf den Button *Neuer Bericht*.
 
-1. Wechseln Sie in den Reiter **Berichte**.
-2. Klicken Sie auf den Button **Neuer Bericht**.
-3. Wählen Sie im Dialog den Zeitraum (Monat/Jahr) aus.
-4. Der Bericht erscheint in der Liste mit dem Status `wird erstellt`.
+![report2x400](images/report2.png)
 
-Sobald der Vorgang abgeschlossen ist, wird der Download-Button grün. Klicken Sie darauf, um den Bericht als **PDF** herunterzuladen.
+Wählen Sie im Dialogfenster die gewünschte Berichtsvorlage sowie den Zeitraum (Monat/Jahr) aus. Bestätigen Sie mit *Jetzt erstellen*, um den Prozess auf dem Server zu starten. Der neue Bericht
+erscheint sofort in der Liste mit dem Status `wird erstellt`. Bitte haben Sie einen Moment Geduld, die Generierung kann je nach Datenmenge einige Minuten dauern.
 
+![report3x400](images/report3.png)
+
+Sobald der Vorgang abgeschlossen ist, können Sie den PDF-Bericht direkt im Browser in der Einzelansicht (über den Button *Detailansicht des Berichts*) betrachten.
+
+![report4x400](images/report4.png)
