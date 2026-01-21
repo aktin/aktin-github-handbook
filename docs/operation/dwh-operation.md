@@ -18,27 +18,29 @@ Der Data Warehouse Manager (DWH-Manager) ist die zentrale Web-Oberfläche zur St
 Über das AKTIN-Netzwerk gehen regelmäßig Forschungsanfragen ein. Das wichtigste Prinzip dabei ist die lokale Datenhoheit: Jede neue Anfrage muss durch Sie lokal geprüft und explizit freigegeben
 werden, bevor die Daten Ihren Standort verlassen.
 
-#### 1. Anfragenübersicht öffnen
+### 1. Anfragenübersicht öffnen
 
 Im Reiter *Anfragen* finden Sie die Liste aller eingegangenen Aufträge. Hier unterscheiden wir zwei Typen:
 
-* **Einzelanfragen:** Einmalige Abfragen für einen spezifischen Zeitraum.
-* **Serien-Anfragen:** Wiederkehrende Abfragen, die vom Inhalt gleich sind, aber sich im Zeitfenster unterscheiden (z. B. Wöchentlicher Export). Diese sind in der Liste entsprechend gekennzeichnet.
+* **Einzelanfragen:**
+    * Einmalige Abfragen für einen spezifischen Zeitraum
+* **Serien-Anfragen:**
+    * Wiederkehrende Abfragen, die vom Inhalt gleich sind, aber sich im Zeitfenster unterscheiden (z. B. Wöchentlicher Export). Diese sind in der Liste entsprechend gekennzeichnet
 
 ![dwh3x400](images/dwh3.png)
 
-::: tip Übersicht der möglichen Zustände einer Anfrage
+::: note Übersicht der möglichen Zustände einer Anfrage
 
 - **Eingegangen**
     - Die Anfrage wurde vom zentralen Broker abgeholt, wurde aber noch nicht geöffnet
 - **Freigabe der Anfrage**
-    - Die Anfrage wurde angesehen und Sie können sie nun zur Ausführung freigegeben oder abgelehnen
+    - Die Anfrage wurde angesehen und Sie können sie nun zur Ausführung freigegeben oder ablehnen
 - **Ausführung geplant**
     - Die Anfrage wurde freigegeben und wartet auf die Ausführung, da das Ausführungsdatum noch in der Zukunft liegt
 - **Ausführung läuft**
     - Die Abfrage befindet sich in der Ausführung
 - **Freigabe der Ergebnisse**
-    - Die Ergebnisse der Ausführung sind einsehbar und Sie können nun die Übermittlung der Ergebnisse an den AKTIN-Broker freigegeben oder abgelehnen
+    - Die Ergebnisse der Ausführung sind einsehbar und Sie können nun die Übermittlung der Ergebnisse an den AKTIN-Broker freigegeben oder ablehnen
 - **Senden der Ergebnisse**
     - Die Ergebnisse werden an den zentralen AKTIN-Broker gesendet
 - **Übermittlung abgeschlossen**
@@ -52,7 +54,7 @@ Im Reiter *Anfragen* finden Sie die Liste aller eingegangenen Aufträge. Hier un
 
 :::
 
-#### 2. Detailansicht einer Anfrage
+### 2. Detailansicht einer Anfrage
 
 Klicken Sie auf das entsprechende *Prüf-Symbol* rechts in der Abfragenübersicht, um die Einzelansicht einer Anfrage aufzurufen. Hier finden Sie alle entscheidungswichtigen Informationen.
 
@@ -80,8 +82,7 @@ Klicken Sie auf das entsprechende *Prüf-Symbol* rechts in der Abfragenübersich
 | **Beschreibung**                     | Erklärungstext des Auftraggebers zum Ziel der Studie                                                                                       |
 | **Abfragesyntax**                    | *Ausklappbarer Text:* Zeigt das exakte Skript (SQL oder R), das auf Ihrer Datenbank ausgeführt wird                                        |
 
-#### Sonderfunktionen für Serien-Anfragen
-
+::: note Sonderfunktionen für Serien-Anfragen
 Handelt es sich um ein wiederkehrendes Abfrage, stehen Ihnen zusätzliche Informationen zur Verfügung:
 
 | Element                   | Beschreibung                                                                                                                                                                                                        |
@@ -90,87 +91,75 @@ Handelt es sich um ein wiederkehrendes Abfrage, stehen Ihnen zusätzliche Inform
 | **Automatisierte Regeln** | Verwaltung von Dauer-Entscheidungen. Zeigt aktive Regeln inkl. Ersteller/Datum an (z. B. *automatische Freigabe* oder *automatische Ablehnung*). Über *Regel entfernen* kann die Automatisierung deaktiviert werden |
 | **Übersicht der Serie**   | Zeigt eine Liste aller bisherigen und geplanten Ausführungen dieser Serie an                                                                                                                                        |
 
-#### 3. Entscheidung treffen
+:::
 
-Bei einer Serien-Anfrage kommen noch weitere Optionen zur Auswahl hinzu. Es ist weiterhin
-möglich jede einzelne Ausführung manuell freizugeben (mit oder ohne Überprüfung der
-Ergebnisse). Darüber hinaus kann eine Regel für die Serie festgelegt werden. Alle
-nachfolgenden Anfragen der entsprechenden Serie werden dann automatisch freigegeben
-bzw. abgelehnt, sobald sie neu eingegangen sind.
-Falls gewünscht, kann diese Regel auch auf bereits bestehende, nicht beantwortete Anfragen
-angewendet werden (dies ist z. B. dann der Fall, wenn nach einer DWH-Neuinstallation bereits
-laufende Anfragen übertragen werden oder bereits Ausführungszeitpunkte „verpasst“ wurden).
-Sofern zu den betreffenden Zeiträumen Daten vorliegen, würden diese dann rückwirkend
-bereitgestellt, wenn diese Option ausgewählt wird.
-Die Regel kann in der Einzelansicht einer Anfrage aus der entsprechenden Serie eingesehen
-und wieder entfernt werden.
+### 3. Entscheidung treffen
 
-Bei erfolgreich durchgeführten Abfragen können (ggf. auch vor der Übermittlung, wenn die
-entsprechende Freigabe-Option gewählt wurde) die Ergebnisse als ZIP-Datei heruntergeladen
-werden. Die enthaltenden Daten können in Microsoft Excel importiert werden. Vor der finalen
-Freigabe und Weiterleitung der Daten besteht also die Möglichkeit die Daten zu prüfen und
-erst danach eine Entscheidung zur Datenweiterleitung zu treffen.
-Öffnen Sie für den Excel-Import eine Excel-Arbeitsmappe und wählen Sie unter dem Reiter
-„Daten“ die Option „Aus Text“ aus, um die heruntergeladene Text-Datei zu importieren
-(extrahieren Sie zunächst den ZIP-Ordner, in dem sie sich befindet). In den folgenden
-Dialogen lassen sich Einstellungen bzgl. der Konvertierung festlegen. I.d.R. erkennt Excel die
-richtige Einstellung von allein, sodass keine Änderungen von Ihnen gemacht werden müssen.
-Die Angabe, die für einen erfolgreichen Import überprüft werden sollte, ist das Trennzeichen,
-welches als Tabstopp festgelegt sein sollte. Falls dies nicht der Fall ist, so korrigieren Sie dies
-bitte. Nachdem dem Bestätigen der Angaben im Dialog, haben Sie die Möglichkeit
-auszuwählen wo die Tabelle eingefügt werden soll.
+Nachdem Sie die Metadaten und den Quellcode geprüft haben, treffen Sie über die Entscheidungsschaltfläche Ihre Entscheidung. Dabei öffnet sich jeweils ein Dialogfenster, in dem Sie den genauen Ablauf
+steuern können.
 
-Nutzen Sie die Buttons am Ende der Seite, um auf die Anfrage zu reagieren:
+::: tip Option A: Anfrage freigeben
 
-* **Freigeben (Automatisch):** Die Ergebnisse werden direkt und verschlüsselt an den zentralen Broker übertragen.
-* **Manuell Übermitteln:** Sie laden die Ergebnisdatei herunter, um sie z. B. auf einem USB-Stick zu transferieren (für strikt getrennte Netze).
-* **Ablehnen:** Es werden keine Daten übertragen. Der Status "Abgelehnt" wird an den Broker gemeldet.
+Wenn Sie der Durchführung zustimmen, klicken Sie auf die grüne Schaltfläche. Es öffnet sich ein Dialog zur Bestätigung. Hier legen Sie fest, ob die Daten sofort übertragen oder erst geprüft werden
+sollen.
 
----
+![dwh5.1x400](images/dwh5.1.png)
 
-### 3. Ergebnisse validieren (Optional)
-
-Bevor Sie die Daten versenden, können Sie die generierten Ergebnisse detailliert prüfen. Laden Sie dazu die **Ergebnis-ZIP-Datei** herunter. Die darin enthaltenen CSV-Dateien können Sie
-stichprobenartig sichten.
-
-::: details Anleitung: Import in Microsoft Excel
-Die Textdateien (CSV) können zur besseren Lesbarkeit in Excel importiert werden:
-
-1. Extrahieren Sie die ZIP-Datei.
-2. Öffnen Sie in Excel eine leere Arbeitsmappe.
-3. Gehen Sie zum Reiter **Daten** und wählen Sie **Aus Text/CSV**.
-4. Achten Sie im Import-Dialog darauf, dass als **Trennzeichen** der *Tabstopp* ausgewählt ist.
+Wenn Sie das Häkchen zu *Ergebnisprüfung vor der Übermittlung* setzen, verbleiben die Daten zunächst lokal auf Ihrem Server. Dies ermöglicht eine manuelle Prüfung vor dem Versand. Die Übermittlung
+selbst erfordert dann eine zweite Bestätigung. Ist das Häkchen nicht gesetzt, werden die Ergebnisse unmittelbar nach der Berechnung verschlüsselt versendet. Es ist keine weitere Interaktion notwendig.
 
 :::
 
-### 4. Entscheidung treffen
+::: danger Option B: Anfrage ablehnen
 
-Am Ende der Detailansicht steuern Sie den weiteren Verlauf. Sofern die Anfrage zentral noch aktiv ist, haben Sie folgende Optionen:
+Wenn Sie die Anfrage zurückweisen möchten, klicken Sie auf die rote Schaltfläche. Es öffnet sich ein Dialog zur Ablehnung.
 
-* **Freigeben (Automatisch):** Die Ergebnisse werden direkt verschlüsselt und an den zentralen Broker übertragen.
-* **Manuell Übermitteln:** Sie laden die verschlüsselte Ergebnisdatei herunter, um sie z. B. über einen USB-Stick zu transferieren (für DWHs ohne Internetanbindung).
-* **Ablehnen:** Es werden **keine Daten** übertragen. Der Broker erhält lediglich die Information, dass die Anfrage abgelehnt wurde.
+![dwh5.2x400](images/dwh5.2.png)
 
----
+Bei der Ablehnung der Anfrage wird die Anfrage nicht ausgeführt und es werden auch keine medizinischen Daten erhoben oder versendet. Der Broker erhält lediglich den Status *Abgelehnt* von Ihrem
+Standort.
 
-### Sonderfall: Serien-Anfragen verwalten
+:::
 
-Bei Serien-Anfragen (wiederkehrenden Abfragen) haben Sie zusätzliche Steuerungsmöglichkeiten, um den Aufwand zu reduzieren:
+::: note Besonderheit bei Serienanfragen (Automatisierung)
 
-**Automatisierte Regeln**
-Sie können eine **Dauer-Freigabe** oder **Dauer-Ablehnung** einrichten.
+Handelt es sich um eine Serienanfrage, sehen Sie in den Popups zusätzliche Checkboxen zur Automatisierung:
 
-* Sobald eine Regel aktiv ist, werden alle *zukünftigen* Anfragen dieser Serie automatisch bearbeitet, ohne dass Sie eingreifen müssen.
-* Die Regel kann jederzeit in der Einzelansicht wieder entfernt werden.
+**1. Regel erstellen (Dauer-Entscheidung)**: Durch Aktivieren der Checkbox *Diese und sämtliche Anfragen der Serie...* erstellen Sie eine Regel. Das System merkt sich Ihre Entscheidung (Freigabe oder
+Ablehnung). Alle zukünftigen Anfragen dieser Serie werden automatisch verarbeitet, sobald sie eintreffen.
 
-**Rückwirkende Anwendung**
-Wenn Sie eine Regel erstellen, fragt das System, ob diese auch auf **vergangene, offene Anfragen** angewendet werden soll.
+**2. Rückwirkende Anwendung**: Wenn Sie eine Serienanfrage freigeben oder ablehnen, erscheint oft eine weitere Option: *Auch bereits bestehende Anfragen...*. Dies ist nützlich, wenn sich (z. B. durch
+Urlaub oder Neuinstallation) mehrere offene Anfragen angestaut haben. Aktivieren Sie diese Option, um den Rückstau mit einem Klick abzuarbeiten.
 
-* *Beispiel:* Nach einer Neuinstallation oder einem Urlaub haben sich 10 Wochenberichte angestaut. Mit der Option "Rückwirkend anwenden" werden alle 10 Berichte auf einmal generiert und versendet.
+:::
 
----
+### 4. *(Optional)* Ergebnisse validieren
+
+Wenn Sie sich für die vorherige Prüfung entschieden haben, steht nach der Berechnung ein ZIP-Archiv mit den Ergebnissen zum Download bereit. Speichern und entpacken Sie dieses Archiv zunächst auf
+Ihrem lokalen Rechner, um die darin enthaltenen CSV-Dateien stichprobenartig auf ihre inhaltliche Korrektheit zu kontrollieren.
+
+::: info
+
+Für eine leserliche Darstellung in Microsoft Excel empfiehlt sich der Weg über die Import-Funktion, statt die Dateien direkt zu öffnen. Starten Sie hierfür eine leere Arbeitsmappe, wechseln Sie auf
+den Reiter *Daten* und wählen Sie die Funktion *Aus Text* (bzw. *Aus Text/CSV*). Im darauffolgenden Import-Dialog ist es entscheidend, dass Sie als Trennzeichen den Tabstopp auswählen, damit die
+Spalten korrekt erkannt werden.
+
+![dwh6x400](images/dwh6.png)
+
+:::
 
 ## Monatsberichte erstellen
+
+Unter dem Menüpunkt „Berichte“ werden alle bisherigen Berichte aufgelistet.
+Der Button „Neuer Bericht“ leitet Sie zur Berichterstellung weiter. Hier können Sie die
+passende Berichtsvorlage sowie Start- und Enddatum auswählen. Beim Klick auf „Erzeugen“
+wird auf dem Server der Prozess zur Berichterzeugung gestartet.
+In der Übersicht wird der neue Bericht mit dem Status „wird erstellt“ sofort angezeigt. Die
+Erstellung dauert in der Regel einige Minuten. Nach erfolgreichem Erzeugen des Berichts wird
+dann auch der grüne Downloadbutton aktiviert.
+
+Über den grauen Button wird die Einzelansicht eines Berichts aufgerufen, in der auch der
+erzeugte PDF-Bericht angezeigt wird.
 
 Das DWH kann automatisierte Berichte über die Datenqualität und Kennzahlen Ihrer Notaufnahme generieren.
 
@@ -180,3 +169,4 @@ Das DWH kann automatisierte Berichte über die Datenqualität und Kennzahlen Ihr
 4. Der Bericht erscheint in der Liste mit dem Status `wird erstellt`.
 
 Sobald der Vorgang abgeschlossen ist, wird der Download-Button grün. Klicken Sie darauf, um den Bericht als **PDF** herunterzuladen.
+
