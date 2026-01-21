@@ -15,68 +15,82 @@ Der Data Warehouse Manager (DWH-Manager) ist die zentrale Web-Oberfläche zur St
 
 ## Zentrale Datenanfragen verwalten
 
-Über das AKTIN-Netzwerk gehen regelmäßig Forschungsanfragen ein. Diese werden niemals automatisch beantwortet. Jede neue Anfrage muss durch Sie lokal geprüft und explizit freigegeben werden.
+Über das AKTIN-Netzwerk gehen regelmäßig Forschungsanfragen ein. Das wichtigste Prinzip dabei ist die lokale Datenhoheit: Jede neue Anfrage muss durch Sie lokal geprüft und explizit freigegeben
+werden, bevor die Daten Ihren Standort verlassen.
 
-#### 1. Anfrage öffnen
+#### 1. Anfragenübersicht öffnen
 
-Im Reiter Anfragen sehen Sie eine Übersicht aller offenen Anfragen. Die Art der Anfragen unterteilt sich in *Einzelanfragen* und *Serien-Anfragen*, welches in der Listenansicht entsprechend gekennzeichnet ist. Serien-Anfragen sind Anfragen, die wiederholt auftreten und sich innerhalb einer Serie lediglich im Ausführungszeitpunkt und dem Referenzzeitpunkt der Daten unterscheiden können.
+Im Reiter *Anfragen* finden Sie die Liste aller eingegangenen Aufträge. Hier unterscheiden wir zwei Typen:
+
+* **Einzelanfragen:** Einmalige Abfragen für einen spezifischen Zeitraum.
+* **Serien-Anfragen:** Wiederkehrende Abfragen, die vom Inhalt gleich sind, aber sich im Zeitfenster unterscheiden (z. B. Wöchentlicher Export). Diese sind in der Liste entsprechend gekennzeichnet.
 
 ![dwh3x400](images/dwh3.png)
 
 ::: tip Übersicht der möglichen Zustände einer Anfrage
+
 - **Eingegangen**
-  - Die Anfrage wurde vom zentralen Broker abgeholt, aber noch nicht angesehen
+    - Die Anfrage wurde vom zentralen Broker abgeholt, wurde aber noch nicht geöffnet
 - **Freigabe der Anfrage**
-  - Die Anfrage wurde angesehen und kann zur Ausführung freigegeben oder abgelehnt werden
+    - Die Anfrage wurde angesehen und Sie können sie nun zur Ausführung freigegeben oder abgelehnen
 - **Ausführung geplant**
-  - Die Anfrage wurde freigegeben und wartet auf die Ausführung, da das Ausführungsdatum noch in der Zukunft liegt
+    - Die Anfrage wurde freigegeben und wartet auf die Ausführung, da das Ausführungsdatum noch in der Zukunft liegt
 - **Ausführung läuft**
-  - Die SQL-Abfrage befindet sich in der Ausführung
+    - Die Abfrage befindet sich in der Ausführung
 - **Freigabe der Ergebnisse**
-  - Die Ergebnisse der Ausführung sind einsehbar und die Übermittlung der Ergebnisse an den AKTIN-Broker kann freigegeben oder abgelehnt werden
+    - Die Ergebnisse der Ausführung sind einsehbar und Sie können nun die Übermittlung der Ergebnisse an den AKTIN-Broker freigegeben oder abgelehnen
 - **Senden der Ergebnisse**
-  - Die Ergebnisse werden an den zentralen AKTIN-Broker gesendet
+    - Die Ergebnisse werden an den zentralen AKTIN-Broker gesendet
 - **Übermittlung abgeschlossen**
-  - Die Ergebnisse wurden erfolgreich übermittelt
+    - Die Ergebnisse wurden erfolgreich übermittelt
 - **Abgelehnt**
-  - Die Freigabe der Anfrage oder die Übermittlung der Ergebnisse wurde abgelehnt
+    - Die Anfrage wurde von Ihnen zurückgewiesen
 - **Geschlossen**
-  - Die Anfrage wurde auf dem AKTIN-Broker geschlossen oder gelöscht, wurde im DWH-Manager aber noch nicht vollständig beantwortet (d.h. die Anfrage wurde noch nicht abgelehnt oder die Ergebnisse wurden noch nicht übermittelt)
+    - Die Anfrage wurde zentral zurückgezogen, bevor sie bei Ihnen abgeschlossen wurde
 - **Fehlgeschlagen**
-  - Bei der Ausführung der Anfrage oder dem Übermitteln der Ergebnisse ist ein Fehler aufgetreten. Wenden Sie sich in diesem Fall an den [AKTIN IT-Support][support-email]
+    - Technischer Fehler. Wenden Sie sich an den [AKTIN IT-Support][support-email]
+
 :::
 
-#### 2. Anfrage prüfen
+#### 2. Detailansicht einer Anfrage
 
-Über das grüne Auge-Symbol oben rechts oder den Status-Balken der Anfrage in der
-Übersicht wird die Einzelansicht aufgerufen. Dort sind Informationen zu der entsprechenden
-Anfrage zu finden. Unter Auftraggeber wird der anfragende Wissenschaftler genannt. Der
-Zeitraum, aus welchem Daten für die Ausführung der Anfrage verwendet werden sollen, wird
-durch den Referenzzeitpunkt und den Erhebungszeitraum bestimmt. Zusätzlich ist das Datum
-der geplanten Ausführung aufgeführt. Für Serien-Anfragen existiert zusätzlich ein Abfrage-
-Intervall, das angibt in welchen zeitlichen Abständen Anfragen dieser Serie gestellt werden.
-Sie haben hier auch die Möglichkeit sich alle Anfragen der Serie anzeigen zu lassen. In der
-Beschreibung finden Sie eine Zusammenfassung der angefragten Daten und der geplanten
-Auswertung. Bei inhaltlichen Fragen zu einer konkreten Anfrage wenden Sie sich bitte
-an office@aktin.org.
+Klicken Sie auf das entsprechende *Prüf-Symbol* rechts in der Abfragenübersicht, um die Einzelansicht einer Anfrage aufzurufen. Hier finden Sie alle entscheidungswichtigen Informationen.
 
-In der Detailansicht finden Sie alle relevanten Informationen:
+::: tabs
+@tab Einzelanfrage
 
-* **Beschreibung:** Ziel und Zweck der Forschung
-* **Kontakt:** Ansprechpartner für Rückfragen
-* **Zeitraum:** Von wann bis wann Daten abgefragt werden
-* **Abfrage-Intervall:** Einmalig oder regelmäßig
+![dwh4.1x400](images/dwh4.1.png)
 
-Sie können die technische Umsetzung prüfen:
+@tab Serienanfrage
 
-* **Quellcode:** Zeigt das SQL- oder R-Skript, das ausgeführt wird.
-* **Ergebnisse:** Zeigt eine Vorschau (z. B. Anzahl der betroffenen Patienten), bevor Daten versendet werden.
+![dwh4.2x400](images/dwh4.2.png)
+:::
 
-Eine Anfrage kann in der Einzelansicht freigegeben oder abgelehnt werden, sofern sie auf
-dem zentralen Server noch nicht geschlossen oder gelöscht wurde (markiert durch den finalen
-Status „Geschlossen“).
+| Element                              | Beschreibung                                                                                                                               |
+|:-------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
+| **Titel**                            | Der Titel der Abfrage. Dient zur Identifikation bei Rückfragen.                                                                            |
+| **Status**                           | Der aktuelle Zustand der Anfrage (z. B. `Eingegangen`, `Ausführung geplant`), visualisiert durch einen Fortschrittsbalken                  |
+| **Ablehnen / Freigeben**             | Entscheidungsschaltfläche. `Freigeben` gibt die Abfrage zur Ausführung oder Übertragung frei, `Ablehnen` weist die Anfrage zurück          |
+| **Ergebnisse herunterladen**         | *Erst nach der Ausführung sichtbar:* Lädt die generierten Daten als ZIP-Datei zur Prüfung herunter                                         |
+| **Anfrage archivieren**              | *Nur bei abgeschlossenen Anfragen:* Verschiebt die Anfrage in das Archiv, sodass sie in der Übersicht nicht mehr erscheint                 |
+| **Auftraggeber**                     | Name des forschenden Wissenschaftlers oder der Institution, die die Anfrage stellt, mit Kontaktdaten für inhaltliche Rückfragen zur Studie |
+| **Referenzdatum der Daten**          | Der zeitliche Ankerpunkt für die Abfrage. Zusammen mit dem Erhebungszeitraum bestimmt er, welcher Zeitraum konkret ausgewertet wird        |
+| **Datum der (geplanten) Ausführung** | Der Zeitpunkt, an dem das Skript technisch auf dem Server läuft                                                                            |
+| **Erhebungszeitraum**                | Der konkrete Zeitraum, aus dem Patientendaten ausgewertet werden                                                                           |
+| **Beschreibung**                     | Erklärungstext des Auftraggebers zum Ziel der Studie                                                                                       |
+| **Abfragesyntax**                    | *Ausklappbarer Text:* Zeigt das exakte Skript (SQL oder R), das auf Ihrer Datenbank ausgeführt wird                                        |
 
-### 3. Entscheidung treffen
+#### Sonderfunktionen für Serien-Anfragen
+
+Handelt es sich um ein wiederkehrendes Abfrage, stehen Ihnen zusätzliche Informationen zur Verfügung:
+
+| Element                   | Beschreibung                                                                                                                                                                                                        |
+|:--------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Abfrage-Intervall**     | Gibt an, wie oft die Anfrage wiederholt wird (z. B. "Täglich", "Wöchentlich")                                                                                                                                       |
+| **Automatisierte Regeln** | Verwaltung von Dauer-Entscheidungen. Zeigt aktive Regeln inkl. Ersteller/Datum an (z. B. *automatische Freigabe* oder *automatische Ablehnung*). Über *Regel entfernen* kann die Automatisierung deaktiviert werden |
+| **Übersicht der Serie**   | Zeigt eine Liste aller bisherigen und geplanten Ausführungen dieser Serie an                                                                                                                                        |
+
+#### 3. Entscheidung treffen
 
 Bei einer Serien-Anfrage kommen noch weitere Optionen zur Auswahl hinzu. Es ist weiterhin
 möglich jede einzelne Ausführung manuell freizugeben (mit oder ohne Überprüfung der
@@ -111,6 +125,50 @@ Nutzen Sie die Buttons am Ende der Seite, um auf die Anfrage zu reagieren:
 * **Freigeben (Automatisch):** Die Ergebnisse werden direkt und verschlüsselt an den zentralen Broker übertragen.
 * **Manuell Übermitteln:** Sie laden die Ergebnisdatei herunter, um sie z. B. auf einem USB-Stick zu transferieren (für strikt getrennte Netze).
 * **Ablehnen:** Es werden keine Daten übertragen. Der Status "Abgelehnt" wird an den Broker gemeldet.
+
+---
+
+### 3. Ergebnisse validieren (Optional)
+
+Bevor Sie die Daten versenden, können Sie die generierten Ergebnisse detailliert prüfen. Laden Sie dazu die **Ergebnis-ZIP-Datei** herunter. Die darin enthaltenen CSV-Dateien können Sie
+stichprobenartig sichten.
+
+::: details Anleitung: Import in Microsoft Excel
+Die Textdateien (CSV) können zur besseren Lesbarkeit in Excel importiert werden:
+
+1. Extrahieren Sie die ZIP-Datei.
+2. Öffnen Sie in Excel eine leere Arbeitsmappe.
+3. Gehen Sie zum Reiter **Daten** und wählen Sie **Aus Text/CSV**.
+4. Achten Sie im Import-Dialog darauf, dass als **Trennzeichen** der *Tabstopp* ausgewählt ist.
+
+:::
+
+### 4. Entscheidung treffen
+
+Am Ende der Detailansicht steuern Sie den weiteren Verlauf. Sofern die Anfrage zentral noch aktiv ist, haben Sie folgende Optionen:
+
+* **Freigeben (Automatisch):** Die Ergebnisse werden direkt verschlüsselt und an den zentralen Broker übertragen.
+* **Manuell Übermitteln:** Sie laden die verschlüsselte Ergebnisdatei herunter, um sie z. B. über einen USB-Stick zu transferieren (für DWHs ohne Internetanbindung).
+* **Ablehnen:** Es werden **keine Daten** übertragen. Der Broker erhält lediglich die Information, dass die Anfrage abgelehnt wurde.
+
+---
+
+### Sonderfall: Serien-Anfragen verwalten
+
+Bei Serien-Anfragen (wiederkehrenden Abfragen) haben Sie zusätzliche Steuerungsmöglichkeiten, um den Aufwand zu reduzieren:
+
+**Automatisierte Regeln**
+Sie können eine **Dauer-Freigabe** oder **Dauer-Ablehnung** einrichten.
+
+* Sobald eine Regel aktiv ist, werden alle *zukünftigen* Anfragen dieser Serie automatisch bearbeitet, ohne dass Sie eingreifen müssen.
+* Die Regel kann jederzeit in der Einzelansicht wieder entfernt werden.
+
+**Rückwirkende Anwendung**
+Wenn Sie eine Regel erstellen, fragt das System, ob diese auch auf **vergangene, offene Anfragen** angewendet werden soll.
+
+* *Beispiel:* Nach einer Neuinstallation oder einem Urlaub haben sich 10 Wochenberichte angestaut. Mit der Option "Rückwirkend anwenden" werden alle 10 Berichte auf einmal generiert und versendet.
+
+---
 
 ## Monatsberichte erstellen
 
