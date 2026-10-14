@@ -1,16 +1,13 @@
-# Auto-generated workflow
 name: Deploy Docs
 
 on:
   push:
-      branches:
-        - issues/5-github-pages-workflow
+    branches:
+      - issues/5-github-pages-workflow
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   build:
@@ -22,66 +19,34 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm ci
 
       - name: Build Docs
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
         run: npm run docs:build
 
-      - name: Upload Pages artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: docs/.vuepress/dist
 
   deploy:
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
     needs: build
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-#  deploy-gh-pages:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v4
-#        with:
-#          fetch-depth: 0
-#          # if your docs needs submodules, uncomment the following line
-#          # submodules: true
-#
-#      - name: Setup Node.js
-#        uses: actions/setup-node@v4
-#        with:
-#          node-version: 22
-#          cache: npm
-#
-#      - name: Install Deps
-#        run: |
-#          corepack enable
-#          npm ci
-#
-#      - name: Build Docs
-#        env:
-#          NODE_OPTIONS: --max_old_space_size=8192
-#        run: |-
-#          npm run docs:build
-#          > docs/.vuepress/dist/.nojekyll
-#
-#      - name: Deploy Docs
-#        uses: JamesIves/github-pages-deploy-action@v4
-#        with:
-#          # Deploy Docs
-#          branch: gh-pages
-#          folder: src/.vuepress/dist
