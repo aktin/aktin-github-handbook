@@ -17,7 +17,7 @@ const GLOBAL_REFS = env.references || {}
 
 // theme docs : https://ecosystem.vuejs.press/themes/default/
 export default {
-  base: '/aktin-github-handbook/',
+  base: '/',
   bundler: viteBundler(),
   theme: defaultTheme({
     logo: "/images/logo.png",
