@@ -2,8 +2,8 @@ name: Deploy Docs
 
 on:
   push:
-    branches:
-      - issues/5-github-pages-workflow
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 permissions:
