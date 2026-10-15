@@ -15,7 +15,7 @@ const GLOBAL_REFS = env.references || {}
 
 // theme docs : https://ecosystem.vuejs.press/themes/default/
 export default {
-  base: "/handbook/",
+  base: "/aktin-github-handbook/",
   bundler: viteBundler(),
   theme: defaultTheme({
     logo: "/images/logo.png",
@@ -83,7 +83,7 @@ export default {
   lang: "de-DE",
   title: `AKTIN Data Warehouse v${versions.dwh} Handbuch`,
   description: "AKTIN Data Warehouse documentation site, providing user manuals, support guides, and FAQs",
-  head: [["link", {rel: "icon", href: "/handbook/images/signet.png"}]],
+  head: [["link", {rel: "icon", href: "/aktin-github-handbook/images/signet.png"}]],
   plugins: [
     searchPlugin({}),
     // inject global refs

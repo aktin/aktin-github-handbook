@@ -1,15 +1,15 @@
-# Docker Update
+# Docker-Aktualisierung
 
-Auf dieser Seite wird beschrieben, wie eine bestehende AKTIN Data Warehouse Docker-Installation aktualisiert wird. Das Verfahren wurde mit **Ubuntu {{ $theme.versions.ubuntu }} LTS
-({{ $theme.versions.codename }})** getestet. Bei abweichenden Systemumgebungen wenden Sie sich bitte an den [AKTIN IT-Support][support-email].
+Auf dieser Seite wird beschrieben, wie eine bestehende Docker-Installation des AKTIN Data Warehouse (kurz DWH) aktualisiert wird. Das Verfahren wurde mit Ubuntu {{ $theme.versions.ubuntu }} LTS
+({{ $theme.versions.codename }}) getestet. Bei abweichenden Systemumgebungen wenden Sie sich bitte an den [AKTIN IT-Support][support-email].
 
 ## 1. Vorbereitung
 
-Die Voraussetzungen für das Docker-Update sind identisch mit den [Vorrausetzungen der Docker-Installation][docker-reqs].
+Die Voraussetzungen für die Docker-Aktualisierung sind identisch mit den [Voraussetzungen der Docker-Installation][docker-reqs].
 
 Stellen Sie außerdem sicher, dass Sie Zugriff auf das Arbeitsverzeichnis der Installation besitzen, beispielsweise `/opt/docker-deploy/aktin-dwh/dwh1`. In diesem Verzeichnis befindet sich die Datei
 `compose.yml`, die alle Containerdefinitionen enthält, sowie die Datei `secret.txt`, in der das interne Datenbankpasswort gespeichert ist. Diese Datei darf nicht verändert oder gelöscht werden. Vor
-dem Update empfiehlt es sich außerdem, ein Backup anzulegen.
+der Aktualisierung empfiehlt es sich außerdem, ein Backup anzulegen.
 
 Zuerst sollten Sie den aktuellen Zustand der laufenden Container prüfen. Wechseln Sie dazu in das Installationsverzeichnis und geben Sie den folgenden Befehl ein:
 
@@ -21,7 +21,7 @@ docker compose ps
 Der Befehl `docker compose ps` zeigt eine Übersicht aller Container mit ihrem aktuellen Status an. Alle Container sollten als Status `running` oder `healthy` anzeigen. Mit dem Befehl
 `docker compose config --services` können Sie sich außerdem anzeigen lassen, welche Dienste in der Konfiguration definiert sind.
 
-## 2. Durchführung des Updates
+## 2. Durchführung der Aktualisierung
 
 Im nächsten Schritt laden Sie die aktuelle Version der AKTIN Compose-Datei aus dem offiziellen GitHub-Repository herunter.
 
@@ -48,31 +48,31 @@ docker compose pull
 Dieser Befehl lädt alle Container-Images in der jeweils neuesten Version aus dem AKTIN-Repository herunter. Die bisherigen Images bleiben lokal gespeichert, sodass Sie bei Problemen wieder
 zurückwechseln können. Nachdem die neuen Images heruntergeladen wurden, starten Sie die Container neu:
 
+::: tip Kurze Ausfallzeit
+Während die Container neu erstellt werden, ist das DWH für kurze Zeit nicht erreichbar. Die Datenbankinhalte und Konfigurationen in den Volumes bleiben dabei unberührt.
+:::
+
 ```bash
 docker compose up -d
 ```
 
-Dieser Befehl erstellt die Container auf Basis der neuen Konfiguration neu. Nach Abschluss des Updates können Sie veraltete Image-Versionen löschen, um Speicherplatz freizugeben:
-
-::: info Kurze Ausfallzeit
-Während die Container neu erstellt werden, ist das Data Warehouse für kurze Zeit nicht erreichbar. Die Datenbankinhalte und Konfigurationen in den Volumes bleiben dabei unberührt.
-:::
+Dieser Befehl erstellt die Container auf Basis der neuen Konfiguration neu. Nach Abschluss der Aktualisierung können Sie veraltete Image-Versionen löschen, um Speicherplatz freizugeben:
 
 ```bash
 docker image prune -f
 ```
 
-Dieser Befehl entfernt sicher nur solche Images, die von keinem laufenden Container mehr verwendet werden (sogenannte _dangling images_). Aktive Daten sind davon nicht betroffen.
+Dieser Befehl entfernt sicher nur solche Images, die von keinem laufenden Container mehr verwendet werden (sogenannte „dangling images“). Aktive Daten sind davon nicht betroffen.
 
 ## 3. Nachbearbeitung
 
-Um sicherzustellen, dass das Update erfolgreich war, prüfen Sie zunächst abschließend den Status aller Container:
+Um sicherzustellen, dass die Aktualisierung erfolgreich war, prüfen Sie zunächst abschließend den Status aller Container:
 
 ```bash
 docker compose ps
 ```
 
-Alle Dienste sollten im Zustand `running` oder `healthy` angezeigt werden. Sie können nun den Normalbetrieb wieder aufzunehmen. Falls ein Container als `exited` oder `unhealthy` erscheint, können Sie
+Alle Dienste sollten im Zustand `running` oder `healthy` angezeigt werden. Sie können nun den Normalbetrieb wieder aufnehmen. Falls ein Container als `exited` oder `unhealthy` erscheint, können Sie
 die Logdateien der letzten Minuten abrufen. Dort finden Sie mögliche Fehlermeldungen oder Hinweise auf Konfigurationsprobleme.
 
 ```bash
