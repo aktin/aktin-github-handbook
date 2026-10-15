@@ -1,18 +1,18 @@
-# Debian Update
+# Debian-Aktualisierung
 
-Seit Version 1.5 des AKTIN Data Warehouse wurde der Updateprozess durch die Debian-Paketierung deutlich vereinfacht. Anstelle eines separaten Skripts übernimmt nun der Debian-Paketmanager das Update
+Seit Version 1.5 des AKTIN Data Warehouse (kurz DWH) wurde der Aktualisierungsprozess durch die Debian-Paketierung deutlich vereinfacht. Anstelle eines separaten Skripts übernimmt nun der Debian-Paketmanager die Aktualisierung
 automatisch im Hintergrund.
 
-Sie können das Update über die Kommandozeile (CLI) oder die Web-Oberfläche starten. Das Data Warehouse wird während des Vorgangs neu gestartet. Falls das Update fehlschlägt, stellt das System
-automatisch die vorherige Version wieder her. In diesem Fall wenden Sie sich bitte an das [AKTIN-IT-Team][support-email].
+Sie können die Aktualisierung über die Kommandozeile (CLI) oder den DWH-Manager starten. Das DWH wird während des Vorgangs neu gestartet. Falls die Aktualisierung fehlschlägt, stellt das System
+automatisch die vorherige Version wieder her. In diesem Fall wenden Sie sich bitte an den [AKTIN IT-Support][support-email].
 
 ::: warning
-Diese Anleitung gilt nur für Updates ab Version 1.5. Für eine Aktualisierung von Version 1.4 oder älter, wenden Sie sich an das [AKTIN-IT-Team][support-email].
+Diese Anleitung gilt nur für Aktualisierungen ab Version 1.5. Für eine Aktualisierung von Version 1.4 oder älter wenden Sie sich an den [AKTIN IT-Support][support-email].
 :::
 
-## Ausführung des Updates über die Kommandozeile
+## 1. Aktualisierung über die Kommandozeile
 
-Für das Upgrade werden administrative Rechte benötigt. Öffnen Sie eine `root`-Sitzung:
+Für die Aktualisierung werden administrative Rechte benötigt. Öffnen Sie eine `root`-Sitzung:
 
 ```bash
 sudo -i
@@ -26,52 +26,52 @@ lsb_release -a
 
 Die Ausgabe sollte Ubuntu {{ $theme.versions.ubuntu }} LTS (Codename {{ $theme.versions.codename }}) enthalten.
 
-Für das Upgrade auf die aktuelle Version {{ $theme.versions.dwh }} wird das AKTIN "{{ $theme.versions.codename }}" Repository benötigt. Falls es nicht vorhanden ist, folgen Sie den Hinweisen im
+Für die Aktualisierung auf die aktuelle Version {{ $theme.versions.dwh }} wird das AKTIN-Repository "{{ $theme.versions.codename }}" benötigt. Falls es nicht vorhanden ist, folgen Sie den Hinweisen im
 Abschnitt [AKTIN Repository einbinden][repo-aktin] der Installationsanleitung, um es hinzuzufügen.
 
-Anschließend können Sie über folgende Befehle die Paketlisten des Paketmanagers neu einzulesen und die neusten verfügbaren Pakete des AKTIN Data Warehouse installieren:
+Anschließend können Sie über folgende Befehle die Paketlisten des Paketmanagers neu einlesen und die neuesten verfügbaren Pakete des DWH installieren:
 
 ```bash
-apt-get update
-apt-get --only-upgrade install aktin-notaufnahme-i2b2
-apt-get --only-upgrade install aktin-notaufnahme-dwh
-apt-get --only-upgrade install aktin-notaufnahme-updateagent
+apt update
+apt install --only-upgrade aktin-notaufnahme-i2b2
+apt install --only-upgrade aktin-notaufnahme-dwh
+apt install --only-upgrade aktin-notaufnahme-updateagent
 ```
 
-Mit diesen Befehlen werden die drei zentralen Pakete des Data Warehouse auf die jeweils aktuelle Version aktualisiert. Das Flag `--only-upgrade` sorgt dafür, dass keine neuen Pakete installiert,
-sondern nur bestehende aktualisiert werden. Weitere Schritte sind nicht erforderlich. Während des Updates steht das Data Warehouse nicht zur Verfügung. Wenn bereits die aktuelle Version installiert
-ist, zeigt die Konsole einen entsprechenden Hinweis. Nach Abschluss des Updates kann das Data Warehouse wieder normal verwendet werden.
+Mit diesen Befehlen werden die drei zentralen Pakete des DWH auf die jeweils aktuelle Version aktualisiert. Das Flag `--only-upgrade` sorgt dafür, dass keine neuen Pakete installiert,
+sondern nur bestehende aktualisiert werden. Weitere Schritte sind nicht erforderlich. Während der Aktualisierung steht das DWH nicht zur Verfügung. Wenn bereits die aktuelle Version installiert
+ist, zeigt die Konsole einen entsprechenden Hinweis. Nach Abschluss der Aktualisierung kann das DWH wieder normal verwendet werden.
 
-## Ausführung des Updates über die Ansicht des DWH
+## 2. Aktualisierung über den DWH-Manager
 
-Um das AKTIN Data Warehouse über die Ansicht zu aktualisieren, wechseln Sie zunächst zum AKTIN Data Warehouse in Ihrem Browser.
+Um das DWH über den DWH-Manager zu aktualisieren, öffnen Sie diesen zunächst in Ihrem Browser.
 
-#### 1. Suche nach einer neuen Version
+### 2.1 Suche nach einer neuen Version
 
-Klicken Sie oben rechts auf den Update-Button. Während der Suche zeigt der Button eine laufende Animation. Wenn die Animation endet, ohne dass sich der Button ändert, ist bereits die aktuelle Version
+Klicken Sie oben rechts auf den Aktualisierungs-Button. Während der Suche zeigt der Button eine laufende Animation. Wenn die Animation endet, ohne dass sich der Button ändert, ist bereits die aktuelle Version
 installiert.
 
-![update1x400](images/update1.png)
+![DWH-Manager mit rot markiertem Aktualisierungs-Button neben der Versionsnummer oben rechts](images/update1.png)
 
-#### 2. Initialisierung des Update-Vorgangs
+### 2.2 Initialisierung der Aktualisierung
 
-Wenn eine neue Version gefunden wurde, ändert sich der Button. Klicken Sie ihn an, um das Update zu starten. Ein Hinweisfenster informiert Sie darüber, dass das Data Warehouse während des Updates
-nicht verfügbar ist und nach Abschluss automatisch neu gestartet wird. Bestätigen Sie den Hinweis, um den Vorgang zu beginnen.
+Wenn eine neue Version gefunden wurde, ändert sich der Button. Klicken Sie ihn an, um die Aktualisierung zu starten. Ein Hinweisfenster informiert Sie darüber, dass das DWH während der Aktualisierung
+nicht verfügbar ist und nach Abschluss automatisch neu gestartet wird. Bestätigen Sie den Hinweis mit **Update durchführen**, um den Vorgang zu beginnen.
 
-![update2x400](images/update2.png)
+![DWH-Manager mit grünem Pfeil-Button, der eine verfügbare neue Version anzeigt](images/update2.png)
 
-![update3x400](images/update3.png)
+![Hinweisfenster zur Aktualisierung des DWH mit den Buttons Update durchführen und Abbrechen](images/update3.png)
 
-#### 3. Durchführung des Updates
+### 2.3 Durchführung der Aktualisierung
 
-Während des Updates werden Sie auf eine externe Statusseite weitergeleitet. Dort sehen Sie den Fortschritt des Prozesses. Nach Abschluss werden Sie automatisch auf die Startseite des Data Warehouse
+Während der Aktualisierung werden Sie auf eine externe Statusseite weitergeleitet. Dort sehen Sie den Fortschritt des Prozesses. Nach Abschluss werden Sie automatisch auf die Startseite des DWH
 zurückgeleitet.
 
-![update4x400](images/update4.png)
+![Statusseite mit der Meldung, dass das AKTIN DWH aktualisiert wird](images/update4.png)
 
-#### 4. Abschluss des Updates
+### 2.4 Abschluss der Aktualisierung
 
-Nach dem Update erscheint ein Hinweisfenster mit dem Ergebnis und der Konsolenausgabe. Schließen Sie dieses Fenster, um wieder in den Normalbetrieb zu wechseln. Das Popup kann jederzeit erneut
+Nach der Aktualisierung erscheint ein Hinweisfenster mit dem Ergebnis und der Konsolenausgabe. Schließen Sie dieses Fenster, um wieder in den Normalbetrieb zu wechseln. Das Fenster kann jederzeit erneut
 geöffnet werden, indem Sie auf die Versionsnummer oben rechts klicken.
 
-![update5x400](images/update5.png)
+![Hinweisfenster mit Erfolgsmeldung und Konsolenausgabe der Aktualisierung](images/update5.png)
