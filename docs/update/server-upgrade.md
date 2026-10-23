@@ -1,6 +1,6 @@
-# Ubuntu Server Upgrade
+# Ubuntu-Server-Upgrade
 
-Diese Anleitung beschreibt das Upgrade einer bestehenden Ubuntu LTS-Version auf die nächste LTS-Version, z. B. von Ubuntu 20.04 LTS (focal) auf Ubuntu 22.04 LTS (jammy).
+Diese Anleitung beschreibt das Upgrade einer bestehenden Ubuntu-LTS-Version auf die nächste LTS-Version, z. B. von Ubuntu 20.04 LTS (focal) auf Ubuntu 22.04 LTS (jammy).
 Dieses Upgrade ist erforderlich für den Betrieb des AKTIN Data Warehouse ab Version 1.6 (ausgenommen Docker-Installationen).
 Wenn Sie eine andere Distribution oder ein angepasstes Setup verwenden, kontaktieren Sie bitte den [AKTIN IT-Support][support-email].
 
@@ -21,14 +21,20 @@ apt upgrade
 
 ## 2. Durchführung des Distributionsupgrades
 
+::: warning Wichtiger Hinweis zu PostgreSQL
+Bei einem Distributionsupgrade wird oft auch die Datenbank-Software (PostgreSQL) aktualisiert. Dabei wird ein neuer, leerer Datenbank-Server gestartet.
+Prüfen Sie nach dem Upgrade, ob Ihre alten Daten verfügbar sind. Falls das System "leer" wirkt, müssen die Daten vom alten in den neuen Datenbank-Cluster migriert werden (über den Befehl `pg_upgradecluster`).
+Kontaktieren Sie im Zweifel bitte den [AKTIN IT-Support][support-email], bevor Sie neue Daten importieren.
+:::
+
 Starten Sie das eigentliche Upgrade:
 
 ```bash
 do-release-upgrade
 ```
 
-Dieser Befehl führt das System auf die nächste unterstützte Ubuntu-LTS-Version (z. B. 20.04 → 22.04) hoch. Wenn Sie gefragt werden, ob bestehende Konfigurationsdateien ersetzt werden sollen,
-**behalten Sie die alten Einstellungen**. Dadurch bleiben beispielsweise SSH-Konfigurationen erhalten. Nach Abschluss wird das System automatisch neu gestartet.
+Dieser Befehl führt das System auf die nächste unterstützte Ubuntu-LTS-Version (z. B. 20.04 → 22.04) hoch. Wenn Sie gefragt werden, ob bestehende Konfigurationsdateien ersetzt werden sollen,
+behalten Sie die alten Einstellungen. Dadurch bleiben beispielsweise SSH-Konfigurationen erhalten. Nach Abschluss wird das System automatisch neu gestartet.
 
 ## 3. Nachbearbeitung
 
@@ -47,9 +53,3 @@ geladen werden.
 ```bash
 apt update
 ```
-
-::: warning Wichtiger Hinweis zu PostgreSQL 
-Bei einem Distributions-Upgrade wird oft auch die Datenbank-Software (PostgreSQL) aktualisiert. Dabei wird ein neuer, leerer Datenbank-Server gestartet.
-Prüfen Sie nach dem Upgrade, ob Ihre alten Daten verfügbar sind. Falls das System "leer" wirkt, müssen die Daten vom alten in den neuen Datenbank-Cluster migriert werden (über den Befehl `pg_upgradecluster`).
-Kontaktieren Sie im Zweifel bitte den [AKTIN IT-Support][support-email]. bevor Sie neue Daten importieren. 
-:::

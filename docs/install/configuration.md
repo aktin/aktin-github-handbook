@@ -10,46 +10,46 @@ Um die Einstellungen zu ändern, benötigen Sie einen Konsolenzugang zum Server.
 ::: tabs
 @tab Debian
 
-**1. Datei öffnen**: Öffnen Sie die Konfigurationsdatei mit dem folgenden Befehl:
+1. Datei öffnen: Öffnen Sie die Konfigurationsdatei mit dem folgenden Befehl:
 
 ```bash
 nano /opt/wildfly/standalone/configuration/aktin.properties
 ```
 
-**2. Änderungen vornehmen**: Passen Sie die gewünschten Werte an. Speichern und Schließen Sie die `aktin.properties` anschließend.
+2. Änderungen vornehmen: Passen Sie die gewünschten Werte an. Speichern und schließen Sie die `aktin.properties` anschließend.
 
-**3. Dienst neustarten**: Wenden Sie die neuen Einstellungen an, indem Sie den Server neustarten:
+3. Dienst neu starten: Wenden Sie die neuen Einstellungen an, indem Sie den Dienst neu starten:
 
 ```bash
-service wildfly restart
+systemctl restart wildfly
 ```
 
 @tab Docker
 
-**1. Datei öffnen**: Bei einer Docker-Installation liegt die Datei in einem Volume. Ersetzen Sie `<PROJEKT_NAME>` mit dem Namen Ihres Docker-Projekts:
+1. Datei öffnen: Bei einer Docker-Installation liegt die Datei in einem Volume. Ersetzen Sie `<PROJEKT-NAME>` durch den Namen Ihres Docker-Projekts:
 
 ```bash
-nano /var/lib/docker/volumes/<PROJEKT_NAME>/aktin_config/_data/aktin.properties
+nano /var/lib/docker/volumes/<PROJEKT-NAME>/aktin_config/_data/aktin.properties
 ```
 
-**2. Änderungen vornehmen**: Passen Sie die gewünschten Werte an. Speichern und Schließen Sie die `aktin.properties` anschließend.
+2. Änderungen vornehmen: Passen Sie die gewünschten Werte an. Speichern und schließen Sie die `aktin.properties` anschließend.
 
-**3. Container neustarten**: Starten Sie den Wildfly-Container neu, um die Änderungen zu übernehmen (der Container-Name kann variieren):
+3. Service neu starten: Starten Sie den WildFly-Service im Verzeichnis der `compose.yml` neu, um die Änderungen zu übernehmen:
 
 ```bash
-docker restart <PROJEKT_NAME>-wildfly-1
+docker compose restart wildfly
 ```
 :::
 
-::: info
-Beachten Sie, dass alle nachträglichen Änderungen an der `aktin.properties` einen Neustart des Wildfly-Servers erfordern, um aktiv zu werden.
+::: tip
+Beachten Sie, dass alle nachträglichen Änderungen an der `aktin.properties` einen Neustart des WildFly-Servers erfordern, um aktiv zu werden.
 :::
 
 ## Referenz der Einstellungen
 
-#### Lokale Standorteinstellungen
+### Lokale Standorteinstellungen
 
-Diese Einstellungen definieren den Namen und den Standort Ihrer Data Warehouse-Instanz.
+Diese Einstellungen definieren den Namen und den Standort Ihrer DWH-Instanz.
 
 In diesem Abschnitt müssen Sie einige Angaben zu Ihrer Klinik machen. Passen Sie mindestens die Werte für `local.o` (Name des Klinikums), `local.ou` (Name der Abteilung) und `local.email` (zentrale
 E-Mail-Adresse für Berichte) an. An die hier hinterlegte E-Mail-Adresse werden später Berichte und Meldungen geschickt. Mehrere Adressen werden kommagetrennt ohne Leerzeichen angegeben.
@@ -60,18 +60,18 @@ E-Mail-Adresse für Berichte) an. An die hier hinterlegte E-Mail-Adresse werden 
 | `local.o`        | Ev. Klinikum Beispielhausen            | Name des Klinikums                          |
 | `local.ou`       | Notaufnahme                            | Name der Abteilung                          |
 | `local.l`        | Beispielhausen                         | Ort                                         |
-| `local.s`        | Niedersachen                           | Bundesland                                  |
+| `local.s`        | Niedersachsen                           | Bundesland                                  |
 | `local.c`        | Deutschland                            | Staat                                       |
 | `local.email`    | zna-contact@klinikum-beispielhausen.de | Empfänger-E-Mail für Berichte und Meldungen |
 | `local.tz`       | Europe/Berlin                          | Zeitzone                                    |
 | `local.language` | de-DE                                  | Benutzersprache                             |
 
-#### i2b2- und Datenbankeinstellungen
+### i2b2- und Datenbankeinstellungen
 
 Diese Schlüssel konfigurieren die Verbindung zum i2b2-Server und zur WildFly-Datenquelle.
 
 ::: warning
-Ändern Sie diese Werte nicht, es sei denn, Sie werden explizit vom Support dazu aufgefordert. Falsche Einstellungen hier können die gesamte Anwendung unbrauchbar machen.
+Ändern Sie diese Werte nicht, es sei denn, Sie werden explizit vom AKTIN IT-Support dazu aufgefordert. Falsche Einstellungen hier können die gesamte Anwendung unbrauchbar machen.
 :::
 
 | Einstellung           | Wert                                           | Beschreibung                      |
@@ -80,13 +80,13 @@ Diese Schlüssel konfigurieren die Verbindung zum i2b2-Server und zur WildFly-Da
 | `i2b2.datasource.crc` | java:/QueryToolDemoDS                          | i2b2 Projekt-Datenquelle          |
 | `i2b2.service.pm`     | http://localhost:9090/i2b2/services/PMService/ | i2b2 PM-Service                   |
 | `i2b2.service.domain` | i2b2demo                                       | i2b2 Projekt-Domäne               |
-| `db.datasource`       | java:jboss/datasources/AktinDS                 | JNDI-Name der Wildfly-Datenquelle |
+| `db.datasource`       | java:jboss/datasources/AktinDS                 | JNDI-Name der WildFly-Datenquelle |
 
-#### E-Mail-Konfiguration
+### E-Mail-Konfiguration
 
 Hier werden alle Einstellungen für den Versand von E-Mails über einen SMTP-Server festgelegt.
 
-Damit das Data Warehouse E-Mails (z.B. Berichte) versenden kann, müssen Sie hier die Zugangsdaten zu Ihrem E-Mail-Server (SMTP) eintragen. Füllen Sie die Felder entsprechend den Vorgaben Ihrer
+Damit das Data Warehouse E-Mails (z. B. Berichte) versenden kann, müssen Sie hier die Zugangsdaten zu Ihrem E-Mail-Server (SMTP) eintragen. Füllen Sie die Felder entsprechend den Vorgaben Ihrer
 IT-Abteilung aus. Die Felder `mail.x.replyto`, `mail.smtp.timeout` und `mail.smtp.connectiontimeout` können Sie auf den Standardwerten belassen.
 
 ::: warning
@@ -95,39 +95,39 @@ Das Feld `email.session` muss auf dem Wert `local` belassen werden. Anderenfalls
 
 | Einstellung                   | Wert                 | Beschreibung                                      |
 |:------------------------------|:---------------------|:--------------------------------------------------|
-| `email.session`               | local                | Lieferant der Email-Konfiguration                 |
+| `email.session`               | local                | Lieferant der E-Mail-Konfiguration                 |
 | `mail.x.replyto`              | it-support@aktin.org | Antwortadresse für versendete E-Mails             |
 | `mail.transport.protocol`     | smtp                 | Verwendetes E-Mail-Protokoll                      |
 | `mail.smtp.host`              | localhost            | Adresse des E-Mail-Servers                        |
 | `mail.smtp.port`              | 3025                 | Port des E-Mail-Servers                           |
 | `mail.smtp.auth`              | true                 | SMTP-Server-Authentifizierung                     |
-| `mail.user`                   | aktin                | Verwendeter Benutzer                              |
-| `mail.from`                   | *leer*               | Die Absender-E-Mail-Adresse des aktuellen Nutzers |
+| `mail.user`                   | aktin                | Verwendeter Benutzername                             |
+| `mail.from`                   | leer                 | Absender-E-Mail-Adresse der aktuell nutzenden Person |
 | `mail.x.password`             | aktin                | Passwort des verwendeten Benutzers                |
 | `mail.smtp.starttls.enable`   | true                 | Sicherheitseinstellung für TLS                    |
 | `mail.smtp.timeout`           | 10000                | Verbindungstimeout zum E-Mail-Server              |
 | `mail.smtp.connectiontimeout` | 10000                | Maximale Verarbeitungszeit für E-Mail-Versand     |
 
-#### Broker-Einstellungen
+### Broker-Einstellungen
 
 Diese Werte steuern die Kommunikation mit dem zentralen AKTIN-Broker.
 
-Hier muss nur der alphanumerische API-Schlüssel (`broker.keys`) eingetragen werden, den Sie vom [AKTIN-Support][support-email] erhalten haben. Ohne diesen Schlüssel kann sich Ihr Data Warehouse
+Hier muss nur der alphanumerische API-Schlüssel (`broker.keys`) eingetragen werden, den Sie vom [AKTIN IT-Support][support-email] erhalten haben. Ohne diesen Schlüssel kann sich Ihr Data Warehouse
 nicht mit der zentralen Infrastruktur verbinden. Die anderen Werte sollten unverändert bleiben.
 
 | Einstellung           | Wert                                                 | Beschreibung                           |
 |:----------------------|:-----------------------------------------------------|:---------------------------------------|
 | `broker.keys`         | XXXyourapikeyXXX                                     | Broker-Key zur Identifizierung         |
-| `broker.uris`         | https://aktin-broker.klinikum.rwth-aachen.de/broker/ | AKTIN Broker-URI                       |
+| `broker.uris`         | https://aktin-broker.klinikum.rwth-aachen.de/broker/ | AKTIN-Broker-URI                       |
 | `broker.data.path`    | /var/lib/aktin/broker                                | Ablageort für Broker-Daten             |
 | `broker.archive.path` | /var/lib/aktin/broker-archive                        | Ablageort für archivierte Broker-Daten |
-| `broker.intervals`    | PT15M                                                | Heartbeat-Update-Intervall (ISO 8601)  |
+| `broker.intervals`    | PT15M                                                | Heartbeat-Aktualisierungsintervall (ISO 8601)  |
 
-#### Studienspezifische Einstellungen & CDA-IDs
+### Studienspezifische Einstellungen & CDA-IDs
 
 Diese Einstellungen sind für die Verarbeitung von Patientendaten im Consent-Manager relevant.
 
-Für die meisten Standard-Installationen (z.B. mit E.Care- oder Orbis-Schnittstelle) müssen Sie hier nichts ändern. Nur wenn Ihr Krankenhaus-Informationssystem abweichende technische IDs (`root`-IDs)
+Für die meisten Standard-Installationen (z. B. mit E.Care- oder Orbis-Schnittstelle) müssen Sie hier nichts ändern. Nur wenn Ihr Krankenhaus-Informationssystem abweichende technische IDs (`root`-IDs)
 verwendet, müssen die Zeilen mit `cda.*.root.preset` angepasst werden.
 
 | Einstellung                 | Wert                      | Beschreibung                                                          |
@@ -141,10 +141,10 @@ verwendet, müssen die Zeilen mit `cda.*.root.preset` angepasst werden.
 | `study.id.billing.label`    | Fallnummer                | Textfeld-Label für die Fallnummer                                     |
 | `study.id.separator`        | /                         | Trennzeichen für Root- und Extension-Nummer                           |
 
-#### Wo finde ich diese IDs?
+### Wo finde ich diese IDs?
 
-Um herauszufinden, welche dieser Nummern über die AKTIN-Schnittstelle in das Data-Warehouse übertragen werden, benötigen Sie Zugriff auf ein CDA-Dokument Ihrer Klinik. Das CDA-Dokument wird als
-Datenstruktur zur Übertragung der Daten aus dem Notaufnahme-System in das klinikinterne Data Warehouse verwendet
+Um herauszufinden, welche dieser Nummern über die AKTIN-Schnittstelle in das Data Warehouse übertragen werden, benötigen Sie Zugriff auf ein CDA-Dokument Ihrer Klinik. Das CDA-Dokument wird als
+Datenstruktur zur Übertragung der Daten aus dem Notaufnahme-System in das klinikinterne Data Warehouse verwendet.
 
 Öffnen Sie eine CDA-Datei und suchen Sie nach folgenden Abschnitten:
 
@@ -172,17 +172,17 @@ Datenstruktur zur Übertragung der Daten aus dem Notaufnahme-System in das klini
 
 Jede Nummer (Patient, Fall, Episode) besteht aus zwei Teilen:
 
-* `extension`: Das ist die eigentliche Nummer, die Sie auch im KIS sehen (z.B. `1234567890`).
-* `root`: Das ist eine feste, technische Kennung, die den Typ der Nummer definiert (z.B. `1.2.276.0.76.4.8` für eine Patientennummer).
+* `extension`: Das ist die eigentliche Nummer, die Sie auch im KIS sehen (z. B. `1234567890`).
+* `root`: Das ist eine feste, technische Kennung, die den Typ der Nummer definiert (z. B. `1.2.276.0.76.4.8` für eine Patientennummer).
 
 Vergleichen Sie die `root`-Werte aus Ihrer CDA-Datei mit den Werten in der Einstellungs-Tabelle. Passen Sie den entsprechenden `cda.*.root.preset`-Eintrag in Ihrer `aktin.properties` an, falls er
 
-:::info
+:::tip
 Sollte in Ihrer Klinik keine feste `root`-Nummer verwendet werden, darf auch keine `root`-Nummer in `aktin.properties` eingetragen werden. Lassen Sie das Feld in diesem Fall einfach leer. Dies kann
 der Fall sein, wenn entweder `extension` direkt als `root` verwendet wird oder sich die `root`-Nummer klinikintern unterscheidet.
 :::
 
-#### Pfad- und Servereinstellungen
+### Pfad- und Servereinstellungen
 
 Diese Schlüssel definieren verschiedene Dateipfade und Konfigurationen für serverseitige Operationen.
 
@@ -195,7 +195,7 @@ Diese Pfade und technischen Werte sind für den Betrieb essenziell und werden be
 | `rscript.binary`                | /usr/bin/Rscript                 | Link zum R-Script Binary                                                                           |
 | `rscript.timeout`               | 1800000                          | Timeout für R-Skripte                                                                              |
 | `rscript.debug`                 | false                            | R Debug-Modus                                                                                      |
-| `update.data.path`              | /var/lib/aktin/update            | Ablageort für den Update-Dienst                                                                    |
+| `update.data.path`              | /var/lib/aktin/update            | Ablageort für den Aktualisierungsdienst                                                                    |
 | `report.data.path`              | /var/lib/aktin/reports           | Ablageort der Berichte                                                                             |
 | `report.temp.path`              | /var/tmp/report-temp             | Temporäre Ablage von Berichten während der Generierung                                             |
 | `report.archive.path`           | /var/lib/aktin/report-archive    | Ablageort der archivierten Berichte                                                                |
@@ -206,11 +206,11 @@ Diese Pfade und technischen Werte sind für den Betrieb essenziell und werden be
 | `import.cda.debug.level`        | none                             | Import-CDA-Debug-Level                                                                             |
 | `import.cda.debug.dir`          | /tmp/                            | Ablageort für CDA-Debug-Dateien                                                                    |
 | `import.cda.fhir.outcome.level` | info                             | Legt das Logging-Level für den FHIR-Outcome beim CDA-Import fest (Optionen: 'all', 'info', 'none') |
-| `wildfly.management.url`        | http://localhost:9990/management | URL der Wildfly-Konfiguration                                                                      |
-| `wildfly.management.user`       | admin                            | Wildfly-Nutzer                                                                                     |
-| `wildfly.management.password`   | admin2                           | Wildfly-Passwort                                                                                   |
+| `wildfly.management.url`        | http://localhost:9990/management | URL der WildFly-Konfiguration                                                                      |
+| `wildfly.management.user`       | admin                            | WildFly-Nutzername                                                                                    |
+| `wildfly.management.password`   | admin2                           | WildFly-Passwort                                                                                   |
 
 ## Einstellungen in der i2b2-Adminoberfläche
 
-Benutzer ohne Admin-Rechte benötigen zwei Berechtigungen, um den Data-Warehouse-Manager zu nutzen: die Zuweisung zum AKTIN-Projekt und eine AKTIN-Rolle. Beides konfigurieren Sie in der
-i2b2-Adminoberfläche unter `http://<IHR-SERVER>/webclient`. Eine genaue Anleitung finden Sie im [i2b2-Handbuch][i2b2-manual].
+Nutzende ohne Admin-Rechte benötigen zwei Berechtigungen, um den DWH-Manager zu nutzen: die Zuweisung zum AKTIN-Projekt und eine AKTIN-Rolle. Beides konfigurieren Sie in der
+i2b2-Adminoberfläche unter `http://<SERVER-IP>/webclient` (ersetzen Sie `<SERVER-IP>` durch die IP-Adresse Ihres Servers). Eine genaue Anleitung finden Sie im [i2b2-Handbuch][i2b2-manual].

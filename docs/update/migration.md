@@ -4,8 +4,8 @@ Diese Anleitung beschreibt die Migration eines AKTIN Data Warehouse zwischen kla
 Wiederherstellung und Validierung. Gültig für DWH-Versionen ab 1.5. Für ältere Versionen wenden Sie sich an den [AKTIN IT-Support][support-email].
 
 Offiziell unterstützt ist Ubuntu {{ $theme.versions.ubuntu }} LTS als Betriebssystem. Für Docker-Zielsysteme muss Docker vorab installiert und lauffähig sein. Orientieren Sie sich dazu an
-der [Docker-Installationsanleitung][docker-install]. Die DWH-Version muss mindestens 1.5 sein. Die aktuell installierte DWH-Version sehen Sie nach Anmeldung in der Admin-Konsole unter
-`http://<SERVER-IP>/aktin/admin`.
+der [Docker-Installationsanleitung][docker-install]. Die DWH-Version muss mindestens 1.5 sein. Die aktuell installierte DWH-Version sehen Sie nach Anmeldung im DWH-Manager unter
+`http://<SERVER-IP>/aktin/admin`, wobei `<SERVER-IP>` für die IP-Adresse des Servers steht.
 
 ## 1. Vorbereitung
 
@@ -60,12 +60,12 @@ chmod +x create_docker_backup.sh
 docker ps --format 'table {{.Names}}\t{{.Image}}'
 ```
 
-Notieren Sie sich die konkreten Container-Namen (z.B. `dwh1-wildfly-1`, `dwh1-db-1`, `dwh1-httpd-1`).
+Notieren Sie sich die konkreten Container-Namen (z. B. `dwh1-wildfly-1`, `dwh1-db-1`, `dwh1-httpd-1`).
 
 4. Starten Sie die Sicherung. Übergeben Sie dabei die Container-Namen in der Reihenfolge `wildfly`, `db` und `httpd` (Beispiel: `./create_docker_backup.sh dwh1-wildfly-1 dwh1-db-1 dwh1-httpd-1`):
 
 ```bash
-./create_docker_backup.sh <WILDFLY_NAME> <DB_NAME> <HTTPD_NAME>
+./create_docker_backup.sh <WILDFLY-CONTAINER> <DB-CONTAINER> <HTTPD-CONTAINER>
 ```
 
 Das Skript erstellt eine komprimierte Backup-Datei `aktin-backup-YYYYmmddHHMM.tar.gz` im aktuellen Verzeichnis.
@@ -73,35 +73,41 @@ Das Skript erstellt eine komprimierte Backup-Datei `aktin-backup-YYYYmmddHHMM.ta
 
 ## 3. Backup anwenden
 
+::: warning Konfiguration prüfen
+Durch das Einspielen des Backups wird die Datei `aktin.properties` überschrieben. In neueren DWH-Versionen können neue Konfigurationsfelder hinzugekommen sein (z. B. für Einstellungen von neuen
+Features). Prüfen Sie die Datei `aktin.properties` manuell. Stellen Sie sicher, dass `email.session=local` gesetzt ist, falls Sie den lokalen Mailversand nutzen. Ergänzen Sie fehlende
+SMTP-Zugangsdaten, falls diese im alten Backup noch nicht enthalten waren.
+:::
+
 ::: tabs
 @tab Debian-Zielsystem
 
-**Voraussetzung**: Ein frisch installiertes AKTIN DWH auf dem Zielserver.
+Voraussetzung: Ein frisch installiertes AKTIN DWH auf dem Zielserver.
 
 1. Kopieren Sie das Skript `apply_backup_to_deb.sh` und die erstellte Backup-Datei (`.tar.gz`) auf den Zielserver.
 
 2. Machen Sie das Skript ausführbar:
 
 ```bash
-chmod +x apply_backup_to_deb.sh 
+chmod +x apply_backup_to_deb.sh
 ```
 
 3. Starten Sie die Wiederherstellung unter Angabe der Backup-Datei (Beispiel: `./apply_backup_to_deb.sh aktin-backup-20250918.tar.gz`):
 
 ```bash
-./apply_backup_to_deb.sh <PFAD_ZUR_BACKUP_DATEI> 
+./apply_backup_to_deb.sh <PFAD-ZUR-BACKUP-DATEI>
 ```
 
 @tab Docker-Zielsystem
 
-**Voraussetzung**: Eine laufende, idealerweise noch leere Docker-Installation des AKTIN DWH.
+Voraussetzung: Eine laufende, idealerweise noch leere Docker-Installation des AKTIN DWH.
 
 1. Kopieren Sie das Skript `apply_backup_to_docker.sh` und die Backup-Datei auf den Docker-Host.
 
 2. Machen Sie das Skript ausführbar:
 
 ```bash
-chmod +x apply_backup_to_docker.sh 
+chmod +x apply_backup_to_docker.sh
 ```
 
 3. Ermitteln Sie die Namen der laufenden Container für `wildfly`, `db` und `httpd`:
@@ -110,29 +116,23 @@ chmod +x apply_backup_to_docker.sh
 docker ps --format 'table {{.Names}}\t{{.Image}}'
 ```
 
-Notieren Sie sich die konkreten Container-Namen (z.B. `dwh1-wildfly-1`, `dwh1-db-1`, `dwh1-httpd-1`).
+Notieren Sie sich die konkreten Container-Namen (z. B. `dwh1-wildfly-1`, `dwh1-db-1`, `dwh1-httpd-1`).
 
-4. Führen Sie das Skript aus. Die Reihenfolge der Argumente ist: Backup-Datei, Wildfly-Container, Datenbank-Container, httpd-Container (Beispiel:
+4. Führen Sie das Skript aus. Die Reihenfolge der Argumente ist: Backup-Datei, WildFly-Container, Datenbank-Container, httpd-Container (Beispiel:
    `./apply_backup_to_docker.sh backup.tar.gz dwh1-wildfly-1 dwh1-db-1 dwh1-httpd-1`):
 
 ```bash
-./apply_backup_to_docker.sh <BACKUP_DATEI> <WILDFLY_NAME> <DB_NAME> <HTTPD_NAME> 
+./apply_backup_to_docker.sh <BACKUP-DATEI> <WILDFLY-CONTAINER> <DB-CONTAINER> <HTTPD-CONTAINER>
 ```
 
 :::
 
-::: warning Konfiguration prüfen
-Durch das Einspielen des Backups wird die Datei `aktin.properties` überschrieben. In neueren DWH-Versionen können neue Konfigurationsfelder hinzugekommen sein (z.B. für Einstellungen von neuen
-Features). Prüfen Sie die Datei `aktin.properties` manuell. Stellen Sie sicher, dass `email.session=local` gesetzt ist, falls Sie den lokalen Mailversand nutzen. Ergänzen Sie fehlende
-SMTP-Zugangsdaten, falls diese im alten Backup noch nicht enthalten waren.
-:::
-
-::: important Datenschutzhinweis
+::: warning Datenschutzhinweis
 Backups enthalten vertrauliche Konfigurationen und exportierte Daten. Die Archive sind strukturiert und Komponenten darin verschlüsselt. Behandeln Sie die Dateien
 dennoch jederzeit vertraulich und begrenzen Sie Zugriffe auf autorisierte Personen. Löschen oder archivieren Sie Backups nach Abschluss gemäß Ihren Richtlinien.
 :::
 
 ## 4. Validierung nach der Migration
 
-Öffnen Sie die Admin-Konsole unter `http://<SERVER-IP>/aktin/admin` und prüfen Sie, ob die erwartete DWH-Version angezeigt wird. Testen Sie auch die Funktionsfähigkeit, indem Sie den Anweisungen
+Öffnen Sie den DWH-Manager unter `http://<SERVER-IP>/aktin/admin` und prüfen Sie, ob die erwartete DWH-Version angezeigt wird. Testen Sie auch die Funktionsfähigkeit, indem Sie den Anweisungen
 zum [Test der Betriebsfähigkeit][test-operability] folgen. Bei Fehlermeldungen prüfen Sie die Dienste und Logs.
